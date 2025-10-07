@@ -30,6 +30,38 @@ Want to try it yourself? Check out the [official repository](https://github.com/
 
 We've organized this repository into three distinct threat model categories, each showcasing different types of systems:
 
+### Folder Organization
+
+Each threat model follows this consistent structure:
+
+```
+📁 1_infosecotb/
+├── 📄 infosecotb-model.json          # Original Threat Dragon model (no threats)
+├── 📁 anthropic/                     # AI-generated threats from Anthropic models
+├── 📁 google/                        # AI-generated threats from Google models
+├── 📁 novita/                        # AI-generated threats from Novita models
+├── 📁 openai/                        # AI-generated threats from OpenAI models
+└── 📁 xai/                           # AI-generated threats from xAI models
+
+📁 2_husky-ai/
+├── 📄 husky-ai-model.json            # Original Threat Dragon model (no threats)
+├── 📁 antropic/                      # AI-generated threats from Anthropic models
+├── 📁 google/                        # AI-generated threats from Google models
+├── 📁 novita/                        # AI-generated threats from Novita models
+├── 📁 ollama/                        # AI-generated threats from Ollama models
+├── 📁 openai/                        # AI-generated threats from OpenAI models
+└── 📁 xai/                           # AI-generated threats from xAI models
+
+📁 3_online-payments-processing-platform/
+├── 📄 payments-processing-platform.json  # Original Threat Dragon model (no threats)
+├── 📁 antropic/                      # AI-generated threats from Anthropic models
+├── 📁 google/                        # AI-generated threats from Google models
+├── 📁 novita/                        # AI-generated threats from Novita models
+├── 📁 ollama/                        # AI-generated threats from Ollama models
+├── 📁 openai/                        # AI-generated threats from OpenAI models
+└── 📁 xai/                           # AI-generated threats from xAI models
+```
+
 ### 1. InfoSecOTB (Infosecotb.com)
 **Location:** `1_infosecotb/`
 
