@@ -103,7 +103,7 @@ Each AI-generated threat model is available in two formats:
 
 ### Using in Threat Dragon
 
-1. Open [Threat Dragon](https://threatdragon.com/)
+1. Open [Threat Dragon](https://www.threatdragon.com/#/)
 2. Create a new model or open existing
 3. Use the import feature to load any `.json` file from this repository
 4. Explore the threat analysis and diagrams
