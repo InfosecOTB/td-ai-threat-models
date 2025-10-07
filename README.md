@@ -6,7 +6,7 @@ A comprehensive collection of Threat Dragon threat models enhanced with AI-gener
 
 ## Overview
 
-This repository contains threat models created using [Threat Dragon](https://threatdragon.org/) - an open-source threat modeling tool - with additional AI-generated threat analysis from various AI providers including Anthropic, OpenAI, Google, xAI, and Novita. The models cover different system architectures and demonstrate how AI can enhance traditional threat modeling practices.
+This repository contains threat models created using [Threat Dragon](https://owasp.org/www-project-threat-dragon/) - an open-source threat modeling tool - with additional AI-generated threat analysis from various AI providers including Anthropic, OpenAI, Google, xAI, and Novita. The models cover different system architectures and demonstrate how AI can enhance traditional threat modeling practices.
 
 ## AI Threat Generation Tool
 
@@ -93,7 +93,7 @@ Each AI-generated threat model is available in two formats:
 
 ### Prerequisites
 
-- [Threat Dragon](https://threatdragon.org/) (web application or desktop version)
+- [Threat Dragon](https://owasp.org/www-project-threat-dragon/) (web application or desktop version)
 - Web browser for viewing PDF reports
 
 ### Viewing Threat Models
@@ -103,7 +103,7 @@ Each AI-generated threat model is available in two formats:
 
 ### Using in Threat Dragon
 
-1. Open [Threat Dragon](https://threatdragon.org/)
+1. Open [Threat Dragon](https://threatdragon.com/)
 2. Create a new model or open existing
 3. Use the import feature to load any `.json` file from this repository
 4. Explore the threat analysis and diagrams
@@ -136,7 +136,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Related Resources
 
-- [Threat Dragon Official Documentation](https://threatdragon.org/)
+- [Threat Dragon Official Documentation](https://www.threatdragon.com/docs/)
 - [OWASP Threat Model Cookbook](https://github.com/wunderwuzzi23/threat-model-cookbook)
 - [STRIDE Threat Modeling Framework](https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats)
 
