@@ -1,0 +1,3906 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Infosecotb.com with vMeNext Threat Model",
+    "owner": "InfoSecOTB",
+    "description": "Infosecotb.com is a professional cybersecurity blog hosted on WordPress through BlueHost. The blog serves as a platform for sharing insights, articles, and resources related to information security, targeting cybersecurity professionals and enthusiasts.\n\nWebsite Structure:\n•\tContent Management System (CMS): Built on WordPress, allowing for easy content creation, management, and publishing.\n•\tUser Interaction: Features such as chatbot, comments, contact forms, and newsletter subscriptions that facilitate user engagement.\n•\tCategorized Content: Articles are organized into categories based on topics \n\nFunctionality:\n•\tArticle Publishing: Regularly updated with new blog posts that include technical guides, best practices, and industry insights.\n•\tSearch Functionality: Allows users to search for specific topics or articles.\n•\tSocial Media Integration: Links to social media platforms for sharing and promoting content.\n•\tvMeNext AI powered chatbot\n\nUser Types:\n•\tVisitors: General users seeking information on cybersecurity topics.\n•\tAdministrators: Individuals with backend access for managing content, settings, and website security.\n\nTechnical Environment:\n•\tHosting: Utilizes BlueHost for hosting, which provides shared or dedicated server resources.\n•\tPlugins and Themes: Employs various WordPress plugins for enhanced functionality (e.g., SEO, analytics, security).\n•\tDatabase: Relies on a MySQL database for storing content, user information, and site settings.\n•\tvMeNext chatbot published using iFrames\n\nvMeNext is a comprehensive AI-powered chatbot system designed to serve as an intelligent interface for blog content and website management. Built with modern Python technologies, it combines the power of OpenAI's GPT models with automated web scraping, monitoring, and user engagement features.\n\nKey Capabilities:\n•\tIntelligent Conversations: Powered by OpenAI's latest GPT models for natural, context-aware responses\n•\tBlog Content Integration: Automatic scraping, processing, and summarization of blog posts\n•\tWebsite Monitoring: Continuous availability checking with real-time alerts\n•\tDocument Processing: Support for multiple file formats (PDF, DOCX, TXT, MD)\n•\tUser Engagement: Automated email notifications and contact management\n•\tAnalytics Dashboard: Website uptime statistics with visualizations",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Infosecotb.com with vMeNext Diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": [
+          {
+            "position": {
+              "x": 290,
+              "y": 310
+            },
+            "size": {
+              "width": 420,
+              "height": 290
+            },
+            "attrs": {
+              "label": {
+                "text": "Hugging Face\nTrust Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "215ae440-6290-43c0-8586-7ddaf8921ad9",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Hugging Face\nTrust Zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 1070,
+              "y": 230
+            },
+            "size": {
+              "width": 260,
+              "height": 370
+            },
+            "attrs": {
+              "label": {
+                "text": "Dev/Admin Trust Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "c4c8c20b-cc6f-4968-ad00-70de206a9187",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Dev/Admin Trust Zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 481.9999999999999,
+              "y": 30
+            },
+            "size": {
+              "width": 510,
+              "height": 200
+            },
+            "attrs": {
+              "label": {
+                "text": "BlueHost Trust Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "2890c2d3-a373-4c93-8d84-293464b869a7",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "BlueHost Trust Zone",
+              "description": "BlueHost Hosting Trust Zone",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 240,
+              "y": 85
+            },
+            "size": {
+              "width": 110,
+              "height": 50
+            },
+            "attrs": {
+              "text": {
+                "text": "Visitor"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2fa1020b-0705-4471-a4f4-0996741c2514"
+                },
+                {
+                  "group": "right",
+                  "id": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+                },
+                {
+                  "group": "bottom",
+                  "id": "1d69b97d-af66-46d3-821e-1825c3e02cf3"
+                },
+                {
+                  "group": "left",
+                  "id": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+                }
+              ]
+            },
+            "id": "d84483c8-cf39-48f2-9d9f-01ed56c5090f",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Visitor",
+              "description": "Visitor connecting to infosecotb.com using a browser",
+              "isTrustBoundary": false,
+              "outOfScope": true,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 350,
+              "y": 370
+            },
+            "size": {
+              "width": 80,
+              "height": 70
+            },
+            "attrs": {
+              "text": {
+                "text": "vMeNext\nApp"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+            "data": {
+              "type": "tm.Process",
+              "name": "vMeNext\nApp",
+              "description": "Gradio ChatBot Python Application with RAG Running on Hugging Face Space",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of API Keys",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "The 'vMeNext App' process handles API keys for OpenAI and SMTP2GO. If these keys are hardcoded or stored insecurely within the Hugging Face space, an attacker gaining read access to the repository could steal them.",
+                  "mitigation": "Store API keys and other secrets in Hugging Face's secrets management service. Do not hardcode credentials in the application source code. Implement secret scanning in the CI/CD pipeline.",
+                  "modelType": "STRIDE",
+                  "id": "e466c47d-9dc6-46be-9830-bf593ecaa2e0"
+                },
+                {
+                  "title": "Denial of Service through API Cost Exhaustion",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The 'vMeNext App' makes external calls to paid services (OpenAI API). A malicious actor could flood the application with requests, causing a high volume of API calls and leading to significant financial cost or service suspension due to rate limiting.",
+                  "mitigation": "Implement rate limiting on the Gradio application endpoint. Add monitoring and alerting for unusual spikes in API usage. Set spending limits and budget alerts on the OpenAI and SMTP2GO accounts.",
+                  "modelType": "STRIDE",
+                  "id": "153aac4c-d7da-4b08-a71c-e955a34a3c4f"
+                },
+                {
+                  "title": "Tampering via Prompt Injection",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "User input is passed to the OpenAI API via the 'vMeNext App'. A malicious user could craft special inputs (prompt injection) to bypass the intended instructions, causing the chatbot to ignore its RAG context, reveal its underlying prompt, or generate unintended and potentially harmful content.",
+                  "mitigation": "Implement robust input validation and sanitization on user-provided data. Use prompt engineering techniques to make the model more resilient to injection, such as using delimiters and clearly separating instructions from user input.",
+                  "modelType": "STRIDE",
+                  "id": "bc014d24-4aea-442c-9c78-a0021147a232"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 330,
+              "y": 525
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "about_me folder"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 5,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "9b56c074-8160-4dee-a694-d767df0737ab"
+                },
+                {
+                  "group": "right",
+                  "id": "d04e051b-1ceb-4119-8401-95c5bfb1c526"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c0f67acb-b84f-4873-8b7c-ac30469c54b8"
+                },
+                {
+                  "group": "left",
+                  "id": "4951fd97-ef81-4024-af07-c90272a9c5f2"
+                }
+              ]
+            },
+            "id": "ec9eaea8-b7c1-4c22-b8a3-c6451d633ec5",
+            "data": {
+              "type": "tm.Store",
+              "name": "about_me folder",
+              "description": "Folder with documents read by Python application and provided to AI ChatBot as a prompt context.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Tampering with RAG Data Source",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An attacker with write access to the Hugging Face space could modify or replace files in the 'about_me folder'. This would poison the Retrieval-Augmented Generation (RAG) context, leading the chatbot to provide false, malicious, or manipulated information to users.",
+                  "mitigation": "Enforce strict access controls on the Hugging Face repository. Implement file integrity monitoring to detect unauthorized changes to the RAG source documents. Regularly audit repository permissions.",
+                  "modelType": "STRIDE",
+                  "id": "66ab130a-2fea-48f8-b76e-20f3aa72ba85"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 1201,
+              "y": 460
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "DEV"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 6,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2fa1020b-0705-4471-a4f4-0996741c2514"
+                },
+                {
+                  "group": "right",
+                  "id": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+                },
+                {
+                  "group": "bottom",
+                  "id": "1d69b97d-af66-46d3-821e-1825c3e02cf3"
+                },
+                {
+                  "group": "left",
+                  "id": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+                }
+              ]
+            },
+            "id": "17116c8f-0dcd-4b51-a87d-4379be1b6325",
+            "data": {
+              "type": "tm.Actor",
+              "name": "DEV",
+              "description": "vMeNext Application Developer",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of Developer Identity",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker could compromise the 'DEV' actor's credentials through phishing or other means. This would allow the attacker to impersonate the developer, gain access to the 'Cursor IDE' and source code, and potentially push malicious code to the Hugging Face repository.",
+                  "mitigation": "Enforce Multi-Factor Authentication (MFA) on all developer accounts (GitHub, Hugging Face). Use hardware tokens for MFA where possible. Provide regular security awareness training on phishing.",
+                  "modelType": "STRIDE",
+                  "id": "9e391133-e076-40e1-920c-7776ef6e1708"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 1091,
+              "y": 510
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Cursor\nIDE"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 7,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+            "data": {
+              "type": "tm.Process",
+              "name": "Cursor\nIDE",
+              "description": "Cursor IDE used for developing and running vMe Next Dev application and deploying on Hugging Face Space",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Code via Malicious IDE Extension",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The 'Cursor IDE' process could be compromised by a malicious extension. Such an extension could tamper with the application source code, inject backdoors, or steal secrets (API keys, tokens) directly from the development environment.",
+                  "mitigation": "Maintain a strict policy for approved and vetted IDE extensions. Use IDEs with built-in security features and sandboxing for extensions. Regularly scan the development environment for malware.",
+                  "modelType": "STRIDE",
+                  "id": "54f897b1-c623-4465-8555-7d0cdda56f0d"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 516.9999999999999,
+              "y": 80
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "infosecotb\n.com"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 9,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "2a4730cc-32bd-441b-990f-e8dce3824540",
+            "data": {
+              "type": "tm.Process",
+              "name": "infosecotb\n.com",
+              "description": "InfoSec Outside The Box Cybersecurity Blog created and managed with WordPress CMS with vMeNext AI powered chatbot added using iFrame",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering via WordPress Plugin Vulnerability",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The 'infosecotb.com' process, being a WordPress application, is susceptible to vulnerabilities in its plugins or themes. An attacker could exploit a flaw (e.g., SQL injection, file upload vulnerability) to tamper with website content, inject malicious scripts, or gain unauthorized access.",
+                  "mitigation": "Keep WordPress core, themes, and plugins updated. Use a Web Application Firewall (WAF). Regularly scan the website for vulnerabilities. Remove unused plugins and themes to reduce the attack surface.",
+                  "modelType": "STRIDE",
+                  "id": "adc46a21-aab5-465c-88e9-e35b0e384af0"
+                },
+                {
+                  "title": "Denial of Service on Web Application",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The 'infosecotb.com' process is publicly accessible and can be targeted by a Denial of Service attack. This could be a network-level DDoS or an application-level attack that exhausts server resources (CPU, memory) by targeting expensive operations like search.",
+                  "mitigation": "Utilize a Content Delivery Network (CDN) with DDoS protection, such as Cloudflare. Implement caching for web content to reduce server load. Use a WAF to block malicious traffic patterns.",
+                  "modelType": "STRIDE",
+                  "id": "bb7d0542-3e11-4c41-89d4-4f4a892b82ae"
+                }
+              ]
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "iFrame\nhttps",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering via Clickjacking",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "The 'iFrame https' flow embeds the vMeNext App into the main website. If proper framing controls are not in place, a malicious site could frame infosecotb.com and overlay invisible elements to trick users into performing unintended actions within the chatbot iFrame (Clickjacking).",
+                  "mitigation": "Both the parent site (infosecotb.com) and the iFramed application (vMeNext App) should implement the Content-Security-Policy (CSP) frame-ancestors directive or the X-Frame-Options header to prevent being framed by unauthorized domains.",
+                  "modelType": "STRIDE",
+                  "id": "0bc20c93-e28d-44dd-8020-e2951b8a0aea"
+                }
+              ]
+            },
+            "labels": [
+              "iFrame\nhttps"
+            ],
+            "id": "a7a466df-ab17-4917-b477-803dbf201295",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "vertices": [
+              {
+                "x": 410,
+                "y": 270
+              },
+              {
+                "x": 470,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "\n",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "\n"
+            ],
+            "id": "833c9d5c-1cd3-408a-a408-d4b4942a3cb9",
+            "source": {
+              "cell": "17116c8f-0dcd-4b51-a87d-4379be1b6325",
+              "port": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              ""
+            ],
+            "id": "cee66ef3-495b-4f8b-8993-327224219358",
+            "source": {
+              "cell": "17116c8f-0dcd-4b51-a87d-4379be1b6325",
+              "port": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+            },
+            "target": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              ""
+            ],
+            "id": "900a17b9-50b1-4512-bc43-145c09fe7264",
+            "source": {
+              "cell": "5a744be2-31cf-458d-97f6-95d5949045ee",
+              "port": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "1c94bfbb-1261-4838-9970-98c08d1e7b64",
+            "source": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "RAG\nRequest",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "RAG\nRequest"
+            ],
+            "id": "37bf0863-485b-4477-b355-4162a18e433f",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "target": {
+              "cell": "ec9eaea8-b7c1-4c22-b8a3-c6451d633ec5",
+              "port": "9b56c074-8160-4dee-a694-d767df0737ab"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 470
+              },
+              {
+                "x": 350,
+                "y": 490
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "RAG\nResponse",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "RAG\nResponse"
+            ],
+            "id": "ab82c574-d565-462d-a4e8-b98b609e5adf",
+            "source": {
+              "cell": "ec9eaea8-b7c1-4c22-b8a3-c6451d633ec5",
+              "port": "9b56c074-8160-4dee-a694-d767df0737ab"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": 490
+              },
+              {
+                "x": 430,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "mysql",
+              "description": "Managed and secured by BlueHost",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed by BlueHost",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "mysql"
+            ],
+            "id": "5e9432fa-5408-4a0c-ab13-ef0b163470b0",
+            "source": {
+              "cell": "ce7df758-18fa-4056-9a74-6fd297f53fae",
+              "port": "c0f67acb-b84f-4873-8b7c-ac30469c54b8"
+            },
+            "target": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 810,
+                "y": 135
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "smtp relay",
+              "description": "E-mail sent to administrator",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "smtp",
+              "threats": []
+            },
+            "labels": [
+              "smtp relay"
+            ],
+            "id": "11d58293-4c19-43bb-a403-cbb50df4fa6c",
+            "source": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "5a744be2-31cf-458d-97f6-95d5949045ee",
+              "port": "2fa1020b-0705-4471-a4f4-0996741c2514"
+            },
+            "vertices": [
+              {
+                "x": 1070,
+                "y": 190
+              },
+              {
+                "x": 1210,
+                "y": 210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Response",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "API Response"
+            ],
+            "id": "e0b16c9a-2b9e-4077-b569-58f423e90810",
+            "source": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 320
+              },
+              {
+                "x": 650,
+                "y": 370
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure of API Traffic",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The 'API Request' flow to the SMTP2GO API crosses a public network. While marked as encrypted, a Man-in-the-Middle (MitM) attacker could intercept this traffic if weak TLS protocols/ciphers are used or if certificate validation is not performed correctly by the client.",
+                  "mitigation": "Ensure the client application enforces TLS 1.2 or higher. Configure the client to properly validate the server's certificate chain. Use certificate pinning for an additional layer of security.",
+                  "modelType": "STRIDE",
+                  "id": "1f708bf9-d6c9-4229-8279-9a46430914bf"
+                }
+              ]
+            },
+            "labels": [
+              "API Request"
+            ],
+            "id": "9c9af698-336a-4a0d-976d-cbf522de037d",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "target": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "vertices": [
+              {
+                "x": 610,
+                "y": 330
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "SMTP2GO Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "5c155f16-dee5-4964-ac60-10a39e695ab0",
+            "source": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+            },
+            "vertices": [
+              {
+                "x": 1060,
+                "y": 350
+              },
+              {
+                "x": 970,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "SMTP2GO Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "1e1def4e-cec9-4fd9-b55b-60f41cbfe9f2",
+            "source": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 990,
+                "y": 340
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Request",
+              "description": "OpenAI API Request",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "API Request"
+            ],
+            "id": "af79274a-ed6e-4ac2-85d7-6eb6eaba6873",
+            "source": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 970,
+                "y": 360
+              },
+              {
+                "x": 840,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Request",
+              "description": "OpenAI API Request",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Prompts and API Key",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The 'API Request' flow to the OpenAI API crosses a public network. An attacker performing a Man-in-the-Middle (MitM) attack could potentially intercept the API key and the content of user prompts if TLS is improperly configured or a weak cipher is negotiated.",
+                  "mitigation": "Enforce the use of strong, modern TLS versions (1.2+) and ciphers in the client making the request. Ensure the client performs strict certificate validation against the expected OpenAI endpoint.",
+                  "modelType": "STRIDE",
+                  "id": "68dbc43a-5bef-44b7-ae05-5d7ae1f7e2fe"
+                }
+              ]
+            },
+            "labels": [
+              "API Request"
+            ],
+            "id": "ee191532-26eb-46ab-8f53-a231031770d2",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "vertices": [
+              {
+                "x": 470,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Response",
+              "description": "OpenAI API Response",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "API Response"
+            ],
+            "id": "3907fb6b-29ea-40c4-8adb-e65c19e18a6b",
+            "source": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 530,
+                "y": 320
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Deployment",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Deployment"
+            ],
+            "id": "959a40f3-6084-4d47-91d5-ecfe6fc1dbd4",
+            "source": {
+              "cell": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "a3772025-e95a-45e3-8240-aeda2e0d714b",
+            "source": {
+              "cell": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Response",
+              "description": "Response from infosecotb.com website including vMeNext chatbot",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Response"
+            ],
+            "id": "2d926214-5383-4873-ae9a-5356670dfb7b",
+            "source": {
+              "cell": "d84483c8-cf39-48f2-9d9f-01ed56c5090f",
+              "port": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+            },
+            "target": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": 130
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Publishing and Managing",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed and secured by BlueHost",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Publishing and Managing"
+            ],
+            "id": "72e79515-6488-45b9-adbc-88d26fbf525e",
+            "source": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": [
+              {
+                "x": 710,
+                "y": 195
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request",
+              "description": "Request to infosecotb.com website including vMeNext chatbot",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Denial of Service via Request Flooding",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The 'Request' flow from the external 'Visitor' to 'infosecotb.com' can be abused to launch a volumetric DDoS attack. A large number of requests can overwhelm the web server or database, making the website unavailable to legitimate users.",
+                  "mitigation": "Use a CDN and WAF provider (e.g., Cloudflare) that offers DDoS mitigation. Implement server-side rate limiting to block IPs that send an excessive number of requests.",
+                  "modelType": "STRIDE",
+                  "id": "b6a1d7f4-752c-4157-bf71-64a9daa626e9"
+                }
+              ]
+            },
+            "labels": [
+              "Request"
+            ],
+            "id": "8fea0c19-825b-4518-88b7-ecfe58699f98",
+            "source": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "d84483c8-cf39-48f2-9d9f-01ed56c5090f",
+              "port": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 100
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "Managed by BlueHost",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "3d9895fe-4deb-46c1-8603-d1063d2adb7a",
+            "source": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "ce7df758-18fa-4056-9a74-6fd297f53fae",
+              "port": "d04e051b-1ceb-4119-8401-95c5bfb1c526"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed and secured by BlueHost",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "0041f62d-72ed-4e81-a793-11719d88bedd",
+            "source": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+            },
+            "target": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 870,
+                "y": 135
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "WordPress Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "833eea5f-37ed-4052-9a7a-bd02396ab8ea",
+            "source": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": [
+              {
+                "x": 1020,
+                "y": 270
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nRequest",
+              "description": "WordPress Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nRequest"
+            ],
+            "id": "05d7a0fc-e6e3-4861-9256-65eb74950018",
+            "source": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 980,
+                "y": 200
+              },
+              {
+                "x": 1060,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nRequest",
+              "description": "BlueHost Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nRequest"
+            ],
+            "id": "27257ac3-708e-4883-a8b6-2666149e4fb8",
+            "source": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 1091,
+                "y": 170
+              },
+              {
+                "x": 1030,
+                "y": 100
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "BlueHost Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "e5410202-4068-4855-b8a4-24e727f5ee6c",
+            "source": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 1020,
+                "y": 150
+              },
+              {
+                "x": 1060,
+                "y": 210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin Response",
+              "description": "Hugging Face Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin Response"
+            ],
+            "id": "95cb454e-82d7-45d7-a184-654e5ccefad4",
+            "source": {
+              "cell": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 950,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin Request",
+              "description": "Hugging Face Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin Request"
+            ],
+            "id": "ef61aabe-ab72-4794-9af3-1636c65848a3",
+            "source": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 920,
+                "y": 430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Deployment Request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Lack of Non-Repudiation for Deployments",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "description": "The 'Deployment Request' flow initiates a code change. If the deployment process lacks sufficient audit logging, a malicious deployment made with compromised credentials could be difficult to attribute to a specific actor, allowing them to repudiate the action.",
+                  "mitigation": "Ensure that all deployment actions are logged with detailed information, including the user or service principal that initiated the action, the source commit hash, and a timestamp. Integrate deployment logs with a centralized SIEM for monitoring and alerting.",
+                  "modelType": "STRIDE",
+                  "id": "fd28adf3-afa7-4966-ab77-7404d09fee85"
+                }
+              ]
+            },
+            "labels": [
+              "Deployment Request"
+            ],
+            "id": "d9bc7cd7-3697-4bec-ba5b-0cc89e521ef8",
+            "source": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 990,
+                "y": 520
+              },
+              {
+                "x": 750,
+                "y": 500
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Deployment Response",
+              "description": "Hugging Face Space Application Deployment",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Deployment Response"
+            ],
+            "id": "556da3ad-2090-4ef9-a67f-dd2e319edc5a",
+            "source": {
+              "cell": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 750,
+                "y": 550
+              },
+              {
+                "x": 1010,
+                "y": 570
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Response",
+              "description": "OpenAI API Response",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "API Response"
+            ],
+            "id": "3b432fc9-af0c-488d-be1a-1415c6337b38",
+            "source": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 770,
+                "y": 330
+              },
+              {
+                "x": 950,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 660,
+              "y": 54.99999999999996
+            },
+            "size": {
+              "width": 120,
+              "height": 50
+            },
+            "attrs": {
+              "text": {
+                "text": "MySQL\nDB"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 17,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "9b56c074-8160-4dee-a694-d767df0737ab"
+                },
+                {
+                  "group": "right",
+                  "id": "d04e051b-1ceb-4119-8401-95c5bfb1c526"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c0f67acb-b84f-4873-8b7c-ac30469c54b8"
+                },
+                {
+                  "group": "left",
+                  "id": "4951fd97-ef81-4024-af07-c90272a9c5f2"
+                }
+              ]
+            },
+            "id": "ce7df758-18fa-4056-9a74-6fd297f53fae",
+            "data": {
+              "type": "tm.Store",
+              "name": "MySQL\nDB",
+              "description": "MySQL Database used for WordPress website",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed by BlueHost",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 1201,
+              "y": 290
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Admin"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 18,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2fa1020b-0705-4471-a4f4-0996741c2514"
+                },
+                {
+                  "group": "right",
+                  "id": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+                },
+                {
+                  "group": "bottom",
+                  "id": "1d69b97d-af66-46d3-821e-1825c3e02cf3"
+                },
+                {
+                  "group": "left",
+                  "id": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+                }
+              ]
+            },
+            "id": "5a744be2-31cf-458d-97f6-95d5949045ee",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Admin",
+              "description": "System Administrator",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of Administrator Identity",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker could spoof the identity of the 'Admin' actor by stealing credentials via phishing, malware, or password spraying. A successful attack would grant access to multiple administrative interfaces, including BlueHost, WordPress, and Hugging Face.",
+                  "mitigation": "Enforce strong, unique passwords and Multi-Factor Authentication (MFA) on all administrative accounts. Limit administrative access to trusted networks or devices using IP whitelisting.",
+                  "modelType": "STRIDE",
+                  "id": "8fe20006-2e97-4f0c-af71-89580ff4d1bd"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 1091,
+              "y": 400
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "vMe Next\nDev"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 21,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+            "data": {
+              "type": "tm.Process",
+              "name": "vMe Next\nDev",
+              "description": "Gradio ChatBot Python Application Development",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Development Secrets",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The 'vMe Next Dev' process may use API keys and other secrets. These could be accidentally committed to a source code repository if not managed correctly, leading to their exposure.",
+                  "mitigation": "Use .env files to manage secrets in the local development environment and ensure the .env file is listed in .gitignore. Implement pre-commit hooks to scan for secrets before code is committed.",
+                  "modelType": "STRIDE",
+                  "id": "18207d50-e55a-42ce-a042-413bda8f900b"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 1091,
+              "y": 280
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Browser"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 22,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+            "data": {
+              "type": "tm.Process",
+              "name": "Browser",
+              "description": "Browser used by System Administrator",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Admin Session via Browser Compromise",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The 'Browser' process used by the Admin could be compromised by a malicious extension or a Man-in-the-Browser (MitB) attack. This could allow an attacker to hijack active administrative sessions to BlueHost, WordPress, or Hugging Face, and perform unauthorized actions.",
+                  "mitigation": "Use a dedicated, hardened browser or profile for administrative tasks with minimal extensions. Ensure endpoint security software is installed and up-to-date on the admin workstation. Log out of administrative sessions when not in use.",
+                  "modelType": "STRIDE",
+                  "id": "6dd74045-a996-482d-94f5-bc1545d544f2"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 576.9999999999999,
+              "y": 240
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "OpenAI\nAPI"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 23,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+            "data": {
+              "type": "tm.Actor",
+              "name": "OpenAI\nAPI",
+              "description": "Artificial Intelligence API secured with a key",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "title": "Spoofing via Stolen OpenAI API Key",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker who obtains the API key for the 'OpenAI API' can make requests impersonating the vMeNext application. This can lead to unexpected financial costs, rate limit exhaustion, and potential misuse of the service under the application's identity.",
+                  "mitigation": "Store the API key securely using a secrets manager. Implement monitoring and alerting for API key usage to detect anomalies. Regularly rotate API keys.",
+                  "modelType": "STRIDE",
+                  "id": "f0f45a85-15d0-43bc-a339-592ac6a0fdca"
+                }
+              ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
+              "x": 820,
+              "y": 240
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "SMTP2GO\nAPI"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 24,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "b2f3f215-de3e-44f2-9ddc-813193696179",
+            "data": {
+              "type": "tm.Actor",
+              "name": "SMTP2GO\nAPI",
+              "description": "E-mail relay hosted system API secured with key",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "title": "Spoofing via Stolen SMTP2GO API Key",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "If the API key for the 'SMTP2GO API' is compromised, an attacker can use it to send emails appearing to originate from the application or its domain. This could be used for phishing, spam campaigns, or spreading malware, damaging the site's reputation.",
+                  "mitigation": "Store the API key securely using a secrets manager. Use IP restrictions in the SMTP2GO settings to only allow requests from the Hugging Face application's IP range. Regularly rotate API keys.",
+                  "modelType": "STRIDE",
+                  "id": "01ee5412-8505-4020-9561-5c5b865e51f4"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 547.5,
+              "y": 400
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Hugging Face\nHost Admin"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 25,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Hugging Face\nHost Admin",
+              "description": "Hugging Face Hosting Administrator Control Panel",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "title": "Elevation of Privilege via Compromised Host Admin",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "An attacker who compromises the credentials for the 'Hugging Face Host Admin' gains full control over the application space. They can stop, delete, or modify the application, access its source code, and steal any secrets stored within the environment.",
+                  "mitigation": "Enforce Multi-Factor Authentication (MFA) on the Hugging Face account. Follow the principle of least privilege for any collaborator accounts, granting only the necessary permissions.",
+                  "modelType": "STRIDE",
+                  "id": "163c21e7-f1c3-4867-bcfe-4bf7573220f3"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 547.5,
+              "y": 490
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Hugging Face\nAPI"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 26,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Hugging Face\nAPI",
+              "description": "Hugging Face Deployment API",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "title": "Spoofing via Stolen Deployment Token",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker with a stolen 'Hugging Face API' deployment token can impersonate the legitimate CI/CD process or developer. This would allow them to push malicious code to the application space, effectively taking over the vMeNext application.",
+                  "mitigation": "Store deployment tokens as secrets in the CI/CD system. Use short-lived tokens where possible. Implement branch protection rules and require reviews for all code changes to prevent direct pushes of malicious code.",
+                  "modelType": "STRIDE",
+                  "id": "b139603f-b5b1-46ff-8571-8015d29b53f2"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 867.5,
+              "y": 49.99999999999996
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "BlueHost"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 27,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+            "data": {
+              "type": "tm.Actor",
+              "name": "BlueHost",
+              "description": "Administrator access to BlueHost",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "title": "Elevation of Privilege via Compromised Hosting Panel",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Compromise of the 'BlueHost' administrative credentials would grant an attacker full control over the hosting environment. This includes access to all website files, the WordPress database, DNS settings, and email accounts, leading to a complete takeover.",
+                  "mitigation": "Enforce a strong, unique password and Multi-Factor Authentication (MFA) for the BlueHost account. Restrict access to the admin panel by IP address if possible. Regularly review account access logs for suspicious activity.",
+                  "modelType": "STRIDE",
+                  "id": "2a65e824-cdcd-4f05-b7fa-72ca6d6c10ef"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 800,
+              "y": 150.00000000000034
+            },
+            "size": {
+              "width": 90,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "WrodPress"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 28,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "b3393147-7a96-44a8-ab8f-551695e082f5",
+            "data": {
+              "type": "tm.Process",
+              "name": "WrodPress",
+              "description": "WordPress Content Management System",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Elevation of Privilege via Vulnerable Plugin",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "A vulnerability in a plugin, theme, or WordPress core itself could allow an unauthenticated attacker or a low-privileged user to elevate their privileges to an administrator level on the 'WordPress' process. This would grant them full control over the website.",
+                  "mitigation": "Ensure WordPress core, plugins, and themes are always up-to-date. Use a security plugin to monitor for vulnerabilities and enforce security hardening. Disable file editing from the admin dashboard. Limit the number of users with administrative roles.",
+                  "modelType": "STRIDE",
+                  "id": "c0d3d614-a4cf-4fc8-bc68-150e467ed35b"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "diagramTop": 3,
+    "reviewer": "Piotr Kowalczyk",
+    "threatTop": 1
+  }
+}

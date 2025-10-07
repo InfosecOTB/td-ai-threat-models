@@ -1,0 +1,3128 @@
+{
+  "summary": {
+    "title": "Husky AI",
+    "owner": "",
+    "description": "A machine learning system to classify Huskies vs dogs. HuskyAI is a machine learning system designed to classify images and distinguish between huskies and non-huskies. It integrates secure data handling practices with a robust convolutional neural network (CNN) for image recognition. Secure Image Retrieval: HuskyAI uses TLS to securely fetch images from Azure Cognitive Services, ensuring encryption during data transmission and validating the server's authenticity to prevent man-in-the-middle attacks. Data Storage and Access Controls: Azure Blob Storage is used to store datasets, with public access fully blocked. Access is controlled using Role-Based Access Control (rbac) and Attribute-Based Access Control (ABAC) to enforce granular, identity-based permissions. Jupyter Notebooks, which host model development and experimentation, are also secured with rbac and ABAC, preventing unauthorized public access. Developer Authentication: Developers access the system through SSH keys protected by passphrases. This adds an additional layer of security, reducing the likelihood of unauthorized access even if keys are exposed. Model and Dataset Dataset Composition: The dataset comprises approximately 1,300 husky images and 3,000 non-husky images sourced via Bing's image search. Data undergoes manual cleansing and is split into training and validation sets to enhance model performance. Model Design: HuskyAI employs a CNN with: Convolutional layers for feature extraction. Max-pooling layers for dimensionality reduction. Dropout layers to prevent overfitting. Dense layers for final classification. The model is trained with the Adam optimizer and a learning rate of 0.0005, optimized for accuracy and computational efficiency. Security Considerations rbac and ABAC controls across storage and development environments ensure sensitive data and configurations are protected. TLS ensures secure communication channels, preventing eavesdropping or data interception during image retrieval. Applications HuskyAI is tailored for accurate image classification and can be adapted for other domains requiring precise visual differentiation, with a focus on maintaining strong security postures. HuskyAI combines state-of-the-art machine learning techniques with stringent security controls, including secure communications, robust access management, and encrypted developer authentication, to deliver a reliable and secure image classification system.",
+    "id": 0,
+    "compatibility": {
+      "business_criticality": "low",
+      "data_sensitivity": [
+        "biz"
+      ],
+      "exposure": "external",
+      "tier": "non_critical"
+    }
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Imported from TM-BOM"
+      }
+    ],
+    "diagrams": [
+      {
+        "version": "2.5.0",
+        "title": "Husky AI",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "diagramType": "TM-BOM",
+        "id": 0,
+        "cells": [
+          {
+            "size": {
+              "width": 150,
+              "height": 80
+            },
+            "label": "Engineer",
+            "shape": "actor",
+            "zIndex": 0,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Engineer",
+              "description": "A Data Engineer responsible for building, training, and deploying machine learning models.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of Engineer Identity",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The Engineer actor, positioned outside trust boundaries, interacts with internal processes like Gather Images Application and Jupyter Notebook via SSH, potentially allowing an attacker to impersonate the engineer and gain unauthorized access to the Experimental Trust Zone.",
+                  "mitigation": "Implement multi-factor authentication and use certificate-based SSH authentication with regular key rotation.",
+                  "modelType": "STRIDE",
+                  "id": "cfbd3dc7-aa59-43a6-9dcd-0f7cd28f687b"
+                }
+              ]
+            },
+            "id": "engineer",
+            "position": {
+              "x": 62.5,
+              "y": 62.5
+            },
+            "attrs": {
+              "stroke": "red"
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 80
+            },
+            "label": "Infra Admin",
+            "shape": "actor",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Infra Admin",
+              "description": "Administrator responsible for securing and maintaining production infrastructure.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of Infrastructure Admin",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The Infrastructure Admin actor, located outside all trust zones, accesses the Bastion in the Production Trust Zone via SSH, which could be spoofed to gain administrative privileges.",
+                  "mitigation": "Enforce SSH with passphrase-protected keys and implement just-in-time access controls.",
+                  "modelType": "STRIDE",
+                  "id": "9503b705-c566-48cb-acdb-e43ce77c9d2e"
+                }
+              ]
+            },
+            "id": "infrastructure-admin",
+            "position": {
+              "x": 62.5,
+              "y": 267.5
+            },
+            "attrs": {
+              "stroke": "red"
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 80
+            },
+            "label": "Azure\nCognitive Services",
+            "shape": "actor",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Azure\nCognitive Services",
+              "description": "External service providing resources for machine learning experimentation.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of Azure Cognitive Services",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "As an external actor outside trust boundaries, Azure Cognitive Services provides images to the internal Gather Images Application via HTTPS, risking spoofing attacks that could inject malicious data into the Experimental Trust Zone.",
+                  "mitigation": "Validate server certificates and use mutual TLS for all communications with external services.",
+                  "modelType": "STRIDE",
+                  "id": "d59fe9d0-38e3-455d-ac03-c280ead962ec"
+                }
+              ]
+            },
+            "id": "azure-cognitive-services",
+            "position": {
+              "x": 347.5,
+              "y": 62.5
+            },
+            "attrs": {
+              "stroke": "red"
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 80
+            },
+            "label": "User",
+            "shape": "actor",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Actor",
+              "name": "User",
+              "description": "External user interacting with the HuskyAI system via the API Gateway.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of User Identity",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "The User actor, external to trust zones, sends requests to the API Gateway in the Production Trust Zone via HTTPS, potentially allowing spoofed identities to access the system.",
+                  "mitigation": "Require API authentication tokens and implement rate limiting to prevent abuse.",
+                  "modelType": "STRIDE",
+                  "id": "75a6cb7d-de01-4911-9bdc-b527073500ca"
+                }
+              ]
+            },
+            "id": "user",
+            "position": {
+              "x": 62.5,
+              "y": 472.5
+            },
+            "attrs": {
+              "stroke": "red"
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "3rd party tools\nand ML libraries"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 4,
+            "data": {
+              "type": "tm.Store",
+              "name": "3rd party tools\nand ML libraries",
+              "description": "External third party tools for the services",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Tampering with Third-Party Libraries",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The 3rd party tools and ML libraries store, positioned outside trust boundaries, supplies code to multiple internal processes across zones, risking tampering that could introduce vulnerabilities or backdoors.",
+                  "mitigation": "Use integrity checks like hashing and source from trusted repositories with regular updates and vulnerability scanning.",
+                  "modelType": "STRIDE",
+                  "id": "cc050b41-ce7f-4218-a8d8-06fa435650b4"
+                },
+                {
+                  "title": "Information Disclosure from Libraries",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "External third-party libraries could leak sensitive data if compromised, given their adjacency to external actors and integration into internal processes.",
+                  "mitigation": "Conduct code reviews and use libraries with minimal permissions and logging.",
+                  "modelType": "STRIDE",
+                  "id": "ee91a307-dd96-4f12-bb56-ac5682d1a307"
+                }
+              ]
+            },
+            "id": "third-party-tools",
+            "position": {
+              "x": 632.5,
+              "y": 62.5
+            }
+          },
+          {
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Gather\nImages Application\n(Python)"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "zIndex": 0,
+            "data": {
+              "type": "tm.Process",
+              "name": "Gather\nImages Application\n(Python)",
+              "description": "This is a Python-based application responsible for gathering images from external sources, specifically Azure Cognitive Services, and storing them in the designated Training and Validation Images storage. ",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Data Poisoning via Tampering",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Gather Images Application process, inside the Experimental Trust Zone, receives images from external Azure Cognitive Services crossing the trust boundary, allowing potential tampering or poisoning of training data.",
+                  "mitigation": "Implement data validation, checksums, and anomaly detection on incoming images.",
+                  "modelType": "STRIDE",
+                  "id": "9447e2c0-e051-41d3-be24-844ec3ad779e"
+                },
+                {
+                  "title": "Denial of Service on Image Gathering",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "Exposed to external flows crossing into the zone, this process could be flooded with requests, disrupting image collection.",
+                  "mitigation": "Apply rate limiting and resource quotas on the process.",
+                  "modelType": "STRIDE",
+                  "id": "869ec584-a90f-4162-b954-7b8e90e834b2"
+                },
+                {
+                  "title": "Elevation via Unauthorized Code Execution",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "As a Python process handling external inputs, it risks code injection leading to privilege escalation within the Experimental Trust Zone.",
+                  "mitigation": "Run in a sandboxed environment with least privilege principles.",
+                  "modelType": "STRIDE",
+                  "id": "a6e8a9fa-2b10-406a-bdf9-070f380a6251"
+                }
+              ]
+            },
+            "id": "gather-images",
+            "position": {
+              "x": 472.5,
+              "y": 392.5
+            }
+          },
+          {
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Jupyter\nNotebook"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Process",
+              "name": "Jupyter\nNotebook",
+              "description": "A Jupyter Notebook environment that processes the images stored in Training and Validation Images, executes code using external ML libraries, and provides a UI for engineers to interact with and manipulate data, allowing for iterative model development. It can save trained machine learning models to Machine Learning Model storage.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Model Training",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Jupyter Notebook process, within the Experimental Trust Zone, processes training images and could be tampered with via malicious code imports or inputs, affecting model integrity.",
+                  "mitigation": "Use version control and signed notebooks, with input sanitization.",
+                  "modelType": "STRIDE",
+                  "id": "070ac8b9-11fe-443e-a57d-b233a4dc8887"
+                },
+                {
+                  "title": "Information Disclosure of Training Data",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Handles sensitive training data inside the zone, risking disclosure if the notebook UI is compromised.",
+                  "mitigation": "Encrypt data in transit and at rest, and restrict access via RBAC.",
+                  "modelType": "STRIDE",
+                  "id": "027129fc-20c5-4fa2-94a8-46b6872dbeec"
+                },
+                {
+                  "title": "Repudiation of Changes in Notebook",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "description": "Actions in the notebook may not be properly logged, allowing denial of changes to models or data.",
+                  "mitigation": "Enable comprehensive auditing and logging of all notebook executions.",
+                  "modelType": "STRIDE",
+                  "id": "61e5dff6-8c0f-4fa1-916d-9d0292ca460b"
+                }
+              ]
+            },
+            "id": "jupyter",
+            "position": {
+              "x": 472.5,
+              "y": 597.5
+            }
+          },
+          {
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Deployment"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Process",
+              "name": "Deployment",
+              "description": "Handles the deployment of the machine learning model by packaging the model and all necessary source code and configuration stored in Source Code and Configuration. It receives the final model from Jupyter Notebook and prepares it for deployment to the production environment.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Deployment Artifacts",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Deployment process, in the Experimental Trust Zone, packages models and code for production, risking tampering that could deploy malicious artifacts across zones.",
+                  "mitigation": "Use digital signatures and integrity checks on all deployment packages.",
+                  "modelType": "STRIDE",
+                  "id": "b38a8a8a-ce45-4338-9246-8e77981ab62c"
+                },
+                {
+                  "title": "Elevation through Deployment Privileges",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Has access to sensitive stores and flows to production, potentially allowing escalation if compromised.",
+                  "mitigation": "Implement strict RBAC and monitor deployment activities.",
+                  "modelType": "STRIDE",
+                  "id": "35b88b8e-51dd-4d1a-98e0-e06c834e6b5f"
+                }
+              ]
+            },
+            "id": "deployment-service",
+            "position": {
+              "x": 757.5,
+              "y": 392.5
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "Training\nand Validation\nImages"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Store",
+              "name": "Training\nand Validation\nImages",
+              "description": "Contains images used for training and validation of machine learning models.\nData set: Training and Validation Images\nContains images used for training and validation of machine learning models.\n Record count maximum of 100000 with data sensitivity of biz and access control methods of rbac",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Tampering with Training Images",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "This store inside the Experimental Trust Zone holds business-sensitive images, accessible via internal flows, risking tampering that poisons ML models.",
+                  "mitigation": "Enable versioning and immutability features in storage, with access logging.",
+                  "modelType": "STRIDE",
+                  "id": "a9d97668-7574-42b5-801c-0d04438f4f2f"
+                },
+                {
+                  "title": "Information Disclosure of Images",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Encrypted store but adjacent to processes with external interactions, potentially leaking data if access controls fail.",
+                  "mitigation": "Enforce ABAC and encrypt data at rest.",
+                  "modelType": "STRIDE",
+                  "id": "f53dd80a-095c-4c76-a693-c3fbb40818a2"
+                }
+              ]
+            },
+            "id": "training-images-blob",
+            "position": {
+              "x": 472.5,
+              "y": 802.5
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "API Key"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 4,
+            "data": {
+              "type": "tm.Store",
+              "name": "API Key",
+              "description": "Stores API keys for secure access to external services.\nData set: API Keys\nStores API keys for secure access to external services.\n Record count maximum of 20 with data sensitivity of cred and access control methods of rbac",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Information Disclosure of API Keys",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Stores credentials inside Experimental Trust Zone, with flows to gathering process, risking exposure of keys to external services.",
+                  "mitigation": "Use secret management tools like Azure Key Vault with rotation policies.",
+                  "modelType": "STRIDE",
+                  "id": "7eba186d-0368-4e5d-8321-40885243eb6e"
+                },
+                {
+                  "title": "Tampering with Stored Keys",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Keys could be altered, affecting authentication to external services.",
+                  "mitigation": "Implement write-once policies and audit trails.",
+                  "modelType": "STRIDE",
+                  "id": "c13a9534-6379-46f0-b7c2-6066157de814"
+                }
+              ]
+            },
+            "id": "api-key-storage",
+            "position": {
+              "x": 1042.5,
+              "y": 392.5
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "Machine\nLearning Model"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 5,
+            "data": {
+              "type": "tm.Store",
+              "name": "Machine\nLearning Model",
+              "description": "Contains the machine learning models in serialized format.\nData set: Bastion Logs\nContains trained machine learning models in serialized format for production use.\n Record count maximum of 5000 with data sensitivity of biz and access control methods of acl",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Model Theft via Information Disclosure",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Stores ML models in Experimental Trust Zone, with flows to deployment, risking model extraction or reverse engineering.",
+                  "mitigation": "Encrypt models and use access controls with monitoring.",
+                  "modelType": "STRIDE",
+                  "id": "7fc9ede7-8408-4e7a-96d3-89abd9c7a58a"
+                },
+                {
+                  "title": "Tampering with Model Files",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Models could be modified, leading to inaccurate or malicious behavior in production.",
+                  "mitigation": "Use hashing and signatures for model integrity.",
+                  "modelType": "STRIDE",
+                  "id": "88b72494-dfd9-4df6-966b-4a3e9d0cf77b"
+                }
+              ]
+            },
+            "id": "ml-models",
+            "position": {
+              "x": 472.5,
+              "y": 1007.5
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "Source Code\nand Configuration"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 6,
+            "data": {
+              "type": "tm.Store",
+              "name": "Source Code\nand Configuration",
+              "description": "Stores source code and configuration files for deployment and production setup.\nData set: Source Code and Configuration\nStores source code and configuration files for deployment and production setup.\n Record count maximum of 200 with data sensitivity of biz and access control methods of rbac",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Tampering with Source Code",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Stores code and configs in Experimental Trust Zone, flowed to deployment, risking injection of backdoors.",
+                  "mitigation": "Employ code signing and repository protections.",
+                  "modelType": "STRIDE",
+                  "id": "10366af4-ff50-4927-9079-8253248a73fb"
+                },
+                {
+                  "title": "Repudiation of Code Changes",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Changes to code may not be attributable, allowing denial of malicious modifications.",
+                  "mitigation": "Integrate with version control systems that log commits immutably.",
+                  "modelType": "STRIDE",
+                  "id": "4288ac99-af40-4fb4-807f-1e874668fd5e"
+                }
+              ]
+            },
+            "id": "source-code-config-storage",
+            "position": {
+              "x": 1327.5,
+              "y": 392.5
+            }
+          },
+          {
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Simple Python\nWeb Server"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "zIndex": 0,
+            "data": {
+              "type": "tm.Process",
+              "name": "Simple Python\nWeb Server",
+              "description": "Serves as simple web server",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Denial of Service on Web Server",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "Simple Python Web Server in Production Trust Zone receives ingress from API Gateway, vulnerable to request flooding.",
+                  "mitigation": "Implement auto-scaling and DDoS protection.",
+                  "modelType": "STRIDE",
+                  "id": "47956747-d35b-47be-b7de-7fc36f7f64d7"
+                },
+                {
+                  "title": "Elevation via Model Inference",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Loads models and processes user inputs, potentially allowing inference attacks to extract privileged information.",
+                  "mitigation": "Apply input validation and differential privacy techniques.",
+                  "modelType": "STRIDE",
+                  "id": "0dbabdc5-4f66-4947-b661-5db5dacc3b02"
+                }
+              ]
+            },
+            "id": "web-service",
+            "position": {
+              "x": 1737.5,
+              "y": 392.5
+            }
+          },
+          {
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "API Gateway"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Process",
+              "name": "API Gateway",
+              "description": "Serves as the entry point for external users to interact with the production environment via HTTPS. It routes user requests to the Simple Python Web Server and ensures secure communication. The API Gateway enforces request validation and manages APIs exposed to the public while ensuring access control to internal services.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Spoofing at API Gateway",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "API Gateway in Production Trust Zone handles ingress from external User over HTTPS crossing the boundary, risking spoofed requests.",
+                  "mitigation": "Enforce token-based authentication and validate all incoming requests.",
+                  "modelType": "STRIDE",
+                  "id": "2848ac91-e18e-4878-baba-249ebe19db94"
+                },
+                {
+                  "title": "Information Disclosure through Gateway",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Routes sensitive traffic, potentially leaking data if not properly secured.",
+                  "mitigation": "Ensure end-to-end encryption and logging without sensitive data.",
+                  "modelType": "STRIDE",
+                  "id": "5165be3b-527f-41c8-9e6a-5bdaf2d54aeb"
+                }
+              ]
+            },
+            "id": "api-gateway",
+            "position": {
+              "x": 1737.5,
+              "y": 597.5
+            }
+          },
+          {
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Bastion"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Process",
+              "name": "Bastion",
+              "description": "A secure access management component for administrative functions. It provides controlled SSH access for the Infrastructure Admin to internal production resources, such as the Stored Machine Learning Model and Simple Python Web Server.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Elevation via Bastion Access",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Bastion in Production Trust Zone provides SSH access from external admin, crossing boundary, allowing potential escalation to production resources.",
+                  "mitigation": "Use session recording and least privilege for bastion users.",
+                  "modelType": "STRIDE",
+                  "id": "9570f964-be3e-448e-8dd3-f43aec7af5f6"
+                },
+                {
+                  "title": "Repudiation of Admin Actions",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Administrative actions through bastion may lack proper auditing.",
+                  "mitigation": "Enable detailed logging and non-repudiation mechanisms.",
+                  "modelType": "STRIDE",
+                  "id": "ee6ff579-e0d7-400c-bf5e-d3155c2dacae"
+                }
+              ]
+            },
+            "id": "bastion",
+            "position": {
+              "x": 2022.5,
+              "y": 392.5
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "Authorized Keys"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Store",
+              "name": "Authorized Keys",
+              "description": "Contains SSH keys used for securing administrative access.\nData set: Authorized Keys\nContains SSH keys used for securing administrative access.\n Record count maximum of 100 with data sensitivity of cred and access control methods of rbac",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Information Disclosure of SSH Keys",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Stores credentials in Production Trust Zone, used by bastion, risking key exposure.",
+                  "mitigation": "Store in encrypted vaults with access monitoring.",
+                  "modelType": "STRIDE",
+                  "id": "7e9698e1-909e-48f9-82c8-88e2be6123d6"
+                }
+              ]
+            },
+            "id": "secret-key-storage",
+            "position": {
+              "x": 1737.5,
+              "y": 802.5
+            }
+          },
+          {
+            "size": {
+              "width": 150,
+              "height": 75
+            },
+            "attrs": {
+              "text": {
+                "text": "Stored Machine\nLearning Model"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "shape": "store",
+            "zIndex": 4,
+            "data": {
+              "type": "tm.Store",
+              "name": "Stored Machine\nLearning Model",
+              "description": "Contains storage for machine learning models in serialized format.\nData set: Stored Machine Learning Models\nContains trained machine learning models in serialized format for production use.\n Record count maximum of 10 with data sensitivity of biz and access control methods of rbac",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Tampering with Production Models",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Stores models in Production Trust Zone, updated via bastion, risking tampering for malicious inference.",
+                  "mitigation": "Implement immutability and verification checks.",
+                  "modelType": "STRIDE",
+                  "id": "337f1faa-800c-4d82-9f74-e86e0cc0c927"
+                }
+              ]
+            },
+            "id": "ml-models-blob",
+            "position": {
+              "x": 2307.5,
+              "y": 392.5
+            }
+          },
+          {
+            "position": {
+              "x": 410,
+              "y": 330
+            },
+            "size": {
+              "width": 1140,
+              "height": 820
+            },
+            "attrs": {
+              "label": {
+                "text": "Experimental Trust Zone"
+              }
+            },
+            "shape": "trust-boundary-box",
+            "id": "experimental-zone",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Experimental Trust Zone",
+              "description": "Internal VPC with the experimental and development deployment for HuskyAI\nconfirmed assumption : All services within the trust boundary validate tokens via Auth Service\n",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 1675,
+              "y": 330
+            },
+            "size": {
+              "width": 855,
+              "height": 615
+            },
+            "attrs": {
+              "label": {
+                "text": "Production Trust Zone"
+              }
+            },
+            "shape": "trust-boundary-box",
+            "id": "prod-zone",
+            "zIndex": -2,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Production Trust Zone",
+              "description": "Internal VPC with the production deployment of HuskyAI\nconfirmed assumption : All services within the trust boundary validate tokens via Auth Service\n",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "HTTPS",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTPS",
+              "description": "Transfer data from Azure Cognitive Services to Gather Images Application in Python.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Spoofing on Image Retrieval Flow",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "The HTTPS flow from external Azure Cognitive Services to Gather Images Application crosses into Experimental Trust Zone, potentially allowing spoofed sources to inject poisoned data.",
+                  "mitigation": "Validate TLS certificates and pin public keys.",
+                  "modelType": "STRIDE",
+                  "id": "17231723-6450-446f-812e-a19538ae3c3d"
+                },
+                {
+                  "title": "Information Disclosure in Transit",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information Disclosure",
+                  "description": "Although encrypted, the flow crosses boundaries; weak TLS could lead to disclosure.",
+                  "mitigation": "Enforce TLS 1.3 with strong ciphers.",
+                  "modelType": "STRIDE",
+                  "id": "f5de85df-b2c2-42ca-8aae-0fd9b7528008"
+                }
+              ]
+            },
+            "source": {
+              "cell": "azure-cognitive-services",
+              "port": ""
+            },
+            "target": {
+              "cell": "gather-images",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "azure-cognitive-gather-images",
+            "zIndex": 0
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "imports",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "imports",
+              "description": "Transfer data from Third Party tools and ML libraries to Gather Images Application in Python.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering in Library Import Flow",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The imports flow from external third-party tools to internal Gather Images Application crosses into Experimental Trust Zone, risking tampered libraries.",
+                  "mitigation": "Verify library integrity with signatures before import.",
+                  "modelType": "STRIDE",
+                  "id": "44f28b3b-cb3e-410a-b3e7-aab1b67aa2d5"
+                }
+              ]
+            },
+            "source": {
+              "cell": "third-party-tools",
+              "port": ""
+            },
+            "target": {
+              "cell": "gather-images",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "third-party-tools-gather-images",
+            "zIndex": 1
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "imports",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "imports",
+              "description": "Transfer data from Third Party tools and ML libraries to Jupyter Notebook.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with ML Library Imports",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Imports flow from external libraries to Jupyter Notebook inside Experimental Trust Zone, potentially introducing tampered code.",
+                  "mitigation": "Use locked dependencies and scan for vulnerabilities.",
+                  "modelType": "STRIDE",
+                  "id": "62d9eafd-173f-40a9-8c7a-71eb8d905945"
+                }
+              ]
+            },
+            "source": {
+              "cell": "third-party-tools",
+              "port": ""
+            },
+            "target": {
+              "cell": "jupyter",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "third-party-tools-jupyter-notebook",
+            "zIndex": 2
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "VS Code (SSH)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "VS Code (SSH)",
+              "description": "Transfer data from Engineer to Gather Images Application in Python.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Spoofing on SSH Flow",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "VS Code (SSH) flow from external Engineer to Gather Images Application crosses into Experimental Trust Zone, risking spoofed access.",
+                  "mitigation": "Require client certificates for SSH.",
+                  "modelType": "STRIDE",
+                  "id": "5d7889ae-760f-44b3-bd70-0c31086112b4"
+                }
+              ]
+            },
+            "source": {
+              "cell": "engineer",
+              "port": ""
+            },
+            "target": {
+              "cell": "gather-images",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "engineer-gather-images",
+            "zIndex": 3
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "VS Code (SSH)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "VS Code (SSH)",
+              "description": "Transfer code and ML models from Engineer locally to Jupyter Notebook.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Elevation via SSH Access",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "SSH flow from external Engineer to Jupyter Notebook allows potential code execution with elevated privileges inside the zone.",
+                  "mitigation": "Restrict SSH commands and use bastion-like controls.",
+                  "modelType": "STRIDE",
+                  "id": "fafe7c4b-8571-45cd-a88f-21640c9ba706"
+                }
+              ]
+            },
+            "source": {
+              "cell": "engineer",
+              "port": ""
+            },
+            "target": {
+              "cell": "jupyter",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "engineer-jupyter-notebook",
+            "zIndex": 4
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "stores",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "stores",
+              "description": "Transfer images from Gather Images Application to Training and Validation Images.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Stored Images",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Stores flow internal to Experimental Trust Zone, but if process compromised, could tamper with images en route to storage.",
+                  "mitigation": "Use signed data transfers and validation.",
+                  "modelType": "STRIDE",
+                  "id": "6bd7d686-b6bc-4707-93bb-28406f3dc6a2"
+                }
+              ]
+            },
+            "source": {
+              "cell": "gather-images",
+              "port": ""
+            },
+            "target": {
+              "cell": "training-images-blob",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "gather-images-training-images",
+            "zIndex": 5
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "loads",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "loads",
+              "description": "API Key Storage to Gather Images Application in Python.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Keys in Flow",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Loads flow internal, but exposes credentials from storage to process, risking interception if not secured.",
+                  "mitigation": "Use secure in-memory handling and avoid logging keys.",
+                  "modelType": "STRIDE",
+                  "id": "1c13c85f-813b-4984-82ce-26cc7416486e"
+                }
+              ]
+            },
+            "source": {
+              "cell": "api-key-storage",
+              "port": ""
+            },
+            "target": {
+              "cell": "gather-images",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "api-key-storage-gather-images",
+            "zIndex": 6
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "processes",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "processes",
+              "description": "Load from Training and Validation Images to Jupyter Notebook.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering During Image Processing",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Processes flow internal, potential for tampering if notebook is compromised.",
+                  "mitigation": "Implement data integrity checks during loading.",
+                  "modelType": "STRIDE",
+                  "id": "1a499446-605f-41e7-ab47-d64f90019bba"
+                }
+              ]
+            },
+            "source": {
+              "cell": "training-images-blob",
+              "port": ""
+            },
+            "target": {
+              "cell": "jupyter",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "training-images-jupyter-notebook",
+            "zIndex": 7
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "package",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "package",
+              "description": "Transfer data from Machine Learning Model to Deployment.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Model Package",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Package flow internal, but critical for deployment; tampering could affect production.",
+                  "mitigation": "Sign models before transfer.",
+                  "modelType": "STRIDE",
+                  "id": "bcdcb714-afa7-4d97-b260-2c48e67c8dbb"
+                }
+              ]
+            },
+            "source": {
+              "cell": "ml-models",
+              "port": ""
+            },
+            "target": {
+              "cell": "deployment-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "ml-models-deployment-service",
+            "zIndex": 8
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "save.h5",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "save.h5",
+              "description": "Transfer final model from Jupyter Notebook to Machine Learning Model.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Model Save",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Save.h5 flow internal, risking model leak if storage access is breached.",
+                  "mitigation": "Encrypt flow and storage.",
+                  "modelType": "STRIDE",
+                  "id": "eb7c34cf-f888-408a-8651-4c225dd3f5dc"
+                }
+              ]
+            },
+            "source": {
+              "cell": "jupyter",
+              "port": ""
+            },
+            "target": {
+              "cell": "ml-models",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "jupyter-notebook-ml-model",
+            "zIndex": 9
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "package",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "package",
+              "description": "Transfer from Machine Learning Model Blob to Deployment Service.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering in Model Transfer",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Package flow from production model to deployment, though id suggests prod, but layout in experimental? Wait, id is ml-model-deployment-service, but source is ml-models-blob (prod) to deployment-service (experimental), so crosses zones! High risk for tampering across boundaries.",
+                  "mitigation": "Use secure channels and verification across zones.",
+                  "modelType": "STRIDE",
+                  "id": "6c165d25-5925-4f82-aafd-fb439d827af2"
+                }
+              ]
+            },
+            "source": {
+              "cell": "ml-models-blob",
+              "port": ""
+            },
+            "target": {
+              "cell": "deployment-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "ml-model-deployment-service",
+            "zIndex": 10
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "package",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "package",
+              "description": "Transfer data from Source Code and Configuration to Deployment.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Code Flow",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Package flow internal to experimental, risking code injection.",
+                  "mitigation": "Integrity checks on code.",
+                  "modelType": "STRIDE",
+                  "id": "4a21a9d6-f348-4ad2-a40f-461ae54a3dbf"
+                }
+              ]
+            },
+            "source": {
+              "cell": "source-code-config-storage",
+              "port": ""
+            },
+            "target": {
+              "cell": "deployment-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "source-code-deployment",
+            "zIndex": 11
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "HTTPS",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTPS",
+              "description": "Transfer from User to API Gateway.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Denial of Service on Ingress Flow",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "HTTPS flow from external User crosses into Production Trust Zone, vulnerable to DoS attacks.",
+                  "mitigation": "Deploy WAF and rate limiting.",
+                  "modelType": "STRIDE",
+                  "id": "8f8461a2-c468-49a0-8a3b-eeb8f600b508"
+                }
+              ]
+            },
+            "source": {
+              "cell": "user",
+              "port": ""
+            },
+            "target": {
+              "cell": "api-gateway",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "user-api-gateway",
+            "zIndex": 12
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "update",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "update",
+              "description": "Transfer data from Bastion to API Gateway.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Elevation on Update Flow",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Update flow internal to prod, but from bastion, potential for unauthorized updates.",
+                  "mitigation": "Authorize updates with RBAC.",
+                  "modelType": "STRIDE",
+                  "id": "5cd22cf4-8156-43cb-9900-591d6cfaf821"
+                }
+              ]
+            },
+            "source": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "target": {
+              "cell": "api-gateway",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "bastion-api-gateway",
+            "zIndex": 13
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "HTTPS",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTPS",
+              "description": "Transfer data from API Gateway to Simple Python Web Server.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Spoofing Internal Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "HTTPS flow internal, but if gateway compromised, could spoof to server.",
+                  "mitigation": "Internal mTLS.",
+                  "modelType": "STRIDE",
+                  "id": "ad3568be-7484-45c6-94ed-f55b1516706f"
+                }
+              ]
+            },
+            "source": {
+              "cell": "api-gateway",
+              "port": ""
+            },
+            "target": {
+              "cell": "web-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "api-gateway-web-server",
+            "zIndex": 14
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "update",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "update",
+              "description": "Transfer data from Bastion to Simple Python Web Server.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering via Update",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Update flow from bastion to web server, risking tampered configurations.",
+                  "mitigation": "Signed updates.",
+                  "modelType": "STRIDE",
+                  "id": "1c599c10-1613-49d2-b965-b9aeca613352"
+                }
+              ]
+            },
+            "source": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "target": {
+              "cell": "web-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "bastion-web-server",
+            "zIndex": 15
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "loads",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "loads",
+              "description": "Transfer sensitive data from Stored Machine Learning Model to Simple Python Web Server.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Model Load",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Loads flow internal, potential leak during loading.",
+                  "mitigation": "Secure loading mechanisms.",
+                  "modelType": "STRIDE",
+                  "id": "bd6cdf91-6333-4f5f-ab9e-6c52b1be24e2"
+                }
+              ]
+            },
+            "source": {
+              "cell": "ml-models-blob",
+              "port": ""
+            },
+            "target": {
+              "cell": "web-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "stored-ml-model-web-server",
+            "zIndex": 16
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "SSH",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SSH",
+              "description": "Transfer sensitive data from Deployment Service to Bastion",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Spoofing on SSH Deployment",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "SSH flow from experimental deployment to prod bastion crosses zones, high risk for spoofing.",
+                  "mitigation": "Cross-zone authentication強化.",
+                  "modelType": "STRIDE",
+                  "id": "0f4783ab-c942-4773-ae8e-3f7e38777ffa"
+                }
+              ]
+            },
+            "source": {
+              "cell": "deployment-service",
+              "port": ""
+            },
+            "target": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "deployment-bastion",
+            "zIndex": 17
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "update",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "update",
+              "description": "Transfer sensitive data from Bastion to Stored Machine Learning Model.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering Across Zones",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Update flow from bastion (prod) to ml-models-blob, but id bastion-ml-model, potentially crossing? Description to Stored ML Model.",
+                  "mitigation": "Verify updates.",
+                  "modelType": "STRIDE",
+                  "id": "7adb6f52-f6d1-4426-a2cd-90ecac5b73e7"
+                }
+              ]
+            },
+            "source": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "target": {
+              "cell": "ml-models-blob",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "bastion-ml-model",
+            "zIndex": 18
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "SSH",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SSH",
+              "description": "Transfer data from Infrastructure Admin to Bastion.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Spoofing Admin SSH",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "SSH flow from external admin crosses into prod zone.",
+                  "mitigation": "MFA for admin access.",
+                  "modelType": "STRIDE",
+                  "id": "789ed6ff-e924-429b-a405-d67e241a144f"
+                }
+              ]
+            },
+            "source": {
+              "cell": "infrastructure-admin",
+              "port": ""
+            },
+            "target": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "admin-bastion",
+            "zIndex": 19
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "update",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "update",
+              "description": "Transfer sensitive data from Bastion to Stored Machine Learning Model.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Elevation on Model Update",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Update flow internal, potential for unauthorized model changes.",
+                  "mitigation": "RBAC on updates.",
+                  "modelType": "STRIDE",
+                  "id": "a88703ea-1c55-479b-a350-f0ef1ce85417"
+                }
+              ]
+            },
+            "source": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "target": {
+              "cell": "ml-models-blob",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "bastion-stored-ml-model",
+            "zIndex": 20
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "Transfer sensitive data from Authorized Keys Storage to Bastion.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Keys Flow",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Flow from authorized keys to bastion, risking key exposure.",
+                  "mitigation": "Encrypted storage and transfer.",
+                  "modelType": "STRIDE",
+                  "id": "dc79af22-aece-40ad-ba56-8de8ae1f091f"
+                }
+              ]
+            },
+            "source": {
+              "cell": "secret-key-storage",
+              "port": ""
+            },
+            "target": {
+              "cell": "bastion",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "authorized-keys-bastion",
+            "zIndex": 21
+          },
+          {
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "shape": "flow",
+            "width": 200,
+            "height": 100,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "imports",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "imports",
+              "description": "Transfer data from Third Party tools and ML libraries to Simple Python Web Server.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Prod Imports",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Imports flow from external tools crosses into prod zone to web server.",
+                  "mitigation": "Integrity verification.",
+                  "modelType": "STRIDE",
+                  "id": "a0b34c4f-d69e-4013-9a74-3000c2caacc0"
+                }
+              ]
+            },
+            "source": {
+              "cell": "third-party-tools",
+              "port": ""
+            },
+            "target": {
+              "cell": "web-service",
+              "port": ""
+            },
+            "vertices": [],
+            "id": "third-party-tools-web-server",
+            "zIndex": 22
+          }
+        ]
+      }
+    ],
+    "diagramTop": 0,
+    "reviewer": "",
+    "threatTop": 8
+  },
+  "version": "2.5.0",
+  "compatibility": {
+    "version": "1.0.1",
+    "description": "A machine learning system to classify Huskies vs dogs",
+    "frozen": false,
+    "release_docs_link": "https://github.com/wunderwuzzi23/huskyai",
+    "reviewed_at": "2025-05-28",
+    "repo_link": "https://github.com/wunderwuzzi23/huskyai"
+  }
+}

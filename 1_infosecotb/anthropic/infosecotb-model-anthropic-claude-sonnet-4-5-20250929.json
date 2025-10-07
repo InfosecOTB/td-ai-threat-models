@@ -1,0 +1,4340 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Infosecotb.com with vMeNext Threat Model",
+    "owner": "InfoSecOTB",
+    "description": "Infosecotb.com is a professional cybersecurity blog hosted on WordPress through BlueHost. The blog serves as a platform for sharing insights, articles, and resources related to information security, targeting cybersecurity professionals and enthusiasts.\n\nWebsite Structure:\n•\tContent Management System (CMS): Built on WordPress, allowing for easy content creation, management, and publishing.\n•\tUser Interaction: Features such as chatbot, comments, contact forms, and newsletter subscriptions that facilitate user engagement.\n•\tCategorized Content: Articles are organized into categories based on topics \n\nFunctionality:\n•\tArticle Publishing: Regularly updated with new blog posts that include technical guides, best practices, and industry insights.\n•\tSearch Functionality: Allows users to search for specific topics or articles.\n•\tSocial Media Integration: Links to social media platforms for sharing and promoting content.\n•\tvMeNext AI powered chatbot\n\nUser Types:\n•\tVisitors: General users seeking information on cybersecurity topics.\n•\tAdministrators: Individuals with backend access for managing content, settings, and website security.\n\nTechnical Environment:\n•\tHosting: Utilizes BlueHost for hosting, which provides shared or dedicated server resources.\n•\tPlugins and Themes: Employs various WordPress plugins for enhanced functionality (e.g., SEO, analytics, security).\n•\tDatabase: Relies on a MySQL database for storing content, user information, and site settings.\n•\tvMeNext chatbot published using iFrames\n\nvMeNext is a comprehensive AI-powered chatbot system designed to serve as an intelligent interface for blog content and website management. Built with modern Python technologies, it combines the power of OpenAI's GPT models with automated web scraping, monitoring, and user engagement features.\n\nKey Capabilities:\n•\tIntelligent Conversations: Powered by OpenAI's latest GPT models for natural, context-aware responses\n•\tBlog Content Integration: Automatic scraping, processing, and summarization of blog posts\n•\tWebsite Monitoring: Continuous availability checking with real-time alerts\n•\tDocument Processing: Support for multiple file formats (PDF, DOCX, TXT, MD)\n•\tUser Engagement: Automated email notifications and contact management\n•\tAnalytics Dashboard: Website uptime statistics with visualizations",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Infosecotb.com with vMeNext Diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": [
+          {
+            "position": {
+              "x": 290,
+              "y": 310
+            },
+            "size": {
+              "width": 420,
+              "height": 290
+            },
+            "attrs": {
+              "label": {
+                "text": "Hugging Face\nTrust Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "215ae440-6290-43c0-8586-7ddaf8921ad9",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Hugging Face\nTrust Zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 1070,
+              "y": 230
+            },
+            "size": {
+              "width": 260,
+              "height": 370
+            },
+            "attrs": {
+              "label": {
+                "text": "Dev/Admin Trust Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "c4c8c20b-cc6f-4968-ad00-70de206a9187",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Dev/Admin Trust Zone",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 481.9999999999999,
+              "y": 30
+            },
+            "size": {
+              "width": 510,
+              "height": 200
+            },
+            "attrs": {
+              "label": {
+                "text": "BlueHost Trust Zone"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "2890c2d3-a373-4c93-8d84-293464b869a7",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "BlueHost Trust Zone",
+              "description": "BlueHost Hosting Trust Zone",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 240,
+              "y": 85
+            },
+            "size": {
+              "width": 110,
+              "height": 50
+            },
+            "attrs": {
+              "text": {
+                "text": "Visitor"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2fa1020b-0705-4471-a4f4-0996741c2514"
+                },
+                {
+                  "group": "right",
+                  "id": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+                },
+                {
+                  "group": "bottom",
+                  "id": "1d69b97d-af66-46d3-821e-1825c3e02cf3"
+                },
+                {
+                  "group": "left",
+                  "id": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+                }
+              ]
+            },
+            "id": "d84483c8-cf39-48f2-9d9f-01ed56c5090f",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Visitor",
+              "description": "Visitor connecting to infosecotb.com using a browser",
+              "isTrustBoundary": false,
+              "outOfScope": true,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 350,
+              "y": 370
+            },
+            "size": {
+              "width": 80,
+              "height": 70
+            },
+            "attrs": {
+              "text": {
+                "text": "vMeNext\nApp"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+            "data": {
+              "type": "tm.Process",
+              "name": "vMeNext\nApp",
+              "description": "Gradio ChatBot Python Application with RAG Running on Hugging Face Space",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Spoofing of vMeNext App Identity via API Key Compromise",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The vMeNext App process communicates with OpenAI API and SMTP2GO API using API keys. If these keys are compromised (e.g., hardcoded in source, exposed in logs, or stolen from environment variables), an attacker could impersonate the application and make unauthorized API calls. The app resides in the Hugging Face Trust Zone and crosses trust boundaries via public network flows to external APIs.",
+                  "mitigation": "- Store API keys in secure secret management systems (e.g., Hugging Face Secrets, HashiCorp Vault)\n- Implement key rotation policies\n- Use environment variables with restricted access\n- Monitor API usage for anomalies\n- Implement rate limiting and usage quotas",
+                  "modelType": "STRIDE",
+                  "id": "45743e7b-83fc-4b56-9362-87c70986c3b5"
+                },
+                {
+                  "title": "Tampering with RAG Context from about_me Folder",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The vMeNext App reads documents from the about_me folder to provide context to the AI chatbot. If an attacker gains write access to this folder (through compromised Hugging Face Space credentials or deployment pipeline), they could inject malicious content, misleading information, or prompt injection attacks that manipulate the chatbot's responses. This could lead to misinformation, reputation damage, or exploitation of users.",
+                  "mitigation": "- Implement file integrity monitoring on the about_me folder\n- Use read-only file system permissions where possible\n- Validate and sanitize document content before processing\n- Implement version control and audit logging for document changes\n- Use code signing for deployment packages\n- Implement content security policies for RAG inputs",
+                  "modelType": "STRIDE",
+                  "id": "3aebc287-8b0e-4e2d-bf6b-8d51233af3b4"
+                },
+                {
+                  "title": "Information Disclosure via Unencrypted iFrame Communication",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The vMeNext App is embedded in infosecotb.com via iFrame over HTTPS. However, if the iFrame implementation doesn't properly restrict cross-origin communication or if sensitive data is passed through postMessage without validation, attackers could intercept or exfiltrate user conversations, prompts, or API responses. The flow crosses from Hugging Face Trust Zone to BlueHost Trust Zone.",
+                  "mitigation": "- Implement Content Security Policy (CSP) with frame-ancestors directive\n- Use postMessage with strict origin validation\n- Avoid passing sensitive data through iFrame communication\n- Implement Subresource Integrity (SRI) for iFrame resources\n- Use X-Frame-Options headers appropriately",
+                  "modelType": "STRIDE",
+                  "id": "917be45f-99e3-4b58-bdb1-3b4c0984fcfc"
+                },
+                {
+                  "title": "Denial of Service via Resource Exhaustion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of Service",
+                  "description": "The vMeNext App processes user queries and makes API calls to OpenAI, which can be resource-intensive. An attacker could flood the application with complex queries or rapid requests, exhausting compute resources, API quotas, or causing financial damage through excessive API usage. The app is publicly accessible through the infosecotb.com website.",
+                  "mitigation": "- Implement rate limiting per user/IP address\n- Set maximum query length and complexity limits\n- Configure API usage quotas and budget alerts\n- Implement request queuing with timeout mechanisms\n- Use CAPTCHA or proof-of-work for suspicious traffic patterns\n- Monitor resource utilization and implement auto-scaling limits",
+                  "modelType": "STRIDE",
+                  "id": "af987085-2c20-4081-b0fb-93bcca1cdf56"
+                },
+                {
+                  "title": "Elevation of Privilege via Prompt Injection",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The vMeNext App uses OpenAI API with RAG context from the about_me folder. An attacker could craft malicious prompts that attempt to override system instructions, access restricted information, or manipulate the AI to perform unauthorized actions. This is particularly concerning as the chatbot may have access to sensitive context about the blog owner or system configuration.",
+                  "mitigation": "- Implement robust prompt filtering and validation\n- Use OpenAI's moderation API to screen inputs\n- Separate system prompts from user inputs with clear delimiters\n- Implement output filtering to prevent sensitive data leakage\n- Use role-based access controls in prompt design\n- Regularly audit and test for prompt injection vulnerabilities\n- Implement conversation context limits",
+                  "modelType": "STRIDE",
+                  "id": "b023c61b-9ef3-4d93-b51d-37ad323c5d09"
+                },
+                {
+                  "title": "Repudiation of Malicious Actions via Insufficient Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The vMeNext App processes user queries and makes external API calls, but if logging is insufficient or logs are not properly secured, malicious actors could deny performing harmful actions (e.g., attempting prompt injections, data exfiltration, or abuse). Without comprehensive audit trails, it becomes difficult to investigate security incidents or attribute actions to specific users.",
+                  "mitigation": "- Implement comprehensive logging of all user interactions, API calls, and system events\n- Include timestamps, user identifiers (IP, session), query content, and responses\n- Store logs in tamper-proof, centralized logging system\n- Implement log retention policies compliant with security requirements\n- Enable real-time alerting for suspicious patterns\n- Ensure logs are encrypted at rest and in transit",
+                  "modelType": "STRIDE",
+                  "id": "71663310-4e5c-48e0-9809-8a5053f5b938"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 330,
+              "y": 525
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "about_me folder"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null,
+                "stroke": "red"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 5,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "9b56c074-8160-4dee-a694-d767df0737ab"
+                },
+                {
+                  "group": "right",
+                  "id": "d04e051b-1ceb-4119-8401-95c5bfb1c526"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c0f67acb-b84f-4873-8b7c-ac30469c54b8"
+                },
+                {
+                  "group": "left",
+                  "id": "4951fd97-ef81-4024-af07-c90272a9c5f2"
+                }
+              ]
+            },
+            "id": "ec9eaea8-b7c1-4c22-b8a3-c6451d633ec5",
+            "data": {
+              "type": "tm.Store",
+              "name": "about_me folder",
+              "description": "Folder with documents read by Python application and provided to AI ChatBot as a prompt context.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "title": "Tampering with RAG Documents in about_me Folder",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The about_me folder stores documents that provide context to the vMeNext App chatbot. If an attacker gains write access to this data store (through compromised deployment credentials, Hugging Face Space vulnerabilities, or insider threats), they could modify, delete, or inject malicious content. This could lead to the chatbot providing incorrect information, executing prompt injection attacks, or damaging the blog's reputation.",
+                  "mitigation": "- Implement strict file system permissions (read-only for application)\n- Use file integrity monitoring (FIM) to detect unauthorized changes\n- Implement version control for all documents with audit trails\n- Require multi-factor authentication for deployment access\n- Use code review and approval processes for document updates\n- Implement automated content validation and scanning",
+                  "modelType": "STRIDE",
+                  "id": "f4bb7c73-3705-4925-9762-f964068598bb"
+                },
+                {
+                  "title": "Information Disclosure of Sensitive Context Data",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The about_me folder contains documents with information about the blog owner and system. If these documents include sensitive personal information, credentials, API keys, or system configuration details, and the folder permissions are misconfigured or the Hugging Face Space is compromised, this information could be exposed to unauthorized parties. The data store resides within the Hugging Face Trust Zone but is accessed by the application process.",
+                  "mitigation": "- Review all documents for sensitive information before deployment\n- Implement data classification and handling policies\n- Encrypt sensitive documents at rest\n- Use secret management systems for credentials (never store in documents)\n- Implement access controls and audit logging for folder access\n- Regularly scan for accidentally committed secrets or PII",
+                  "modelType": "STRIDE",
+                  "id": "a140093f-13ab-4e62-bbfb-a67d31bbc497"
+                },
+                {
+                  "title": "Denial of Service via Large or Malformed Documents",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The about_me folder stores documents that are processed by the vMeNext App for RAG functionality. If an attacker can upload extremely large files, malformed documents, or files with embedded exploits (e.g., XML bombs, zip bombs), the application could experience resource exhaustion, crashes, or processing delays when attempting to read and parse these files.",
+                  "mitigation": "- Implement file size limits for documents\n- Validate file formats and structure before processing\n- Use safe parsing libraries with timeout mechanisms\n- Implement resource limits for document processing\n- Scan uploaded files for malware and malicious content\n- Use sandboxed environments for document parsing",
+                  "modelType": "STRIDE",
+                  "id": "8a5f4d30-3490-4d42-b414-02d9321e1bb1"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 1201,
+              "y": 460
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "DEV"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 6,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2fa1020b-0705-4471-a4f4-0996741c2514"
+                },
+                {
+                  "group": "right",
+                  "id": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+                },
+                {
+                  "group": "bottom",
+                  "id": "1d69b97d-af66-46d3-821e-1825c3e02cf3"
+                },
+                {
+                  "group": "left",
+                  "id": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+                }
+              ]
+            },
+            "id": "17116c8f-0dcd-4b51-a87d-4379be1b6325",
+            "data": {
+              "type": "tm.Actor",
+              "name": "DEV",
+              "description": "vMeNext Application Developer",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 1091,
+              "y": 510
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Cursor\nIDE"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 7,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+            "data": {
+              "type": "tm.Process",
+              "name": "Cursor\nIDE",
+              "description": "Cursor IDE used for developing and running vMe Next Dev application and deploying on Hugging Face Space",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Source Code via Compromised IDE or Extensions",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Cursor IDE is used for developing the vMeNext application. If the IDE itself is compromised (through malicious extensions, supply chain attacks, or malware), an attacker could inject malicious code into the application before deployment. This is particularly concerning as the IDE has direct deployment capabilities to Hugging Face Space, residing in the Dev/Admin Trust Zone.",
+                  "mitigation": "- Use only trusted and verified IDE extensions\n- Implement code signing and verification in deployment pipeline\n- Use separate development and deployment credentials\n- Implement code review processes before deployment\n- Scan development environment for malware regularly\n- Use version control with protected branches\n- Implement CI/CD pipeline with automated security scanning",
+                  "modelType": "STRIDE",
+                  "id": "2b6f20fd-3cc5-4577-8d83-43ee8ccf0412"
+                },
+                {
+                  "title": "Elevation of Privilege via Stolen Developer Credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "Cursor IDE has access to deployment credentials for Hugging Face Space and potentially other sensitive systems. If developer credentials are compromised (through phishing, keylogging, or session hijacking), an attacker could gain unauthorized access to deploy malicious code, modify the application, or access production secrets. The IDE resides in the Dev/Admin Trust Zone with privileged access.",
+                  "mitigation": "- Enforce multi-factor authentication (MFA) for all developer accounts\n- Use hardware security keys for authentication\n- Implement credential rotation policies\n- Use separate credentials for development and production\n- Monitor and alert on unusual deployment activities\n- Implement IP whitelisting for deployment access\n- Use time-limited access tokens instead of long-lived credentials",
+                  "modelType": "STRIDE",
+                  "id": "6a93c77a-9f14-4a1e-a87c-9600ac3b48b4"
+                },
+                {
+                  "title": "Information Disclosure via IDE Telemetry or Logs",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Cursor IDE may collect telemetry data, store logs, or cache sensitive information (API keys, credentials, source code) locally. If the developer's workstation is compromised or if telemetry data is transmitted insecurely, sensitive information could be exposed to unauthorized parties.",
+                  "mitigation": "- Review and configure IDE telemetry settings to minimize data collection\n- Encrypt local IDE cache and configuration files\n- Use full disk encryption on developer workstations\n- Implement data loss prevention (DLP) tools\n- Regularly clear sensitive data from IDE history and caches\n- Use secure channels for any telemetry transmission\n- Implement endpoint detection and response (EDR) on developer machines",
+                  "modelType": "STRIDE",
+                  "id": "d4735cb7-8b3a-4573-9fd1-45ba66032db7"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 516.9999999999999,
+              "y": 80
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "infosecotb\n.com"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 9,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "2a4730cc-32bd-441b-990f-e8dce3824540",
+            "data": {
+              "type": "tm.Process",
+              "name": "infosecotb\n.com",
+              "description": "InfoSec Outside The Box Cybersecurity Blog created and managed with WordPress CMS with vMeNext AI powered chatbot added using iFrame",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Spoofing via WordPress Admin Account Compromise",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The infosecotb.com WordPress process manages the blog content and embeds the vMeNext chatbot via iFrame. If WordPress admin credentials are compromised (through brute force, credential stuffing, or phishing), an attacker could impersonate the administrator, modify content, inject malicious scripts, or alter the iFrame to point to a malicious chatbot. The process resides in the BlueHost Trust Zone and receives public network traffic from visitors.",
+                  "mitigation": "- Enforce strong password policies and multi-factor authentication (MFA)\n- Implement account lockout policies after failed login attempts\n- Use security plugins (e.g., Wordfence, Sucuri) for WordPress hardening\n- Limit login attempts and implement CAPTCHA\n- Monitor and alert on suspicious login activities\n- Use IP whitelisting for admin access where possible\n- Regularly audit user accounts and remove unused accounts",
+                  "modelType": "STRIDE",
+                  "id": "deee3174-ae3f-49cd-8d38-0038d4692989"
+                },
+                {
+                  "title": "Tampering with WordPress Core or Plugin Files",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The infosecotb.com WordPress installation includes core files, themes, and plugins. If an attacker gains write access to the file system (through compromised FTP/SSH credentials, vulnerable plugins, or hosting account compromise), they could modify WordPress files to inject backdoors, malware, or malicious iFrames. This could compromise all site visitors and the embedded vMeNext chatbot.",
+                  "mitigation": "- Implement file integrity monitoring for WordPress core, themes, and plugins\n- Use read-only file permissions where possible\n- Keep WordPress core, themes, and plugins updated\n- Remove unused themes and plugins\n- Use security plugins to scan for malware and vulnerabilities\n- Implement Web Application Firewall (WAF)\n- Use secure FTP (SFTP) with key-based authentication\n- Regularly backup and verify backup integrity",
+                  "modelType": "STRIDE",
+                  "id": "4081ef85-9147-4179-9014-9eeeef0adfe9"
+                },
+                {
+                  "title": "Information Disclosure via WordPress Configuration Exposure",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "The infosecotb.com WordPress process stores sensitive configuration in wp-config.php, including database credentials, authentication keys, and salts. If this file is exposed through misconfiguration (e.g., directory listing, backup files in web root, or path traversal vulnerabilities), attackers could gain access to the MySQL database and compromise the entire site. The process is publicly accessible over HTTPS.",
+                  "mitigation": "- Move wp-config.php outside the web root or use .htaccess to deny access\n- Disable directory listing on the web server\n- Remove backup files and version control directories from web root\n- Use strong, unique authentication keys and salts\n- Implement proper file permissions (e.g., 600 for wp-config.php)\n- Use environment variables for sensitive configuration where possible\n- Regularly scan for exposed sensitive files",
+                  "modelType": "STRIDE",
+                  "id": "6e1bfe21-4357-4a9b-9bb7-baf9df49366b"
+                },
+                {
+                  "title": "Denial of Service via WordPress Resource Exhaustion",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The infosecotb.com WordPress process is publicly accessible and handles visitor requests. An attacker could launch DDoS attacks, XML-RPC amplification attacks, or exploit resource-intensive plugins to exhaust server resources, making the site unavailable. This would also impact the embedded vMeNext chatbot accessibility.",
+                  "mitigation": "- Implement rate limiting and request throttling\n- Disable XML-RPC if not needed or restrict access\n- Use CDN with DDoS protection (e.g., Cloudflare)\n- Implement caching mechanisms (e.g., WP Super Cache, W3 Total Cache)\n- Configure resource limits on the hosting environment\n- Monitor server resources and implement auto-scaling if possible\n- Use Web Application Firewall (WAF) to filter malicious traffic",
+                  "modelType": "STRIDE",
+                  "id": "2883f536-38ac-4c1f-b687-f9a80d67b8ef"
+                },
+                {
+                  "title": "Elevation of Privilege via WordPress Plugin Vulnerabilities",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The infosecotb.com WordPress installation uses various plugins for enhanced functionality. Vulnerable plugins could allow attackers to escalate privileges from unauthenticated visitor to administrator, execute arbitrary code, or gain unauthorized access to the hosting environment. The process resides in the BlueHost Trust Zone with access to the MySQL database.",
+                  "mitigation": "- Keep all plugins updated to latest versions\n- Only install plugins from trusted sources with good security track records\n- Regularly audit installed plugins and remove unused ones\n- Use security plugins to scan for known vulnerabilities\n- Implement principle of least privilege for WordPress user roles\n- Monitor WordPress security advisories and apply patches promptly\n- Use virtual patching through WAF for zero-day vulnerabilities",
+                  "modelType": "STRIDE",
+                  "id": "605fa6fe-5583-422b-9cc0-6de9f21484fe"
+                },
+                {
+                  "title": "Repudiation via Insufficient WordPress Audit Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The infosecotb.com WordPress process handles content management, user interactions, and administrative actions. If audit logging is insufficient or logs are not properly secured, malicious actors could deny performing harmful actions (e.g., content modification, user account manipulation, or malicious plugin installation). Without comprehensive logs, incident investigation and attribution become difficult.",
+                  "mitigation": "- Install and configure WordPress activity logging plugins (e.g., WP Activity Log)\n- Log all administrative actions, login attempts, and content changes\n- Store logs in centralized, tamper-proof logging system\n- Implement log retention policies\n- Enable real-time alerting for critical actions\n- Ensure logs include timestamps, user identifiers, IP addresses, and action details\n- Regularly review logs for suspicious activities",
+                  "modelType": "STRIDE",
+                  "id": "bee8773c-985d-473b-a2c7-4b6c18564bc4"
+                }
+              ]
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "iFrame\nhttps",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with iFrame Content via Man-in-the-Middle Attack",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "The iFrame flow connects vMeNext App to infosecotb.com over HTTPS, crossing from Hugging Face Trust Zone to BlueHost Trust Zone. While HTTPS provides encryption, if certificate validation is weak or if there are TLS downgrade vulnerabilities, an attacker could perform a man-in-the-middle attack to modify the iFrame content, inject malicious scripts, or redirect users to phishing sites.",
+                  "mitigation": "- Enforce TLS 1.2 or higher with strong cipher suites\n- Implement HTTP Strict Transport Security (HSTS) with preloading\n- Use certificate pinning where feasible\n- Implement Subresource Integrity (SRI) for iFrame resources\n- Monitor for TLS certificate changes and anomalies\n- Use Content Security Policy (CSP) to restrict iFrame sources",
+                  "modelType": "STRIDE",
+                  "id": "238ddb61-d0e9-494a-8a71-648f55a82ed2"
+                },
+                {
+                  "title": "Information Disclosure via iFrame Clickjacking",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The iFrame flow embeds the vMeNext App into infosecotb.com. If proper frame protection headers are not implemented, an attacker could embed the chatbot in a malicious site and use clickjacking techniques to trick users into revealing sensitive information or performing unintended actions. The flow crosses trust boundaries between Hugging Face and BlueHost zones.",
+                  "mitigation": "- Implement X-Frame-Options: SAMEORIGIN or DENY headers\n- Use Content Security Policy (CSP) frame-ancestors directive\n- Implement frame-busting JavaScript as defense-in-depth\n- Validate and restrict iFrame embedding to trusted domains only\n- Educate users about clickjacking risks\n- Monitor for unauthorized iFrame embedding attempts",
+                  "modelType": "STRIDE",
+                  "id": "63d07563-46d0-400c-8a49-0b85e5db9ed5"
+                },
+                {
+                  "title": "Denial of Service via iFrame Resource Loading",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of Service",
+                  "description": "The iFrame flow loads the vMeNext App into infosecotb.com. If the Hugging Face Space becomes unavailable or experiences performance issues, the iFrame will fail to load or cause delays, degrading the user experience on the main website. This creates a dependency where the availability of infosecotb.com is partially dependent on Hugging Face infrastructure.",
+                  "mitigation": "- Implement lazy loading for iFrame to prevent blocking page load\n- Set appropriate timeout values for iFrame loading\n- Provide fallback content or error messages when iFrame fails to load\n- Monitor Hugging Face Space availability and performance\n- Consider implementing a backup chatbot solution\n- Use asynchronous loading techniques\n- Implement graceful degradation strategies",
+                  "modelType": "STRIDE",
+                  "id": "b65466f3-437f-4c83-be16-3c2841946085"
+                }
+              ]
+            },
+            "labels": [
+              "iFrame\nhttps"
+            ],
+            "id": "a7a466df-ab17-4917-b477-803dbf201295",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "vertices": [
+              {
+                "x": 410,
+                "y": 270
+              },
+              {
+                "x": 470,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "\n",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "\n"
+            ],
+            "id": "833c9d5c-1cd3-408a-a408-d4b4942a3cb9",
+            "source": {
+              "cell": "17116c8f-0dcd-4b51-a87d-4379be1b6325",
+              "port": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              ""
+            ],
+            "id": "cee66ef3-495b-4f8b-8993-327224219358",
+            "source": {
+              "cell": "17116c8f-0dcd-4b51-a87d-4379be1b6325",
+              "port": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+            },
+            "target": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              ""
+            ],
+            "id": "900a17b9-50b1-4512-bc43-145c09fe7264",
+            "source": {
+              "cell": "5a744be2-31cf-458d-97f6-95d5949045ee",
+              "port": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "1c94bfbb-1261-4838-9970-98c08d1e7b64",
+            "source": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "RAG\nRequest",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure via Unencrypted RAG Request",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The RAG Request flow from vMeNext App to about_me folder occurs within the Hugging Face Trust Zone. However, if the internal communication is not properly secured or if the Hugging Face Space environment is compromised, an attacker could intercept these requests to understand the application's context retrieval patterns, potentially revealing sensitive information about the RAG implementation or document structure.",
+                  "mitigation": "- Implement encryption for internal data flows even within trust zones\n- Use secure file access APIs with proper authentication\n- Implement access controls and audit logging for folder access\n- Monitor for unusual file access patterns\n- Use principle of least privilege for application file system access\n- Implement runtime application self-protection (RASP)",
+                  "modelType": "STRIDE",
+                  "id": "ed515da9-a198-4469-b93e-c16e9b01b01f"
+                },
+                {
+                  "title": "Tampering with RAG Request to Access Unauthorized Files",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The RAG Request flow allows vMeNext App to read documents from the about_me folder. If input validation is insufficient, an attacker could manipulate the request to perform path traversal attacks, accessing files outside the intended directory. This could expose sensitive configuration files, credentials, or other application data within the Hugging Face Space environment.",
+                  "mitigation": "- Implement strict input validation and sanitization for file paths\n- Use whitelisting for allowed file names and paths\n- Implement path canonicalization to prevent traversal attacks\n- Use chroot or containerization to restrict file system access\n- Implement file access audit logging\n- Use secure file access APIs that prevent path traversal\n- Regularly test for path traversal vulnerabilities",
+                  "modelType": "STRIDE",
+                  "id": "8ea2258b-681e-4b49-9ee8-10c2153ba72f"
+                }
+              ]
+            },
+            "labels": [
+              "RAG\nRequest"
+            ],
+            "id": "37bf0863-485b-4477-b355-4162a18e433f",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "target": {
+              "cell": "ec9eaea8-b7c1-4c22-b8a3-c6451d633ec5",
+              "port": "9b56c074-8160-4dee-a694-d767df0737ab"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 470
+              },
+              {
+                "x": 350,
+                "y": 490
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "RAG\nResponse",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure via RAG Response Interception",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The RAG Response flow returns document content from about_me folder to vMeNext App within the Hugging Face Trust Zone. If the Hugging Face Space environment is compromised or if logging is excessive, an attacker could intercept these responses to extract sensitive information from the documents, understand the RAG context, or identify vulnerabilities in the content processing logic.",
+                  "mitigation": "- Implement encryption for internal data flows\n- Minimize logging of RAG response content\n- Use secure memory handling to prevent data leakage\n- Implement data loss prevention (DLP) controls\n- Monitor for unusual data access patterns\n- Use runtime application self-protection (RASP)\n- Implement secure coding practices to prevent memory dumps",
+                  "modelType": "STRIDE",
+                  "id": "a0acd0b3-e880-4b27-a755-6e3e899bd6a5"
+                },
+                {
+                  "title": "Tampering with RAG Response to Inject Malicious Content",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The RAG Response flow delivers document content to vMeNext App for processing. If an attacker compromises the about_me folder or the file reading mechanism, they could inject malicious content, prompt injection payloads, or misleading information into the response. This could manipulate the chatbot's behavior, spread misinformation, or exploit downstream processing vulnerabilities.",
+                  "mitigation": "- Implement file integrity monitoring for source documents\n- Validate and sanitize RAG response content before processing\n- Use content security policies for RAG data\n- Implement anomaly detection for unusual response patterns\n- Use read-only file system permissions\n- Implement digital signatures for documents\n- Regularly audit document content for malicious patterns",
+                  "modelType": "STRIDE",
+                  "id": "b0777a52-f907-4c24-a483-616228911ef4"
+                }
+              ]
+            },
+            "labels": [
+              "RAG\nResponse"
+            ],
+            "id": "ab82c574-d565-462d-a4e8-b98b609e5adf",
+            "source": {
+              "cell": "ec9eaea8-b7c1-4c22-b8a3-c6451d633ec5",
+              "port": "9b56c074-8160-4dee-a694-d767df0737ab"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": 490
+              },
+              {
+                "x": 430,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "mysql",
+              "description": "Managed and secured by BlueHost",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed by BlueHost",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "mysql"
+            ],
+            "id": "5e9432fa-5408-4a0c-ab13-ef0b163470b0",
+            "source": {
+              "cell": "ce7df758-18fa-4056-9a74-6fd297f53fae",
+              "port": "c0f67acb-b84f-4873-8b7c-ac30469c54b8"
+            },
+            "target": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 810,
+                "y": 135
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "smtp relay",
+              "description": "E-mail sent to administrator",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "smtp",
+              "threats": [
+                {
+                  "title": "Spoofing via SMTP Relay Impersonation",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "The smtp relay flow sends emails from vMe Next Dev to Admin over public network with encryption. However, if SMTP authentication is weak or if SPF/DKIM/DMARC records are not properly configured, an attacker could spoof emails appearing to come from the vMeNext system, potentially phishing the administrator or sending malicious notifications. The flow crosses from Dev/Admin Trust Zone to external email infrastructure.",
+                  "mitigation": "- Implement SPF, DKIM, and DMARC records for email authentication\n- Use strong SMTP authentication credentials\n- Implement TLS for SMTP connections (STARTTLS or SMTPS)\n- Monitor for unauthorized email sending attempts\n- Use dedicated email sending service with authentication (SMTP2GO)\n- Implement email rate limiting\n- Educate administrators about email spoofing risks",
+                  "modelType": "STRIDE",
+                  "id": "6b96f860-87ea-4fdf-b78f-f20a0ba452a7"
+                },
+                {
+                  "title": "Information Disclosure via Email Interception",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The smtp relay flow transmits emails over public network, though marked as encrypted. If TLS is not properly enforced or if there are downgrade attacks, email content could be intercepted in transit. Emails may contain sensitive information about system status, errors, or user activities that could aid attackers in reconnaissance.",
+                  "mitigation": "- Enforce TLS 1.2+ for all SMTP connections\n- Implement certificate validation for SMTP servers\n- Avoid including sensitive information in email bodies\n- Use secure email gateways with encryption\n- Monitor for TLS downgrade attempts\n- Implement email encryption (S/MIME or PGP) for sensitive content\n- Use secure channels for critical notifications",
+                  "modelType": "STRIDE",
+                  "id": "feffac7b-2f1f-45cf-89d9-56fcfab86a9f"
+                },
+                {
+                  "title": "Denial of Service via Email Flooding",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of Service",
+                  "description": "The smtp relay flow sends notifications to the administrator. If the application generates excessive emails due to errors, monitoring alerts, or malicious triggering, it could flood the administrator's inbox, causing important notifications to be missed or overwhelming the email service. This could also incur costs if using a paid email relay service.",
+                  "mitigation": "- Implement email rate limiting and throttling\n- Use email aggregation for multiple similar events\n- Configure alert thresholds to prevent notification storms\n- Implement email quotas and budget alerts\n- Use alternative notification channels for critical alerts (SMS, push)\n- Monitor email sending patterns for anomalies\n- Implement circuit breakers for email sending",
+                  "modelType": "STRIDE",
+                  "id": "0e6714c9-f4dd-4f6b-a49a-82ccc75dd577"
+                }
+              ]
+            },
+            "labels": [
+              "smtp relay"
+            ],
+            "id": "11d58293-4c19-43bb-a403-cbb50df4fa6c",
+            "source": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "5a744be2-31cf-458d-97f6-95d5949045ee",
+              "port": "2fa1020b-0705-4471-a4f4-0996741c2514"
+            },
+            "vertices": [
+              {
+                "x": 1070,
+                "y": 190
+              },
+              {
+                "x": 1210,
+                "y": 210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Response",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure via API Response Interception",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The API Response flow from SMTP2GO API to vMeNext App crosses trust boundaries over public network with HTTPS encryption. If TLS is compromised or if the application logs API responses excessively, sensitive information about email delivery status, API keys, or system configuration could be exposed. The flow enters the Hugging Face Trust Zone from external infrastructure.",
+                  "mitigation": "- Enforce TLS 1.2+ with strong cipher suites\n- Implement certificate pinning for API connections\n- Minimize logging of API response content\n- Sanitize logs to remove sensitive data\n- Use secure memory handling for API responses\n- Implement data loss prevention (DLP) controls\n- Monitor for unusual API response patterns",
+                  "modelType": "STRIDE",
+                  "id": "3b09c7fe-1230-4df0-a91c-8de1bad9e63c"
+                },
+                {
+                  "title": "Tampering with API Response to Cause False Status",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "The API Response flow delivers email delivery status from SMTP2GO API to vMeNext App. If an attacker performs a man-in-the-middle attack or compromises the API endpoint, they could modify responses to indicate successful delivery when emails failed, or vice versa. This could mask security incidents or cause operational confusion.",
+                  "mitigation": "- Implement response signature verification\n- Use mutual TLS (mTLS) for API authentication\n- Validate API response structure and content\n- Implement anomaly detection for unexpected responses\n- Use API response caching with integrity checks\n- Monitor for API response tampering indicators\n- Implement end-to-end encryption for critical data",
+                  "modelType": "STRIDE",
+                  "id": "0b2f3ea5-ee63-4cc3-9b2d-268a858fb466"
+                }
+              ]
+            },
+            "labels": [
+              "API Response"
+            ],
+            "id": "e0b16c9a-2b9e-4077-b569-58f423e90810",
+            "source": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 320
+              },
+              {
+                "x": 650,
+                "y": 370
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Spoofing via API Key Theft in Transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The API Request flow from vMeNext App to SMTP2GO API crosses trust boundaries over public network with HTTPS. The request includes API authentication credentials. If TLS is compromised or if the application inadvertently exposes the API key (in logs, error messages, or client-side code), an attacker could steal the key and impersonate the application to send unauthorized emails.",
+                  "mitigation": "- Store API keys in secure secret management systems\n- Never log or expose API keys in error messages\n- Implement API key rotation policies\n- Use environment variables with restricted access\n- Monitor API usage for anomalies and unauthorized access\n- Implement IP whitelisting for API access\n- Use short-lived tokens instead of long-lived API keys where possible",
+                  "modelType": "STRIDE",
+                  "id": "3f3ec891-c11d-4dd0-8f5c-fb5077b5620c"
+                },
+                {
+                  "title": "Tampering with API Request to Send Malicious Emails",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The API Request flow sends email instructions from vMeNext App to SMTP2GO API. If the application doesn't properly validate and sanitize email content before sending, an attacker could exploit input validation vulnerabilities to inject malicious content, phishing links, or spam into emails sent to administrators. This crosses from Hugging Face Trust Zone to external email infrastructure.",
+                  "mitigation": "- Implement strict input validation for all email fields (to, from, subject, body)\n- Sanitize email content to prevent injection attacks\n- Use email templates with parameterized content\n- Implement content security policies for emails\n- Monitor sent emails for suspicious patterns\n- Implement rate limiting and approval workflows for sensitive emails\n- Use email security scanning before sending",
+                  "modelType": "STRIDE",
+                  "id": "88d67922-56fd-40ac-abd7-768169083d2c"
+                },
+                {
+                  "title": "Information Disclosure via API Request Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The API Request flow contains email content and potentially sensitive information about system events or user activities. If the application or network infrastructure logs these requests excessively, sensitive information could be exposed through log files, monitoring systems, or compromised logging infrastructure.",
+                  "mitigation": "- Minimize logging of API request content\n- Sanitize logs to remove sensitive data (PII, credentials)\n- Encrypt logs at rest and in transit\n- Implement access controls for log files\n- Use secure logging infrastructure with audit trails\n- Implement log retention policies\n- Regularly review and audit logging practices",
+                  "modelType": "STRIDE",
+                  "id": "4fa7079b-c7cf-4ff5-8d9c-783867b0abd1"
+                }
+              ]
+            },
+            "labels": [
+              "API Request"
+            ],
+            "id": "9c9af698-336a-4a0d-976d-cbf522de037d",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "target": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "vertices": [
+              {
+                "x": 610,
+                "y": 330
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "SMTP2GO Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure via Admin Response Interception",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The Admin Response flow from vMe Next Dev to SMTP2GO API crosses trust boundaries over public network with HTTPS encryption. This flow contains SMTP2GO administration data that could reveal API configuration, usage statistics, or account details. If TLS is compromised or if the response is logged excessively, sensitive administrative information could be exposed.",
+                  "mitigation": "- Enforce TLS 1.2+ with strong cipher suites\n- Implement certificate pinning for administrative connections\n- Minimize logging of administrative response data\n- Use secure session management for admin interfaces\n- Implement multi-factor authentication for admin access\n- Monitor for unusual administrative activities\n- Use VPN or private networks for administrative access where possible",
+                  "modelType": "STRIDE",
+                  "id": "9b241424-8861-433d-a826-1816a28bf1b2"
+                }
+              ]
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "5c155f16-dee5-4964-ac60-10a39e695ab0",
+            "source": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+            },
+            "vertices": [
+              {
+                "x": 1060,
+                "y": 350
+              },
+              {
+                "x": 970,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "SMTP2GO Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Tampering with Admin Response to Manipulate Configuration",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Admin Response flow from SMTP2GO API to vMe Next Dev delivers administrative configuration and status information over public network. If an attacker performs a man-in-the-middle attack, they could modify the response to provide false configuration data, hide security issues, or manipulate administrative settings. This could lead to misconfiguration or security vulnerabilities.",
+                  "mitigation": "- Implement response signature verification\n- Use mutual TLS (mTLS) for administrative connections\n- Validate response integrity using checksums or digital signatures\n- Implement anomaly detection for unexpected administrative responses\n- Use out-of-band verification for critical configuration changes\n- Monitor for administrative response tampering indicators\n- Implement configuration version control and audit trails",
+                  "modelType": "STRIDE",
+                  "id": "582eac9b-e878-4928-afb8-286541229822"
+                }
+              ]
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "1e1def4e-cec9-4fd9-b55b-60f41cbfe9f2",
+            "source": {
+              "cell": "b2f3f215-de3e-44f2-9ddc-813193696179",
+              "port": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 990,
+                "y": 340
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Request",
+              "description": "OpenAI API Request",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Spoofing via Stolen OpenAI API Key",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The API Request flow from vMe Next Dev to OpenAI API crosses trust boundaries over public network with HTTPS. The request includes OpenAI API authentication credentials. If the API key is compromised through code exposure, logging, or developer workstation compromise, an attacker could impersonate the application to make unauthorized API calls, incurring costs or accessing sensitive AI capabilities.",
+                  "mitigation": "- Store API keys in secure secret management systems (e.g., environment variables, vault)\n- Never commit API keys to version control\n- Implement API key rotation policies\n- Monitor API usage for anomalies and unauthorized access\n- Implement usage quotas and budget alerts\n- Use IP whitelisting for API access where possible\n- Implement least privilege access for API keys",
+                  "modelType": "STRIDE",
+                  "id": "6bb7b609-6acd-462e-9bac-087e703fc984"
+                },
+                {
+                  "title": "Tampering with API Request for Prompt Injection",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The API Request flow sends prompts from vMe Next Dev to OpenAI API during development and testing. If the development environment is compromised or if input validation is insufficient, an attacker could inject malicious prompts to test vulnerabilities, extract training data, or manipulate the AI model's behavior. This could reveal security weaknesses before they're fixed in production.",
+                  "mitigation": "- Implement strict input validation and sanitization for all prompts\n- Use separate API keys for development and production\n- Implement prompt filtering and content moderation\n- Monitor API requests for suspicious patterns\n- Use OpenAI's moderation API to screen inputs\n- Implement rate limiting for development API calls\n- Regularly audit and review API usage logs",
+                  "modelType": "STRIDE",
+                  "id": "2b5cc41a-c855-4f9d-97cf-80fa1b2746f3"
+                },
+                {
+                  "title": "Information Disclosure via Development API Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The API Request flow from vMe Next Dev to OpenAI API may contain sensitive information during development, including test data, system prompts, or configuration details. If these requests are logged excessively or if the development environment is compromised, sensitive information about the application's AI implementation could be exposed.",
+                  "mitigation": "- Minimize logging of API request content in development\n- Use synthetic or anonymized data for testing\n- Sanitize logs to remove sensitive information\n- Implement access controls for development environments\n- Use separate development and production API keys\n- Encrypt development environment data at rest\n- Regularly audit development practices for security",
+                  "modelType": "STRIDE",
+                  "id": "2af5e0c8-4010-4d0a-b574-40cc11dba4b0"
+                }
+              ]
+            },
+            "labels": [
+              "API Request"
+            ],
+            "id": "af79274a-ed6e-4ac2-85d7-6eb6eaba6873",
+            "source": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 970,
+                "y": 360
+              },
+              {
+                "x": 840,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Request",
+              "description": "OpenAI API Request",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Spoofing via API Key Compromise in Production",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The API Request flow from vMeNext App to OpenAI API crosses trust boundaries over public network with HTTPS encryption. The request includes OpenAI API authentication credentials. If the API key is exposed through application vulnerabilities, Hugging Face Space compromise, or logging, an attacker could impersonate the application to make unauthorized API calls, causing financial damage and potential data exposure.",
+                  "mitigation": "- Store API keys in Hugging Face Secrets or secure secret management\n- Implement API key rotation policies\n- Monitor API usage for anomalies and set budget alerts\n- Use IP whitelisting for API access\n- Implement rate limiting and usage quotas\n- Never log or expose API keys in application code\n- Use environment variables with restricted access",
+                  "modelType": "STRIDE",
+                  "id": "0a957edc-f412-40bb-af22-0349c48174fb"
+                },
+                {
+                  "title": "Tampering with API Request for Malicious Prompts",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The API Request flow sends user prompts from vMeNext App to OpenAI API. If input validation is insufficient, an attacker could inject malicious prompts to manipulate the AI's responses, extract sensitive information from the model, perform prompt injection attacks, or cause the application to generate harmful content. The flow crosses from Hugging Face Trust Zone to external AI infrastructure.",
+                  "mitigation": "- Implement robust input validation and sanitization\n- Use OpenAI's moderation API to screen all inputs\n- Implement prompt filtering with blacklists and whitelists\n- Separate system prompts from user inputs with clear delimiters\n- Implement output filtering to prevent sensitive data leakage\n- Monitor for prompt injection patterns\n- Implement rate limiting per user/session\n- Regularly test for prompt injection vulnerabilities",
+                  "modelType": "STRIDE",
+                  "id": "88f1e482-ac64-4eaa-9c5a-72246f3c651c"
+                },
+                {
+                  "title": "Information Disclosure via API Request Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The API Request flow contains user prompts and potentially sensitive information. If the application logs these requests excessively or if Hugging Face Space logging is misconfigured, user conversations, personal information, or system prompts could be exposed through log files or monitoring systems.",
+                  "mitigation": "- Minimize logging of user prompts and API request content\n- Sanitize logs to remove PII and sensitive data\n- Encrypt logs at rest and in transit\n- Implement access controls for log files\n- Use secure logging infrastructure with audit trails\n- Implement log retention policies compliant with privacy regulations\n- Regularly audit logging practices",
+                  "modelType": "STRIDE",
+                  "id": "9e0f8abe-144d-409c-bf05-e21d7d6975e5"
+                },
+                {
+                  "title": "Denial of Service via API Rate Limit Exhaustion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of Service",
+                  "description": "The API Request flow to OpenAI API is subject to rate limits and usage quotas. An attacker could flood the application with requests to exhaust API quotas, causing legitimate users to be denied service. This could also result in significant financial costs due to excessive API usage.",
+                  "mitigation": "- Implement application-level rate limiting per user/IP\n- Set API usage quotas and budget alerts\n- Implement request queuing with timeout mechanisms\n- Use CAPTCHA or proof-of-work for suspicious traffic\n- Monitor API usage patterns and implement anomaly detection\n- Implement circuit breakers to prevent quota exhaustion\n- Use caching to reduce API calls where appropriate",
+                  "modelType": "STRIDE",
+                  "id": "38e8aee3-3304-480a-b4a1-ae3d8bfa36ca"
+                }
+              ]
+            },
+            "labels": [
+              "API Request"
+            ],
+            "id": "ee191532-26eb-46ab-8f53-a231031770d2",
+            "source": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "vertices": [
+              {
+                "x": 470,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Response",
+              "description": "OpenAI API Response",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure via API Response Interception",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The API Response flow from OpenAI API to vMeNext App delivers AI-generated responses over public network with HTTPS encryption. If TLS is compromised or if the application logs responses excessively, sensitive information from AI responses, user conversations, or system prompts could be exposed. The flow enters the Hugging Face Trust Zone from external AI infrastructure.",
+                  "mitigation": "- Enforce TLS 1.2+ with strong cipher suites\n- Implement certificate pinning for API connections\n- Minimize logging of API response content\n- Sanitize logs to remove sensitive data\n- Use secure memory handling for API responses\n- Implement data loss prevention (DLP) controls\n- Encrypt sensitive data in responses before storage",
+                  "modelType": "STRIDE",
+                  "id": "a38298c3-a6e6-459d-8821-719bf1469d11"
+                },
+                {
+                  "title": "Tampering with API Response to Inject Malicious Content",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The API Response flow delivers AI-generated content from OpenAI API to vMeNext App. If an attacker performs a man-in-the-middle attack or compromises the API endpoint, they could modify responses to inject malicious content, phishing links, misinformation, or XSS payloads that could be rendered in the user's browser through the chatbot interface.",
+                  "mitigation": "- Implement response signature verification\n- Use mutual TLS (mTLS) for API authentication\n- Validate and sanitize all API response content before rendering\n- Implement Content Security Policy (CSP) for chatbot interface\n- Use output encoding to prevent XSS\n- Implement anomaly detection for unexpected response patterns\n- Monitor for API response tampering indicators",
+                  "modelType": "STRIDE",
+                  "id": "d84632c4-ab40-4d6a-b63c-df9b210358e4"
+                }
+              ]
+            },
+            "labels": [
+              "API Response"
+            ],
+            "id": "3907fb6b-29ea-40c4-8adb-e65c19e18a6b",
+            "source": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 530,
+                "y": 320
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Deployment",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Deployment"
+            ],
+            "id": "959a40f3-6084-4d47-91d5-ecfe6fc1dbd4",
+            "source": {
+              "cell": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "a3772025-e95a-45e3-8240-aeda2e0d714b",
+            "source": {
+              "cell": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "3a230b53-a971-4020-b3bb-c12f2c7b1511",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Response",
+              "description": "Response from infosecotb.com website including vMeNext chatbot",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure via Unencrypted Response Content",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information Disclosure",
+                  "description": "The Response flow from infosecotb.com to Visitor delivers website content including the embedded vMeNext chatbot over HTTPS on public network. While HTTPS provides encryption, if TLS configuration is weak or if sensitive information is inadvertently included in responses (e.g., debug information, internal paths, API keys in client-side code), it could be exposed to visitors or attackers.",
+                  "mitigation": "- Enforce TLS 1.2+ with strong cipher suites\n- Implement HTTP Strict Transport Security (HSTS)\n- Remove debug information and verbose error messages from production\n- Sanitize responses to prevent information leakage\n- Use security headers (X-Content-Type-Options, X-Frame-Options)\n- Regularly scan for exposed sensitive information\n- Implement Content Security Policy (CSP)",
+                  "modelType": "STRIDE",
+                  "id": "25568ffb-ca7b-460a-bfff-4f00bf922c3b"
+                }
+              ]
+            },
+            "labels": [
+              "Response"
+            ],
+            "id": "2d926214-5383-4873-ae9a-5356670dfb7b",
+            "source": {
+              "cell": "d84483c8-cf39-48f2-9d9f-01ed56c5090f",
+              "port": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+            },
+            "target": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 430,
+                "y": 130
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Publishing and Managing",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed and secured by BlueHost",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Publishing and Managing"
+            ],
+            "id": "72e79515-6488-45b9-adbc-88d26fbf525e",
+            "source": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": [
+              {
+                "x": 710,
+                "y": 195
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request",
+              "description": "Request to infosecotb.com website including vMeNext chatbot",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Tampering with Request to Exploit WordPress Vulnerabilities",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Request flow from Visitor to infosecotb.com crosses trust boundaries over public network with HTTPS. Visitors can send malicious requests to exploit WordPress vulnerabilities, including SQL injection, XSS, CSRF, or plugin vulnerabilities. The flow enters the BlueHost Trust Zone from untrusted public internet.",
+                  "mitigation": "- Keep WordPress core, themes, and plugins updated\n- Implement Web Application Firewall (WAF) with WordPress-specific rules\n- Use security plugins (e.g., Wordfence, Sucuri)\n- Implement input validation and sanitization\n- Use parameterized queries to prevent SQL injection\n- Implement CSRF tokens for all forms\n- Use Content Security Policy (CSP) to prevent XSS\n- Regularly scan for vulnerabilities",
+                  "modelType": "STRIDE",
+                  "id": "a1090640-8e6d-467e-84b9-56a7ebd8e13e"
+                },
+                {
+                  "title": "Denial of Service via Request Flooding",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The Request flow from Visitor to infosecotb.com is publicly accessible. An attacker could launch DDoS attacks, send resource-intensive requests, or exploit WordPress vulnerabilities to exhaust server resources, making the website unavailable to legitimate users. This also impacts the embedded vMeNext chatbot.",
+                  "mitigation": "- Implement rate limiting and request throttling\n- Use CDN with DDoS protection (e.g., Cloudflare)\n- Implement Web Application Firewall (WAF)\n- Configure resource limits on hosting environment\n- Implement caching mechanisms\n- Monitor traffic patterns and implement anomaly detection\n- Use CAPTCHA for suspicious traffic\n- Implement IP-based blocking for malicious sources",
+                  "modelType": "STRIDE",
+                  "id": "f9a7f5d7-bf42-409b-818c-16e7176705b3"
+                },
+                {
+                  "title": "Spoofing via Session Hijacking",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "The Request flow from Visitor to infosecotb.com includes session cookies for authenticated users. If session management is weak or if cookies are not properly secured, an attacker could hijack user sessions through XSS, network sniffing, or session fixation attacks to impersonate legitimate users or administrators.",
+                  "mitigation": "- Use secure and HttpOnly flags for all cookies\n- Implement SameSite cookie attribute\n- Use strong session ID generation\n- Implement session timeout and renewal\n- Regenerate session IDs after authentication\n- Implement IP-based session validation\n- Use HTTPS for all pages (not just login)\n- Implement logout functionality that invalidates sessions",
+                  "modelType": "STRIDE",
+                  "id": "55f720e9-711e-4ca6-8e93-945b77527b63"
+                }
+              ]
+            },
+            "labels": [
+              "Request"
+            ],
+            "id": "8fea0c19-825b-4518-88b7-ecfe58699f98",
+            "source": {
+              "cell": "2a4730cc-32bd-441b-990f-e8dce3824540",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "d84483c8-cf39-48f2-9d9f-01ed56c5090f",
+              "port": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 100
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "Managed by BlueHost",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "3d9895fe-4deb-46c1-8603-d1063d2adb7a",
+            "source": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "b8254441-b790-4467-a2ec-b454127dc40e"
+            },
+            "target": {
+              "cell": "ce7df758-18fa-4056-9a74-6fd297f53fae",
+              "port": "d04e051b-1ceb-4119-8401-95c5bfb1c526"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Host",
+              "description": "",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed and secured by BlueHost",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Host"
+            ],
+            "id": "0041f62d-72ed-4e81-a793-11719d88bedd",
+            "source": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+            },
+            "target": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 870,
+                "y": 135
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "WordPress Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "833eea5f-37ed-4052-9a7a-bd02396ab8ea",
+            "source": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "vertices": [
+              {
+                "x": 1020,
+                "y": 270
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nRequest",
+              "description": "WordPress Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nRequest"
+            ],
+            "id": "05d7a0fc-e6e3-4861-9256-65eb74950018",
+            "source": {
+              "cell": "b3393147-7a96-44a8-ab8f-551695e082f5",
+              "port": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 980,
+                "y": 200
+              },
+              {
+                "x": 1060,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nRequest",
+              "description": "BlueHost Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nRequest"
+            ],
+            "id": "27257ac3-708e-4883-a8b6-2666149e4fb8",
+            "source": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "target": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 1091,
+                "y": 170
+              },
+              {
+                "x": 1030,
+                "y": 100
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin\nResponse",
+              "description": "BlueHost Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin\nResponse"
+            ],
+            "id": "e5410202-4068-4855-b8a4-24e727f5ee6c",
+            "source": {
+              "cell": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+            },
+            "vertices": [
+              {
+                "x": 1020,
+                "y": 150
+              },
+              {
+                "x": 1060,
+                "y": 210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin Response",
+              "description": "Hugging Face Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin Response"
+            ],
+            "id": "95cb454e-82d7-45d7-a184-654e5ccefad4",
+            "source": {
+              "cell": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 950,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin Request",
+              "description": "Hugging Face Administration",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": []
+            },
+            "labels": [
+              "Admin Request"
+            ],
+            "id": "ef61aabe-ab72-4794-9af3-1636c65848a3",
+            "source": {
+              "cell": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 920,
+                "y": 430
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Deployment Request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Spoofing via Compromised Deployment Credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The Deployment Request flow from Cursor IDE to Hugging Face API crosses trust boundaries over public network with HTTPS encryption. The request includes deployment authentication credentials. If these credentials are compromised through IDE vulnerabilities, developer workstation attacks, or credential theft, an attacker could impersonate the developer to deploy malicious code to production.",
+                  "mitigation": "- Use short-lived deployment tokens instead of long-lived credentials\n- Implement multi-factor authentication for deployment\n- Use hardware security keys for authentication\n- Store credentials in secure credential managers\n- Implement IP whitelisting for deployment access\n- Monitor deployment activities for anomalies\n- Use separate credentials per developer with audit trails\n- Implement credential rotation policies",
+                  "modelType": "STRIDE",
+                  "id": "936b9fe8-014a-4d49-ad5f-10bdc62ea74a"
+                },
+                {
+                  "title": "Tampering with Deployment Request to Deploy Malicious Code",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Deployment Request flow sends application code from Cursor IDE to Hugging Face API. If the developer's workstation is compromised or if the IDE has malicious extensions, an attacker could modify the deployment payload to inject backdoors, malware, or vulnerable code before it reaches production. The flow crosses from Dev/Admin Trust Zone to Hugging Face Trust Zone.",
+                  "mitigation": "- Implement code signing and verification\n- Use automated security scanning in deployment pipeline\n- Implement deployment approval workflows\n- Use version control with protected branches\n- Scan developer workstations for malware regularly\n- Use only trusted IDE extensions\n- Implement integrity checks for deployment packages\n- Use immutable infrastructure and infrastructure-as-code",
+                  "modelType": "STRIDE",
+                  "id": "c450ff76-f3dd-43db-99af-51c7cef8a6ba"
+                },
+                {
+                  "title": "Information Disclosure via Deployment Request Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The Deployment Request flow may contain sensitive information including source code, configuration files, API keys, or secrets. If the deployment process logs this information excessively or if logs are not properly secured, sensitive data could be exposed through log files, monitoring systems, or compromised infrastructure.",
+                  "mitigation": "- Minimize logging of deployment payload content\n- Use secret management systems instead of embedding secrets in code\n- Sanitize logs to remove sensitive data\n- Encrypt logs at rest and in transit\n- Implement access controls for deployment logs\n- Use .gitignore and secret scanning to prevent credential commits\n- Regularly audit deployment logs for exposed secrets",
+                  "modelType": "STRIDE",
+                  "id": "00615a50-a29a-4486-8b44-752a1da45a80"
+                }
+              ]
+            },
+            "labels": [
+              "Deployment Request"
+            ],
+            "id": "d9bc7cd7-3697-4bec-ba5b-0cc89e521ef8",
+            "source": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "target": {
+              "cell": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "vertices": [
+              {
+                "x": 990,
+                "y": 520
+              },
+              {
+                "x": 750,
+                "y": 500
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Deployment Response",
+              "description": "Hugging Face Space Application Deployment",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure via Deployment Response Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The Deployment Response flow from Hugging Face API to Cursor IDE delivers deployment status and potentially sensitive information about the production environment over public network with HTTPS. If this response is logged excessively or if the developer workstation is compromised, information about the production infrastructure, configuration, or vulnerabilities could be exposed.",
+                  "mitigation": "- Minimize logging of deployment response details\n- Sanitize logs to remove sensitive infrastructure information\n- Encrypt logs on developer workstations\n- Implement access controls for deployment logs\n- Use secure workstation configurations with full disk encryption\n- Monitor for unusual deployment activities\n- Implement data loss prevention (DLP) on developer machines",
+                  "modelType": "STRIDE",
+                  "id": "9b25091c-7c85-450d-adcc-4cfa5b2c1771"
+                },
+                {
+                  "title": "Tampering with Deployment Response to Hide Failures",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "The Deployment Response flow provides feedback about deployment success or failure. If an attacker performs a man-in-the-middle attack or compromises the communication channel, they could modify responses to indicate successful deployment when it actually failed, or vice versa. This could mask security issues or cause operational confusion.",
+                  "mitigation": "- Implement response signature verification\n- Use mutual TLS (mTLS) for deployment API connections\n- Validate deployment status through independent verification\n- Implement anomaly detection for unexpected responses\n- Monitor production environment independently of deployment responses\n- Use out-of-band verification for critical deployments\n- Implement deployment health checks and rollback mechanisms",
+                  "modelType": "STRIDE",
+                  "id": "3d4bcc6d-2ee0-4cb6-8af5-5913561531ef"
+                }
+              ]
+            },
+            "labels": [
+              "Deployment Response"
+            ],
+            "id": "556da3ad-2090-4ef9-a67f-dd2e319edc5a",
+            "source": {
+              "cell": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "55ed45c6-a0ef-46f3-8ee0-382787a41679",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 750,
+                "y": 550
+              },
+              {
+                "x": 1010,
+                "y": 570
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "API Response",
+              "description": "OpenAI API Response",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "https",
+              "threats": [
+                {
+                  "title": "Information Disclosure via API Response Interception in Development",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The API Response flow from OpenAI API to vMe Next Dev delivers AI-generated responses during development over public network with HTTPS. If the developer workstation is compromised or if responses are logged excessively, sensitive information about the AI implementation, test prompts, or system behavior could be exposed.",
+                  "mitigation": "- Use secure workstation configurations with endpoint protection\n- Minimize logging of API responses in development\n- Use synthetic or anonymized data for testing\n- Encrypt development environment data at rest\n- Implement access controls for development logs\n- Use separate API keys for development and production\n- Regularly audit development practices for security",
+                  "modelType": "STRIDE",
+                  "id": "27f92d4f-77fe-416f-81af-fa9923ce1e3d"
+                }
+              ]
+            },
+            "labels": [
+              "API Response"
+            ],
+            "id": "3b432fc9-af0c-488d-be1a-1415c6337b38",
+            "source": {
+              "cell": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+              "port": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+            },
+            "target": {
+              "cell": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+              "port": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+            },
+            "vertices": [
+              {
+                "x": 770,
+                "y": 330
+              },
+              {
+                "x": 950,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 660,
+              "y": 54.99999999999996
+            },
+            "size": {
+              "width": 120,
+              "height": 50
+            },
+            "attrs": {
+              "text": {
+                "text": "MySQL\nDB"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": "4 3"
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 17,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "9b56c074-8160-4dee-a694-d767df0737ab"
+                },
+                {
+                  "group": "right",
+                  "id": "d04e051b-1ceb-4119-8401-95c5bfb1c526"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c0f67acb-b84f-4873-8b7c-ac30469c54b8"
+                },
+                {
+                  "group": "left",
+                  "id": "4951fd97-ef81-4024-af07-c90272a9c5f2"
+                }
+              ]
+            },
+            "id": "ce7df758-18fa-4056-9a74-6fd297f53fae",
+            "data": {
+              "type": "tm.Store",
+              "name": "MySQL\nDB",
+              "description": "MySQL Database used for WordPress website",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "Managed by BlueHost",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 1201,
+              "y": 290
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Admin"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 18,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2fa1020b-0705-4471-a4f4-0996741c2514"
+                },
+                {
+                  "group": "right",
+                  "id": "e3861672-bf26-4de9-8a9c-affbc07fec34"
+                },
+                {
+                  "group": "bottom",
+                  "id": "1d69b97d-af66-46d3-821e-1825c3e02cf3"
+                },
+                {
+                  "group": "left",
+                  "id": "ecd0e5ff-daff-407d-a765-ba0c08dd498a"
+                }
+              ]
+            },
+            "id": "5a744be2-31cf-458d-97f6-95d5949045ee",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Admin",
+              "description": "System Administrator",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 1091,
+              "y": 400
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "vMe Next\nDev"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 21,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "a492b1f4-6b79-4787-80ff-3da3059ca30a",
+            "data": {
+              "type": "tm.Process",
+              "name": "vMe Next\nDev",
+              "description": "Gradio ChatBot Python Application Development",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Development Code to Inject Vulnerabilities",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The vMe Next Dev process is used for developing the vMeNext application in the Dev/Admin Trust Zone. If the development environment is compromised through malware, malicious IDE extensions, or supply chain attacks, an attacker could inject vulnerabilities, backdoors, or malicious code that would be deployed to production. The process has access to deployment credentials and production APIs.",
+                  "mitigation": "- Use secure development workstations with endpoint protection\n- Implement code review processes before deployment\n- Use static and dynamic code analysis tools\n- Scan for vulnerabilities in dependencies\n- Use only trusted IDE extensions and tools\n- Implement version control with protected branches\n- Use separate development and production environments\n- Implement CI/CD pipeline with automated security testing",
+                  "modelType": "STRIDE",
+                  "id": "32cbab9d-0bac-4ba7-9cc5-d111d9d9a501"
+                },
+                {
+                  "title": "Elevation of Privilege via Stolen Development Credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The vMe Next Dev process has access to sensitive credentials including OpenAI API keys, SMTP2GO API keys, and Hugging Face deployment credentials. If the development environment is compromised through phishing, malware, or insider threats, an attacker could steal these credentials to gain unauthorized access to production systems, APIs, or deploy malicious code.",
+                  "mitigation": "- Use secure credential management systems (e.g., password managers, vaults)\n- Implement multi-factor authentication for all accounts\n- Use hardware security keys for authentication\n- Implement principle of least privilege for credentials\n- Use separate credentials for development and production\n- Implement credential rotation policies\n- Monitor for unusual credential usage\n- Use endpoint detection and response (EDR) on development machines",
+                  "modelType": "STRIDE",
+                  "id": "afaeb0af-9148-49f7-b5fe-be4f5def6aac"
+                },
+                {
+                  "title": "Information Disclosure via Development Environment Exposure",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The vMe Next Dev process handles sensitive information including source code, API keys, test data, and system architecture. If the development workstation is compromised, lost, or stolen, or if data is inadvertently exposed through cloud synchronization or backup services, sensitive information could be disclosed to unauthorized parties.",
+                  "mitigation": "- Use full disk encryption on development workstations\n- Implement data loss prevention (DLP) tools\n- Use secure cloud storage with encryption\n- Implement access controls for development resources\n- Regularly audit data handling practices\n- Use secure backup solutions with encryption\n- Implement remote wipe capabilities for lost devices\n- Avoid storing sensitive data in cloud-synced folders",
+                  "modelType": "STRIDE",
+                  "id": "3a694358-83c6-4ddc-8d49-8370da30b643"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 1091,
+              "y": 280
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Browser"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 22,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "1f5d61b6-7611-4af0-9197-499d7f81ef26",
+            "data": {
+              "type": "tm.Process",
+              "name": "Browser",
+              "description": "Browser used by System Administrator",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Spoofing via Browser Session Hijacking",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The Browser process is used by the Admin to access WordPress, BlueHost, and Hugging Face administration interfaces in the Dev/Admin Trust Zone. If browser sessions are hijacked through XSS, malicious extensions, or network attacks, an attacker could impersonate the administrator to gain unauthorized access to all managed systems. The browser handles multiple administrative sessions simultaneously.",
+                  "mitigation": "- Use browser with strong security features and keep it updated\n- Implement multi-factor authentication for all admin interfaces\n- Use separate browser profiles for administrative tasks\n- Disable or carefully vet browser extensions\n- Clear cookies and sessions after administrative tasks\n- Use VPN or secure networks for administrative access\n- Implement session timeout policies\n- Monitor for unusual administrative activities",
+                  "modelType": "STRIDE",
+                  "id": "b9b9ef39-bc59-41a3-93ee-1737c523df12"
+                },
+                {
+                  "title": "Tampering with Browser to Inject Malicious Scripts",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Browser process renders administrative interfaces and handles sensitive operations. If the browser is compromised through malicious extensions, man-in-the-browser attacks, or malware, an attacker could inject malicious scripts to modify administrative actions, steal credentials, or manipulate system configurations across WordPress, BlueHost, and Hugging Face platforms.",
+                  "mitigation": "- Use browser with strong security features and sandbox\n- Keep browser and extensions updated\n- Use only trusted extensions from official stores\n- Implement Content Security Policy (CSP) on admin interfaces\n- Use browser isolation or virtual machines for high-risk tasks\n- Implement endpoint protection on administrator workstations\n- Regularly scan for malware and malicious extensions\n- Use separate browsers for administrative and general use",
+                  "modelType": "STRIDE",
+                  "id": "ffc9406e-12f0-415f-a091-c29ce8d758dd"
+                },
+                {
+                  "title": "Information Disclosure via Browser Cache and History",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The Browser process caches administrative pages, stores credentials in password managers, and maintains browsing history. If the administrator workstation is compromised or if browser data is not properly secured, sensitive information including credentials, session tokens, and administrative data could be exposed to unauthorized parties.",
+                  "mitigation": "- Use private/incognito mode for administrative tasks\n- Clear browser cache and history regularly\n- Use secure password managers with encryption\n- Implement full disk encryption on administrator workstations\n- Use browser with strong privacy features\n- Disable browser sync for administrative profiles\n- Implement data loss prevention (DLP) tools\n- Use remote wipe capabilities for lost devices",
+                  "modelType": "STRIDE",
+                  "id": "1bfce3a6-79b2-433a-89fd-a17c44159aaa"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 576.9999999999999,
+              "y": 240
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "OpenAI\nAPI"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 23,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "8bf44871-55fd-4b2d-b1c7-57ffe3bb36c4",
+            "data": {
+              "type": "tm.Actor",
+              "name": "OpenAI\nAPI",
+              "description": "Artificial Intelligence API secured with a key",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": true,
+              "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
+              "x": 820,
+              "y": 240
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "SMTP2GO\nAPI"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 24,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "b2f3f215-de3e-44f2-9ddc-813193696179",
+            "data": {
+              "type": "tm.Actor",
+              "name": "SMTP2GO\nAPI",
+              "description": "E-mail relay hosted system API secured with key",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": true,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 547.5,
+              "y": 400
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Hugging Face\nHost Admin"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 25,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "9df300c7-3ced-4e40-9ac7-a38c20155fea",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Hugging Face\nHost Admin",
+              "description": "Hugging Face Hosting Administrator Control Panel",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": true,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 547.5,
+              "y": 490
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Hugging Face\nAPI"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 26,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "bc9ed546-7ba3-4be8-bde1-1d27d82a30ba",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Hugging Face\nAPI",
+              "description": "Hugging Face Deployment API",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": true,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 867.5,
+              "y": 49.99999999999996
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "BlueHost"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 27,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "871df700-f5a6-4a26-b64b-c72b1f4aa50f"
+                },
+                {
+                  "group": "right",
+                  "id": "dacf734a-97d0-469d-8e5f-79c01401fb2d"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cfe2993a-9417-4564-b508-06d6f04bc1e1"
+                },
+                {
+                  "group": "left",
+                  "id": "b8254441-b790-4467-a2ec-b454127dc40e"
+                }
+              ]
+            },
+            "id": "4d2814b1-98c6-41ad-8693-6e695fdbd2f8",
+            "data": {
+              "type": "tm.Actor",
+              "name": "BlueHost",
+              "description": "Administrator access to BlueHost",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": true,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 800,
+              "y": 150.00000000000034
+            },
+            "size": {
+              "width": 90,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "WrodPress"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 28,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "490eb4cf-826b-410a-b8c9-3f6aebdb1c27"
+                },
+                {
+                  "group": "right",
+                  "id": "179ca26b-67c4-4d37-9fad-bf2010ac3676"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a67f5dfb-e3e4-4169-8056-a6647f86ffe7"
+                },
+                {
+                  "group": "left",
+                  "id": "a238dd92-6ac9-4d65-ab73-085c4c755a67"
+                }
+              ]
+            },
+            "id": "b3393147-7a96-44a8-ab8f-551695e082f5",
+            "data": {
+              "type": "tm.Process",
+              "name": "WrodPress",
+              "description": "WordPress Content Management System",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Spoofing via WordPress Authentication Bypass",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The WordPress process manages authentication for the infosecotb.com website in the BlueHost Trust Zone. If authentication mechanisms are weak or vulnerable (e.g., weak passwords, lack of MFA, vulnerable plugins), an attacker could bypass authentication to gain unauthorized administrative access. The process is accessible from public network and handles admin requests from the Browser.",
+                  "mitigation": "- Enforce strong password policies with complexity requirements\n- Implement multi-factor authentication (MFA) for all admin accounts\n- Use security plugins to monitor and block brute force attacks\n- Implement account lockout policies\n- Use CAPTCHA for login forms\n- Limit login attempts and implement progressive delays\n- Monitor for suspicious login activities\n- Use IP whitelisting for admin access where possible",
+                  "modelType": "STRIDE",
+                  "id": "e96b3dc1-b43c-4b11-89dc-3e35f4b9e17a"
+                },
+                {
+                  "title": "Tampering with WordPress Database via SQL Injection",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The WordPress process interacts with MySQL database for content management. If input validation is insufficient or if vulnerable plugins are used, an attacker could exploit SQL injection vulnerabilities to modify database content, steal data, or gain unauthorized access. The process handles public requests and has direct database access.",
+                  "mitigation": "- Use parameterized queries and prepared statements\n- Keep WordPress core and plugins updated\n- Implement input validation and sanitization\n- Use Web Application Firewall (WAF) with SQL injection rules\n- Implement database user with minimal privileges\n- Use security plugins to scan for vulnerabilities\n- Regularly audit database queries in custom code\n- Implement database activity monitoring",
+                  "modelType": "STRIDE",
+                  "id": "1e5d3dd4-62d4-472b-b6f3-73afdb12f8b8"
+                },
+                {
+                  "title": "Information Disclosure via WordPress Information Leakage",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "The WordPress process may expose sensitive information through error messages, debug logs, version information, or directory listings. If not properly configured, attackers could gather reconnaissance information about the system, installed plugins, file structure, or vulnerabilities to plan targeted attacks. The process is publicly accessible.",
+                  "mitigation": "- Disable debug mode in production\n- Remove version information from headers and meta tags\n- Disable directory listing on web server\n- Implement custom error pages without detailed information\n- Remove readme.html and other default files\n- Use security headers to prevent information leakage\n- Regularly scan for exposed sensitive files\n- Implement proper file permissions",
+                  "modelType": "STRIDE",
+                  "id": "1a428259-1800-46cb-82c5-cf5d3bcac467"
+                },
+                {
+                  "title": "Elevation of Privilege via WordPress Plugin Vulnerabilities",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The WordPress process uses various plugins for functionality. Vulnerable plugins could allow attackers to escalate privileges from unauthenticated user to administrator, execute arbitrary code, or gain unauthorized access to the hosting environment. The process has access to the MySQL database and file system in the BlueHost Trust Zone.",
+                  "mitigation": "- Keep all plugins updated to latest versions\n- Only install plugins from trusted sources\n- Regularly audit installed plugins and remove unused ones\n- Use security plugins to scan for vulnerabilities\n- Implement principle of least privilege for WordPress user roles\n- Monitor WordPress security advisories\n- Use virtual patching through WAF for zero-day vulnerabilities\n- Implement file integrity monitoring",
+                  "modelType": "STRIDE",
+                  "id": "2f61b5a6-480d-483b-9ce7-930dcc42ddbc"
+                },
+                {
+                  "title": "Repudiation via Insufficient WordPress Audit Logging",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The WordPress process handles administrative actions, content changes, and user activities. If audit logging is insufficient or logs are not properly secured, malicious actors could deny performing harmful actions. Without comprehensive logs, it becomes difficult to investigate security incidents, attribute actions to specific users, or maintain compliance.",
+                  "mitigation": "- Install WordPress activity logging plugins (e.g., WP Activity Log)\n- Log all administrative actions, content changes, and login attempts\n- Store logs in centralized, tamper-proof logging system\n- Implement log retention policies\n- Enable real-time alerting for critical actions\n- Ensure logs include timestamps, user identifiers, IP addresses\n- Regularly review logs for suspicious activities\n- Implement log integrity verification",
+                  "modelType": "STRIDE",
+                  "id": "165e19f5-147b-447c-b7d1-d36490cbc652"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "diagramTop": 3,
+    "reviewer": "Piotr Kowalczyk",
+    "threatTop": 1
+  }
+}

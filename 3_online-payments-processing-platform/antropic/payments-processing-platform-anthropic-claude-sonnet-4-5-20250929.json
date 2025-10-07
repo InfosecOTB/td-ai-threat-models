@@ -1,0 +1,2008 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Online Payments Processing Platform",
+    "owner": "A development team",
+    "description": "This threat model has been provided by the OWASP Threat Model Cookbook:\nthreat-model-cookbook/Flow Diagram/payment",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "development engineers"
+      },
+      {
+        "name": "product managers"
+      },
+      {
+        "name": "security architects"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Payment",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.5.0",
+        "cells": [
+          {
+            "position": {
+              "x": 360,
+              "y": 325.0000000000001
+            },
+            "size": {
+              "width": 310,
+              "height": 200
+            },
+            "attrs": {
+              "label": {
+                "text": "Customer /\nInternet"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "347f80ba-5755-47a5-9a1b-295fe75552b2",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Customer /\nInternet",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 20,
+              "y": 620.0000000000045
+            },
+            "size": {
+              "width": 220,
+              "height": 210
+            },
+            "attrs": {
+              "label": {
+                "text": "Merchant / Web"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "d50ff0be-15cd-4ddb-80b3-37e06d71fcf2",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "name": "Merchant / Web"
+            }
+          },
+          {
+            "position": {
+              "x": 670,
+              "y": 680.0000000000048
+            },
+            "size": {
+              "width": 380,
+              "height": 410
+            },
+            "attrs": {
+              "label": {
+                "text": "Stripe /\nWeb"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "4991548a-366e-4c45-87fc-487056f4379d",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Stripe /\nWeb",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 190,
+              "y": 10
+            },
+            "size": {
+              "width": 190,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Demo threat model for an online Payments Processing Platform\nprovided by the OWASP Threat Model Cookbook:\nthreat-model-cookbook/Flow Diagram/payment"
+              }
+            },
+            "visible": true,
+            "shape": "td-text-block",
+            "zIndex": 1,
+            "id": "f3ba6ded-7614-456e-b6b8-76d9f227e9de",
+            "data": {
+              "type": "tm.Text",
+              "name": "Demo threat model for an online Payments Processing Platform\nprovided by the OWASP Threat Model Cookbook:\nthreat-model-cookbook/Flow Diagram/payment",
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 450,
+              "y": 120
+            },
+            "size": {
+              "width": 130,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Customer"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "d4f8b5d0-9d31-4bed-b945-a7e952eebf11"
+                },
+                {
+                  "group": "right",
+                  "id": "b0aaf075-ddb0-44c1-ae3c-8291734212c0"
+                },
+                {
+                  "group": "bottom",
+                  "id": "5e2a440a-ee9d-47d6-a90a-69f9d6a2dada"
+                },
+                {
+                  "group": "left",
+                  "id": "c24543e9-80ee-4b6c-90b7-ef373b64b581"
+                }
+              ]
+            },
+            "id": "a10e3c57-dad4-4914-b702-a43d9bf13956",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Customer",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": false,
+              "threats": [
+                {
+                  "title": "Spoofing of Customer Identity",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The Customer actor initiates authentication flows with the Merchant Web Server. Without strong authentication mechanisms, an attacker could impersonate a legitimate customer to gain unauthorized access to accounts and perform fraudulent transactions. This actor resides outside all trust boundaries and connects across the public internet to the Customer Client within the Customer/Internet zone.",
+                  "mitigation": "- Implement multi-factor authentication (MFA) for all customer logins\n- Use OAuth 2.0 with PKCE for secure authentication flows\n- Enforce strong password policies and account lockout mechanisms\n- Implement device fingerprinting and behavioral analytics",
+                  "modelType": "STRIDE",
+                  "id": "ff091050-ae9b-425d-819f-76a0d4acf943"
+                },
+                {
+                  "title": "Repudiation of Payment Actions",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The Customer actor performs payment operations through multiple flows (steps 1, 2, 7). Without proper logging and non-repudiation controls, customers could deny initiating payment transactions, leading to disputes and potential fraud. The customer interacts across trust boundaries from an external position to internal payment processing systems.",
+                  "mitigation": "- Implement comprehensive audit logging for all customer actions with timestamps and IP addresses\n- Use digital signatures for payment confirmations\n- Store transaction receipts with cryptographic proofs\n- Implement session recording for critical payment flows\n- Maintain immutable audit trails in a separate logging system",
+                  "modelType": "STRIDE",
+                  "id": "c9d4d6c9-c5a9-46ef-8cb6-e6b36d1bbf4a"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 450,
+              "y": 375.0000000000001
+            },
+            "size": {
+              "width": 140,
+              "height": 130
+            },
+            "attrs": {
+              "text": {
+                "text": "Customer Client"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 3,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "74889663-70bf-4946-a4a2-833c19a536b5"
+                },
+                {
+                  "group": "right",
+                  "id": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+                },
+                {
+                  "group": "bottom",
+                  "id": "4a561378-4f29-458f-b347-982d3b288912"
+                },
+                {
+                  "group": "left",
+                  "id": "65b37177-809a-438d-844d-ab14c573e744"
+                }
+              ]
+            },
+            "id": "313655e5-4832-4424-b13c-7a3618543737",
+            "data": {
+              "type": "tm.Process",
+              "name": "Customer Client",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Tampering with Payment Intent Data",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Customer Client process handles sensitive payment data including order amounts and payment intents (flows 3, 6, 8). If this client-side process is compromised or manipulated, attackers could tamper with payment amounts, currency values, or payment confirmation data before submission to backend systems. This process resides within the Customer/Internet boundary and communicates with both Merchant and Stripe systems across trust boundaries.",
+                  "mitigation": "- Implement client-side integrity checks and code signing\n- Use Content Security Policy (CSP) headers to prevent XSS attacks\n- Validate all payment data server-side and never trust client-supplied amounts\n- Implement subresource integrity (SRI) for all external JavaScript libraries\n- Use anti-tampering and obfuscation techniques for client code",
+                  "modelType": "STRIDE",
+                  "id": "b9bedca0-9e79-43ce-8858-250dca853232"
+                },
+                {
+                  "title": "Information Disclosure of Payment Credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "The Customer Client receives and handles sensitive card details from the customer (flow 7) and communicates with Stripe API (flow 8). This data flows through a client-side process in the Customer/Internet zone. If the client is compromised through XSS, malware, or man-in-the-browser attacks, card details and payment tokens could be intercepted and exfiltrated.",
+                  "mitigation": "- Use Stripe Elements or hosted payment forms to avoid handling raw card data in client code\n- Implement strong CSP to prevent unauthorized script execution\n- Ensure all communications use TLS 1.3 with certificate pinning\n- Use PCI DSS compliant tokenization for card data\n- Implement runtime application self-protection (RASP) mechanisms",
+                  "modelType": "STRIDE",
+                  "id": "56494110-5d0c-48c2-bc0b-b70b33ba206a"
+                },
+                {
+                  "title": "Denial of Service Against Customer Client",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The Customer Client process in the Customer/Internet zone handles multiple critical flows (1, 2, 3, 6, 7, 8, 11). An attacker could overwhelm this client-side process with malicious requests, resource exhaustion attacks, or exploit client-side vulnerabilities to crash the application, preventing legitimate customers from completing payments.",
+                  "mitigation": "- Implement client-side rate limiting and request throttling\n- Use service workers for resilient client-side operations\n- Implement graceful degradation and error handling\n- Use CDN with DDoS protection for client asset delivery\n- Implement client-side request queuing and retry logic with exponential backoff",
+                  "modelType": "STRIDE",
+                  "id": "84dd6127-f362-4f07-9aad-6e32d8305d2d"
+                },
+                {
+                  "title": "Elevation of Privilege via Client Manipulation",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The Customer Client operates within the Customer/Internet boundary with limited privileges. If an attacker can manipulate client-side code or exploit vulnerabilities, they could attempt to elevate privileges by modifying API requests, bypassing client-side authorization checks, or manipulating session tokens to access unauthorized payment operations or other customer accounts.",
+                  "mitigation": "- Implement robust server-side authorization checks for all operations\n- Never rely on client-side security controls for access decisions\n- Use short-lived, signed JWT tokens with proper claims validation\n- Implement principle of least privilege for API access\n- Use Content Security Policy and Subresource Integrity\n- Monitor for anomalous API usage patterns",
+                  "modelType": "STRIDE",
+                  "id": "90f0be9f-2743-4417-a2de-6b9aa6a7022e"
+                }
+              ]
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(1) Customer logs into\nthe merchant site",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(1) Customer logs into\nthe merchant site",
+              "description": "OAuth",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": [
+                {
+                  "title": "Spoofing of Authentication Endpoint",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Flow (1) 'Customer logs into the merchant site' uses OAuth over HTTPS from the Customer actor to the Customer Client. This flow crosses from outside all boundaries into the Customer/Internet zone. An attacker could create a phishing site spoofing the merchant's login page to capture customer credentials. Without proper endpoint verification, customers may be tricked into authenticating with a malicious service.",
+                  "mitigation": "- Implement Extended Validation (EV) SSL certificates with visible indicators\n- Use HSTS (HTTP Strict Transport Security) with preloading\n- Implement certificate pinning for critical authentication endpoints\n- Educate users about verifying domain names and SSL indicators\n- Use OAuth with proper redirect URI validation\n- Implement anti-phishing measures like password managers that verify domains",
+                  "modelType": "STRIDE",
+                  "id": "95acd636-7ed3-4faa-bdec-7ae63183ac04"
+                },
+                {
+                  "title": "Information Disclosure via Credential Interception",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Flow (1) carries OAuth authentication credentials over HTTPS from the external Customer actor to the Customer Client. Despite HTTPS protocol, if TLS is misconfigured, uses weak ciphers, or is subject to man-in-the-middle attacks, credentials could be intercepted. This is an ingress flow crossing into a more trusted zone from an untrusted external position.",
+                  "mitigation": "- Enforce TLS 1.3 with strong cipher suites only\n- Implement certificate transparency monitoring\n- Use mutual TLS (mTLS) for enhanced authentication\n- Implement certificate pinning to prevent MITM attacks\n- Monitor for SSL/TLS downgrade attacks\n- Use OAuth 2.0 with PKCE to protect authorization codes",
+                  "modelType": "STRIDE",
+                  "id": "18cef3d1-9623-4fa5-b31b-83907509cd48"
+                }
+              ]
+            },
+            "id": "bd50f8ec-ce5d-477d-84e9-f50d1ebe4bc4",
+            "source": {
+              "cell": "a10e3c57-dad4-4914-b702-a43d9bf13956",
+              "port": "c24543e9-80ee-4b6c-90b7-ef373b64b581"
+            },
+            "target": {
+              "cell": "313655e5-4832-4424-b13c-7a3618543737",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "vertices": [
+              {
+                "x": 250,
+                "y": 210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(2) Customer proceeds to payment page\nto make a purchase",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(2) Customer proceeds to payment page\nto make a purchase",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": [
+                {
+                  "title": "Tampering with Order Request Data",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (2) 'Customer proceeds to payment page to make a purchase' carries order information over HTTPS from the Customer actor to the Customer Client. An attacker with MITM capabilities or client-side access could tamper with the order details, product selections, quantities, or pricing information before the purchase is processed. This flow enters the Customer/Internet boundary from an external untrusted source.",
+                  "mitigation": "- Implement end-to-end encryption for order data\n- Use digital signatures to verify order integrity\n- Validate all order data server-side against product catalog\n- Implement session binding to prevent session hijacking\n- Use HMAC or similar mechanisms to protect order parameters\n- Log all order modifications with timestamps and user context",
+                  "modelType": "STRIDE",
+                  "id": "5a7d0e73-a970-4c6f-b7f4-98c8eaf96bf8"
+                },
+                {
+                  "title": "Information Disclosure of Shopping Cart Data",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Flow (2) transfers customer shopping cart and purchase intent data from the external Customer actor to the Customer Client over HTTPS. If SSL/TLS is compromised or traffic is intercepted, sensitive shopping behavior, product preferences, and personal information could be exposed. This represents an ingress flow crossing into the application zone.",
+                  "mitigation": "- Enforce TLS 1.3 with perfect forward secrecy\n- Implement certificate pinning for the payment domain\n- Use encrypted cookies for session management\n- Implement Content Security Policy to prevent data exfiltration\n- Monitor for unusual traffic patterns or SSL anomalies\n- Minimize PII in transit; use tokenization where possible",
+                  "modelType": "STRIDE",
+                  "id": "003bc891-dd76-4d3d-9728-75ffbd7d2860"
+                }
+              ]
+            },
+            "id": "bed188fc-babc-4061-a122-dd2270adf37d",
+            "source": {
+              "cell": "a10e3c57-dad4-4914-b702-a43d9bf13956",
+              "port": "5e2a440a-ee9d-47d6-a90a-69f9d6a2dada"
+            },
+            "target": {
+              "cell": "313655e5-4832-4424-b13c-7a3618543737",
+              "port": "74889663-70bf-4946-a4a2-833c19a536b5"
+            },
+            "vertices": [
+              {
+                "x": 490,
+                "y": 230
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(7) Customer provides card details\nand finalizes payment",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(7) Customer provides card details\nand finalizes payment",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Card Details in Transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Flow (7) 'Customer provides card details and finalizes payment' transmits highly sensitive payment card information from the external Customer actor directly to the Customer Client within the Customer/Internet zone. While the protocol should be HTTPS, the flow metadata shows an empty protocol field, raising concerns. Any interception or logging of this data would expose full card details including PAN, CVV, and expiry dates.",
+                  "mitigation": "- Mandate TLS 1.3 with strong cipher suites for this flow\n- Implement certificate pinning to prevent MITM attacks\n- Use Stripe Elements or hosted payment forms to avoid handling raw card data\n- Ensure PCI DSS SAQ A-EP or SAQ A compliance\n- Never log or store card details client-side\n- Implement client-side encryption before transmission\n- Use tokenization immediately upon card data entry",
+                  "modelType": "STRIDE",
+                  "id": "6b92751e-eac5-49ed-9f59-8f19c8ab5300"
+                },
+                {
+                  "title": "Tampering with Payment Card Data",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (7) carries payment card information from the external Customer to the Customer Client. An attacker with client-side access or MITM capabilities could tamper with card details, potentially substituting their own card information for fraudulent purposes or corrupting the data to cause payment failures and service disruption. This is a critical ingress flow of highly sensitive financial data.",
+                  "mitigation": "- Use Stripe hosted payment forms to minimize client-side card handling\n- Implement strong client-side input validation and sanitization\n- Use Content Security Policy to prevent script injection\n- Implement integrity checks using HMAC or digital signatures\n- Validate card data format and checksum (Luhn algorithm) immediately\n- Use secure, tamper-resistant payment input components\n- Implement fraud detection for unusual card data patterns",
+                  "modelType": "STRIDE",
+                  "id": "4a109cf3-c02e-46e2-ba8c-acf490b90271"
+                },
+                {
+                  "title": "Repudiation of Payment Card Submission",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Flow (7) represents the customer submitting card details for payment. Without proper audit logging and non-repudiation controls, customers could claim they never provided card information or authorized the payment, leading to chargebacks and disputes. This flow crosses from an external untrusted actor into the payment processing chain.",
+                  "mitigation": "- Log all payment submission events with timestamps, IP addresses, and device fingerprints\n- Implement 3D Secure authentication for additional proof of cardholder authorization\n- Use digital receipts sent via email immediately upon submission\n- Store payment confirmation acknowledgments with cryptographic signatures\n- Implement session recording for payment flows (without capturing sensitive data)\n- Use strong customer authentication (SCA) as required by PSD2",
+                  "modelType": "STRIDE",
+                  "id": "24faf2e8-0e3a-46ab-8be1-abd4eceb1687"
+                }
+              ]
+            },
+            "id": "f01e4de9-a79b-460d-84dc-9e929e14946d",
+            "source": {
+              "cell": "a10e3c57-dad4-4914-b702-a43d9bf13956",
+              "port": "b0aaf075-ddb0-44c1-ae3c-8291734212c0"
+            },
+            "target": {
+              "cell": "313655e5-4832-4424-b13c-7a3618543737",
+              "port": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 200
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(3) Customer Client sends order intent\nincluding order amount\n(6) Return PaymentIntent to\nthe Customer Client",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(3) Customer Client sends order intent\nincluding order amount\n(6) Return PaymentIntent to\nthe Customer Client",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Order Amount During Transit",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Bidirectional flow (3, 6) 'Customer Client sends order intent including order amount / Return PaymentIntent to the Customer Client' crosses from the Customer/Internet zone to the Merchant/Web zone. The flow carries critical payment amount data. An attacker with MITM capabilities could intercept and modify the order amount, currency, or PaymentIntent parameters in either direction, potentially causing financial fraud or incorrect charges.",
+                  "mitigation": "- Implement mutual TLS (mTLS) authentication between Customer Client and Merchant Web Server\n- Use message-level encryption with HMAC for order data integrity\n- Sign all payment intents with server-side keys\n- Validate order amounts against product catalog server-side\n- Implement rate limiting and anomaly detection for unusual amounts\n- Use request/response correlation IDs to detect replay attacks\n- Never trust client-supplied amounts; always recalculate server-side",
+                  "modelType": "STRIDE",
+                  "id": "ef0e320a-58c3-4ac0-ab96-69482aa502dc"
+                },
+                {
+                  "title": "Information Disclosure of PaymentIntent Tokens",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Bidirectional flow (3, 6) transmits PaymentIntent objects containing sensitive payment session information between the Customer Client in the Customer/Internet zone and Merchant Web Server in the Merchant/Web zone across trust boundaries. If intercepted, these tokens could be used to gain insights into payment sessions, amounts, and potentially replay or manipulate payments.",
+                  "mitigation": "- Enforce TLS 1.3 end-to-end with perfect forward secrecy\n- Use short-lived, single-use PaymentIntent tokens\n- Implement token binding to prevent token theft and reuse\n- Encrypt sensitive payload fields within the PaymentIntent\n- Bind PaymentIntents to specific client sessions and IP addresses\n- Implement comprehensive logging and monitoring for PaymentIntent usage\n- Use mutual authentication to verify both endpoints",
+                  "modelType": "STRIDE",
+                  "id": "5ad360f6-b66f-4bc2-a57a-7f585458a334"
+                },
+                {
+                  "title": "Spoofing of Merchant Web Server",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Flow (3, 6) represents communication between Customer Client and Merchant Web Server across different trust zones. An attacker could spoof the Merchant Web Server endpoint, intercepting PaymentIntent requests from the Customer Client and returning malicious or fraudulent PaymentIntent objects to capture payment information or redirect funds.",
+                  "mitigation": "- Implement certificate pinning for the merchant domain\n- Use Extended Validation (EV) SSL certificates\n- Implement DNS Security Extensions (DNSSEC)\n- Use mutual TLS authentication\n- Implement strict Transport Security (HSTS) with preloading\n- Verify server certificates against certificate transparency logs\n- Use OAuth or API keys for additional endpoint verification",
+                  "modelType": "STRIDE",
+                  "id": "d7359fff-9aab-4ae0-beb2-1a1beedcab96"
+                }
+              ]
+            },
+            "id": "48fa6630-5cd9-40e8-8f64-4cd134682065",
+            "source": {
+              "cell": "313655e5-4832-4424-b13c-7a3618543737",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "target": {
+              "cell": "9a109a12-5616-4a78-b268-96e2cf68e9b3",
+              "port": "74889663-70bf-4946-a4a2-833c19a536b5"
+            },
+            "vertices": [
+              {
+                "x": 210,
+                "y": 510
+              },
+              {
+                "x": 140,
+                "y": 550
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(9) Attempt payment",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(9) Attempt payment",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Payment Request to Stripe",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (9) 'Attempt payment' transmits the actual payment charge request from Stripe API service to Stripe Payment Service within the Stripe/Web zone. While this is internal to Stripe's infrastructure, if an attacker compromised the API service layer or the communication channel between services, they could tamper with payment amounts, payment methods, or destination accounts before the payment is processed.",
+                  "mitigation": "- Use mutual TLS authentication between Stripe internal services\n- Implement message-level encryption and HMAC for payment requests\n- Use service mesh with end-to-end encryption for microservices communication\n- Implement cryptographic signing of payment requests\n- Use request correlation and integrity checks\n- Monitor for anomalous payment patterns or amounts\n- Implement service-to-service authentication using certificates or tokens\n- Use immutable infrastructure and regular integrity checks",
+                  "modelType": "STRIDE",
+                  "id": "c8c6e4bd-34f4-4439-aede-b10dbe57a249"
+                },
+                {
+                  "title": "Information Disclosure of Payment Processing Data",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Flow (9) carries complete payment details including card information, amounts, and merchant identifiers from Stripe API service to Stripe Payment Service. Even within the Stripe/Web trust zone, if network segmentation is inadequate or logging is excessive, sensitive payment data could be exposed to unauthorized internal systems or through compromised internal services.",
+                  "mitigation": "- Implement network segmentation and microsegmentation within Stripe infrastructure\n- Use encrypted communication channels for all inter-service communication\n- Implement data classification and handling procedures\n- Minimize logging of sensitive payment data; use tokenization\n- Implement strict access controls for internal services\n- Use data loss prevention (DLP) tools to monitor for data exfiltration\n- Encrypt payment data at rest and in transit internally\n- Implement least privilege access for service accounts",
+                  "modelType": "STRIDE",
+                  "id": "688a7c9d-46a5-4dca-b73d-e86af1b82e65"
+                }
+              ]
+            },
+            "id": "6e2c1f8e-4f6f-44a7-9303-549d9329dbb6",
+            "source": {
+              "cell": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "target": {
+              "cell": "91a72b16-b05b-463a-b0c6-62fa2dd0f72b",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "vertices": [
+              {
+                "x": 740,
+                "y": 900
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(10) Payment Response",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(10) Payment Response",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Payment Response Data",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (10) 'Payment Response' returns the payment result from Stripe Payment Service to Stripe API service within the Stripe/Web zone. If this internal communication is compromised, an attacker could tamper with payment status, converting failed payments to successful or vice versa, leading to financial discrepancies, unauthorized access to goods/services, or fraudulent chargebacks.",
+                  "mitigation": "- Use mutual TLS authentication for internal service communication\n- Implement cryptographic signing of payment responses\n- Use message authentication codes (MAC) for response integrity\n- Implement response validation and reconciliation checks\n- Use immutable audit logging for all payment status changes\n- Implement anomaly detection for inconsistent payment outcomes\n- Use service mesh with end-to-end encryption\n- Implement correlation IDs to track request-response pairs",
+                  "modelType": "STRIDE",
+                  "id": "3eaf493d-50e7-47ce-8a11-bb9c589ce6c5"
+                },
+                {
+                  "title": "Spoofing of Payment Service Response",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Flow (10) represents the payment result being returned from Stripe Payment Service to Stripe API service. An attacker who has compromised the internal network or a service could spoof the Payment Service, returning fraudulent success responses for failed payments or failed responses for successful payments, causing financial fraud or service disruption.",
+                  "mitigation": "- Implement strong service-to-service authentication using mutual TLS\n- Use service identity verification with certificates\n- Implement response signature verification\n- Use service mesh with identity-based routing and authentication\n- Implement health checks and service validation\n- Monitor for rogue services or unexpected endpoints\n- Use certificate pinning for internal service communication\n- Implement zero-trust network architecture with service verification",
+                  "modelType": "STRIDE",
+                  "id": "f01d06f2-eac1-4256-853e-df51c03423b3"
+                }
+              ]
+            },
+            "id": "9e576812-499d-407c-bf1e-114505d4bd77",
+            "source": {
+              "cell": "91a72b16-b05b-463a-b0c6-62fa2dd0f72b",
+              "port": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+            },
+            "target": {
+              "cell": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+              "port": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+            },
+            "vertices": [
+              {
+                "x": 920,
+                "y": 880
+              },
+              {
+                "x": 920,
+                "y": 850
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(11) Return the PaymentIntent\nwith status",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(11) Return the PaymentIntent\nwith status",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Information Disclosure of Payment Status",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Flow (11) 'Return the PaymentIntent with status' transmits payment outcome information from Stripe API service in the Stripe/Web zone back to Customer Client in the Customer/Internet zone, crossing trust boundaries. This response includes payment status, which could reveal information about card validity, account balances, or fraud detection results. If intercepted, this information could be used for reconnaissance or social engineering attacks.",
+                  "mitigation": "- Enforce TLS 1.3 with perfect forward secrecy for all responses\n- Implement certificate pinning for Stripe API communications\n- Minimize information in error messages; use generic failure messages\n- Implement rate limiting on payment attempts to prevent enumeration\n- Use standardized, non-revealing error codes\n- Implement monitoring for unusual patterns of failed payment attempts\n- Don't reveal specific reasons for payment decline in client responses\n- Use secure session management to protect status information",
+                  "modelType": "STRIDE",
+                  "id": "bb40a303-0ad8-4456-a3d2-f406789e93ed"
+                },
+                {
+                  "title": "Repudiation of Payment Attempt",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Flow (11) returns the payment result to the Customer Client. Without proper logging and audit trails on both client and server sides, customers could dispute whether they attempted a payment, whether it was successful, or claim they never received confirmation of payment status, leading to disputes and chargebacks. This crosses from the Stripe/Web zone back to the Customer/Internet zone.",
+                  "mitigation": "- Implement comprehensive logging of all payment status responses with timestamps\n- Send immediate email receipts for all payment attempts (success and failure)\n- Store payment confirmation logs in immutable audit storage\n- Use Stripe's webhook events as secondary verification of payment status\n- Implement non-repudiation through cryptographic receipts\n- Use digital signatures for payment confirmation messages\n- Implement session recording (without capturing sensitive data) for payment flows\n- Maintain correlation between payment attempts and confirmations",
+                  "modelType": "STRIDE",
+                  "id": "677ec397-adcd-41c2-87a3-517bbe197af3"
+                }
+              ]
+            },
+            "id": "93d0c80f-02f1-4260-b498-e99d2cd200a9",
+            "source": {
+              "cell": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+              "port": "74889663-70bf-4946-a4a2-833c19a536b5"
+            },
+            "target": {
+              "cell": "313655e5-4832-4424-b13c-7a3618543737",
+              "port": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+            },
+            "vertices": [
+              {
+                "x": 840,
+                "y": 510
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(8) Customer Client send Stripe\ne.ConfirmCardPayment()",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(8) Customer Client send Stripe\ne.ConfirmCardPayment()",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Payment Confirmation Request",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (8) 'Customer Client send Stripe e.ConfirmCardPayment()' transmits the final payment confirmation from Customer Client in the Customer/Internet zone to Stripe API service in the Stripe/Web zone, crossing trust boundaries. An attacker with MITM capabilities could tamper with the payment confirmation parameters, payment method details, or amounts before reaching Stripe, potentially causing failed payments, incorrect charges, or fraud.",
+                  "mitigation": "- Enforce TLS 1.3 with certificate pinning for all Stripe API communications\n- Use Stripe's official SDKs which implement integrity checks\n- Implement client-side signature generation for payment confirmation requests\n- Validate payment parameters server-side before client confirmation\n- Use PaymentIntent IDs that are bound to specific sessions and amounts\n- Implement request replay protection with nonces or timestamps\n- Monitor for unusual payment confirmation patterns",
+                  "modelType": "STRIDE",
+                  "id": "1b07e900-0173-4732-b196-37ae0bf5bb93"
+                },
+                {
+                  "title": "Information Disclosure of Payment Method Details",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Flow (8) carries sensitive payment method information and card details from the Customer Client to Stripe API service across trust boundaries. If TLS is compromised or the client-side is attacked with keyloggers or memory scraping malware, payment method details could be intercepted and stolen. This is a critical egress flow of sensitive data from the customer zone to an external payment processor zone.",
+                  "mitigation": "- Use Stripe Elements which isolate card input in secure iframes\n- Implement certificate pinning to prevent MITM attacks\n- Use tokenization to avoid transmitting raw card data\n- Ensure TLS 1.3 with strong cipher suites\n- Implement client-side encryption before transmission\n- Use Stripe's Payment Request API which handles sensitive data securely\n- Never log or cache payment method details client-side\n- Implement memory protection against scraping attacks",
+                  "modelType": "STRIDE",
+                  "id": "9f67accf-b6e8-42c1-a88d-4970926002dc"
+                },
+                {
+                  "title": "Spoofing of Stripe API Endpoint",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Flow (8) connects from Customer Client to Stripe API service across trust boundaries. An attacker could spoof the Stripe API endpoint through DNS poisoning, compromised hosts file, or MITM attacks, capturing payment confirmations and card details submitted by customers. The Customer Client needs to verify it's communicating with the legitimate Stripe service.",
+                  "mitigation": "- Implement certificate pinning for api.stripe.com\n- Use Stripe's official SDKs which have built-in endpoint verification\n- Implement DNS Security Extensions (DNSSEC)\n- Validate SSL certificates against certificate transparency logs\n- Use HSTS with preload for Stripe domains\n- Implement public key pinning (HPKP) backup\n- Monitor for DNS resolution anomalies\n- Use explicit domain allowlisting in Content Security Policy",
+                  "modelType": "STRIDE",
+                  "id": "a81ec2e8-e206-4117-97d4-0f241c7146aa"
+                }
+              ]
+            },
+            "id": "2ccf113d-6dfb-4dca-9f2c-1fcfa321decf",
+            "source": {
+              "cell": "313655e5-4832-4424-b13c-7a3618543737",
+              "port": "4a561378-4f29-458f-b347-982d3b288912"
+            },
+            "target": {
+              "cell": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 560
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(5) Return PaymentIntent\nto the Merchant",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(5) Return PaymentIntent\nto the Merchant",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with PaymentIntent During Return",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (5) 'Return PaymentIntent to the Merchant' transmits the newly created PaymentIntent from Stripe API service in the Stripe/Web zone to Merchant Web Server in the Merchant/Web zone, crossing trust boundaries. An attacker with MITM capabilities or network access could tamper with the PaymentIntent object, modifying the amount, currency, client secret, or other parameters before it reaches the merchant server, causing payment processing errors or fraud.",
+                  "mitigation": "- Enforce mutual TLS authentication between Stripe and Merchant servers\n- Use certificate pinning for Stripe API communications\n- Implement cryptographic signatures for PaymentIntent objects\n- Validate PaymentIntent amounts and parameters immediately upon receipt\n- Compare returned PaymentIntent against original request parameters server-side\n- Use HMAC to verify integrity of PaymentIntent data\n- Implement correlation IDs to track request-response pairs\n- Monitor for PaymentIntent parameter mismatches",
+                  "modelType": "STRIDE",
+                  "id": "5e227a30-62eb-42af-9a5d-17e3a0d23aae"
+                },
+                {
+                  "title": "Information Disclosure of PaymentIntent Client Secret",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Flow (5) returns PaymentIntent objects containing client secrets that will be used to complete payments. These secrets are sensitive tokens that, if intercepted during transmission from Stripe API to Merchant Web Server across trust zones, could be used by attackers to complete payments fraudulently or gain unauthorized access to payment sessions.",
+                  "mitigation": "- Enforce TLS 1.3 for all Stripe API communications\n- Implement certificate pinning for api.stripe.com\n- Never log PaymentIntent client secrets\n- Use short-lived client secrets with Stripe's default expiration\n- Implement secure session storage for client secrets server-side\n- Transmit client secrets to Customer Client over secure channels only\n- Implement monitoring for unusual client secret usage patterns\n- Use IP allowlisting for Stripe API access where feasible",
+                  "modelType": "STRIDE",
+                  "id": "7b794f6c-1b8c-4290-a5f1-142d17acc22a"
+                }
+              ]
+            },
+            "id": "3c3b4416-5b07-4b94-b73d-52f38137d29b",
+            "source": {
+              "cell": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "target": {
+              "cell": "9a109a12-5616-4a78-b268-96e2cf68e9b3",
+              "port": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+            },
+            "vertices": [
+              {
+                "x": 400,
+                "y": 830
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "(4) Merchant sends order information\ninc amount and currency",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "args": {
+                    "keepGradient": true,
+                    "ensureLegibility": true
+                  }
+                }
+              }
+            ],
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "(4) Merchant sends order information\ninc amount and currency",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "title": "Tampering with Order Amount Before Stripe Processing",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Flow (4) 'Merchant sends order information inc amount and currency' transmits payment details from Merchant Web Server in the Merchant/Web zone to Stripe API service in the Stripe/Web zone, crossing trust boundaries. An attacker with access to the merchant server or network could tamper with order amounts, currency, or other parameters before the PaymentIntent is created at Stripe, resulting in incorrect charges or financial fraud.",
+                  "mitigation": "- Implement order amount validation against product catalog before sending to Stripe\n- Use cryptographic signatures for order data sent to Stripe\n- Implement request signing using HMAC with shared secrets\n- Enforce mutual TLS authentication for merchant-to-Stripe communication\n- Implement audit logging for all order amounts sent to Stripe\n- Use idempotency keys to prevent duplicate or tampered requests\n- Implement real-time monitoring for unusual amount patterns\n- Validate currency codes against ISO 4217 standards",
+                  "modelType": "STRIDE",
+                  "id": "ea7c4599-4ca1-45c6-84e3-220e0bf92f45"
+                },
+                {
+                  "title": "Information Disclosure of Order Details",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Flow (4) carries order information including amounts, currency, product details, and potentially customer identifiers from the Merchant Web Server to Stripe API service across trust boundaries. If this communication is intercepted through compromised TLS or network attacks, sensitive business information and customer order details could be exposed, leading to competitive intelligence loss or privacy violations.",
+                  "mitigation": "- Enforce TLS 1.3 with strong cipher suites for all Stripe API calls\n- Implement certificate pinning for api.stripe.com\n- Minimize PII in order metadata sent to Stripe\n- Use tokenization or pseudonymization for customer identifiers\n- Encrypt sensitive order metadata at application layer before transmission\n- Implement data classification and handling procedures\n- Monitor for unusual API access patterns\n- Use Stripe's metadata field encryption where appropriate",
+                  "modelType": "STRIDE",
+                  "id": "160ae8f3-7325-4bff-a494-832419db754c"
+                },
+                {
+                  "title": "Spoofing of Stripe API Endpoint by Merchant",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Flow (4) connects from Merchant Web Server to Stripe API service across trust zones. An attacker who has compromised the merchant server or DNS could redirect this flow to a spoofed Stripe endpoint, capturing order information, payment amounts, and API keys. The merchant needs assurance it's communicating with the legitimate Stripe service.",
+                  "mitigation": "- Implement certificate pinning for api.stripe.com in merchant application\n- Use Stripe's official server-side SDKs which have built-in endpoint verification\n- Implement DNS Security Extensions (DNSSEC)\n- Validate SSL certificates against certificate transparency logs\n- Use explicit domain allowlisting in application configuration\n- Implement monitoring for unexpected SSL certificate changes\n- Use IP allowlisting to restrict outbound connections to known Stripe endpoints\n- Implement public key pinning for Stripe certificates",
+                  "modelType": "STRIDE",
+                  "id": "0f72ff49-08f0-4ce2-a7e9-196d1a891aa6"
+                }
+              ]
+            },
+            "id": "bf0e4da4-150b-4f1a-b59d-3e82c7b03e91",
+            "source": {
+              "cell": "9a109a12-5616-4a78-b268-96e2cf68e9b3",
+              "port": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+            },
+            "target": {
+              "cell": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+              "port": "65b37177-809a-438d-844d-ab14c573e744"
+            },
+            "vertices": [
+              {
+                "x": 330,
+                "y": 690
+              },
+              {
+                "x": 560,
+                "y": 730
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 65,
+              "y": 670.0000000000048
+            },
+            "size": {
+              "width": 130,
+              "height": 130
+            },
+            "attrs": {
+              "text": {
+                "text": "Merchant\nWeb Server"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 11,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "74889663-70bf-4946-a4a2-833c19a536b5"
+                },
+                {
+                  "group": "right",
+                  "id": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+                },
+                {
+                  "group": "bottom",
+                  "id": "4a561378-4f29-458f-b347-982d3b288912"
+                },
+                {
+                  "group": "left",
+                  "id": "65b37177-809a-438d-844d-ab14c573e744"
+                }
+              ]
+            },
+            "id": "9a109a12-5616-4a78-b268-96e2cf68e9b3",
+            "data": {
+              "type": "tm.Process",
+              "name": "Merchant\nWeb Server",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Elevation of Privilege via API Exploitation",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The Merchant Web Server process in the Merchant/Web zone handles authentication, order processing, and payment orchestration (flows 3, 4, 5, 6). If an attacker exploits vulnerabilities in the web server or APIs, they could elevate privileges to access administrative functions, manipulate orders, or access other customers' payment data. This process acts as a gateway between the Customer/Internet zone and the Stripe/Web zone.",
+                  "mitigation": "- Implement role-based access control (RBAC) with principle of least privilege\n- Use separate service accounts with minimal permissions for each function\n- Implement API authentication using OAuth 2.0 with proper scope validation\n- Conduct regular security code reviews and penetration testing\n- Use Web Application Firewall (WAF) with OWASP Top 10 protection\n- Implement runtime application self-protection (RASP)\n- Enforce strong session management with short timeouts",
+                  "modelType": "STRIDE",
+                  "id": "fced0510-1ab1-484c-8ed0-628835bf3fb5"
+                },
+                {
+                  "title": "Tampering with Order Data at Server",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Merchant Web Server receives order intents from Customer Client (flow 3) and sends order information to Stripe API (flow 4). If the server is compromised or has vulnerabilities, attackers could tamper with order amounts, product details, or payment parameters before forwarding to Stripe, resulting in incorrect charges or fraudulent transactions. This process sits at a critical trust boundary junction between customer-facing and payment processing zones.",
+                  "mitigation": "- Implement database-level integrity constraints and triggers\n- Use immutable audit logs for all order modifications\n- Implement digital signatures for order data\n- Use stored procedures with parameterized queries to prevent SQL injection\n- Implement file integrity monitoring (FIM) for application code\n- Use hardware security modules (HSM) for cryptographic operations\n- Implement real-time monitoring and alerting for order anomalies",
+                  "modelType": "STRIDE",
+                  "id": "86c8abfe-0b50-441a-97c6-75c6a9cc84e1"
+                },
+                {
+                  "title": "Denial of Service Against Merchant Web Server",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of Service",
+                  "description": "The Merchant Web Server is a critical component handling multiple flows (3, 4, 5, 6) and serving as the intermediary between customers and payment processing. An attacker could launch DDoS attacks, resource exhaustion attacks, or exploit application-level vulnerabilities to overwhelm the server, preventing legitimate customers from making purchases and disrupting business operations.",
+                  "mitigation": "- Implement rate limiting per IP address and per user session\n- Deploy Web Application Firewall (WAF) with DDoS protection\n- Use CDN services with DDoS mitigation capabilities\n- Implement connection throttling and request queuing\n- Use auto-scaling infrastructure to handle traffic spikes\n- Implement circuit breakers for downstream service calls\n- Monitor for unusual traffic patterns and implement automated blocking\n- Use CAPTCHA for suspected bot traffic",
+                  "modelType": "STRIDE",
+                  "id": "b354480f-e712-4f32-870f-590156d4180b"
+                },
+                {
+                  "title": "Repudiation of Merchant Actions",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The Merchant Web Server performs critical operations including order processing, PaymentIntent creation with Stripe, and transaction management. Without comprehensive audit logging, merchant administrators or compromised accounts could perform fraudulent actions (price modifications, unauthorized refunds) and deny responsibility, leading to financial losses and compliance issues.",
+                  "mitigation": "- Implement comprehensive audit logging for all merchant actions with timestamps, user IDs, and IP addresses\n- Use write-once, append-only logging to prevent log tampering\n- Store logs in a separate, secured logging infrastructure\n- Implement log aggregation and SIEM integration\n- Use digital signatures for critical transaction logs\n- Implement role-based logging to track administrative actions\n- Regularly review and analyze audit logs for suspicious patterns",
+                  "modelType": "STRIDE",
+                  "id": "65f707d9-66de-4e46-a1af-c593788730a5"
+                },
+                {
+                  "title": "Information Disclosure via Server Vulnerabilities",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "The Merchant Web Server stores or processes sensitive customer information, order details, and payment session data. If the server has vulnerabilities (e.g., SQL injection, path traversal, insecure direct object references), attackers could extract sensitive information including customer PII, order history, payment tokens, and API keys. This server bridges multiple trust zones and has access to data from both customer and payment processor zones.",
+                  "mitigation": "- Implement secure coding practices following OWASP guidelines\n- Use parameterized queries and ORM frameworks to prevent SQL injection\n- Implement proper input validation and output encoding\n- Use encryption at rest for sensitive data storage\n- Implement proper access controls and authentication for all APIs\n- Conduct regular vulnerability scanning and penetration testing\n- Implement Data Loss Prevention (DLP) controls\n- Use secrets management solutions for API keys and credentials",
+                  "modelType": "STRIDE",
+                  "id": "e8f8a22c-c8ef-461e-bc78-2846c00e5b2d"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 780,
+              "y": 720.0000000000045
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "Stripe API service"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 12,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "74889663-70bf-4946-a4a2-833c19a536b5"
+                },
+                {
+                  "group": "right",
+                  "id": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+                },
+                {
+                  "group": "bottom",
+                  "id": "4a561378-4f29-458f-b347-982d3b288912"
+                },
+                {
+                  "group": "left",
+                  "id": "65b37177-809a-438d-844d-ab14c573e744"
+                }
+              ]
+            },
+            "id": "43b2bb57-8d50-479f-abf3-c9addd9aa295",
+            "data": {
+              "type": "tm.Process",
+              "name": "Stripe API service",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Elevation of Privilege via API Key Compromise",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of Privilege",
+                  "description": "The Stripe API service process in the Stripe/Web zone handles PaymentIntent creation, payment confirmations, and payment processing (flows 2, 3, 4, 5, 8, 9, 11). This service requires API keys for authentication. If these keys are compromised through exposure in client-side code, logs, or repository leaks, attackers could gain elevated access to perform unauthorized payment operations, refunds, or access customer payment data.",
+                  "mitigation": "- Store API keys securely using secrets management services (e.g., AWS Secrets Manager, HashiCorp Vault)\n- Use separate publishable and secret keys with appropriate scope restrictions\n- Implement API key rotation policies\n- Never expose secret keys in client-side code or repositories\n- Use environment variables for key storage, not hardcoded values\n- Implement IP allowlisting for API access where possible\n- Monitor API usage for unusual patterns indicating compromised keys\n- Use webhook signature verification to validate Stripe callbacks",
+                  "modelType": "STRIDE",
+                  "id": "d6280607-372c-470e-8bbf-1576cdd1fd27"
+                },
+                {
+                  "title": "Denial of Service via API Rate Limit Exhaustion",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "The Stripe API service handles multiple critical flows (2, 3, 4, 5, 8, 9, 11) and is subject to rate limits. An attacker could intentionally exhaust API rate limits by generating excessive PaymentIntent creation requests or payment confirmations, preventing legitimate transactions from completing and disrupting business operations. This service is at the boundary of the Stripe/Web zone and critical for payment processing.",
+                  "mitigation": "- Implement client-side rate limiting before calling Stripe APIs\n- Use request queuing and retry logic with exponential backoff\n- Implement CAPTCHA for user-initiated payment flows to prevent bot attacks\n- Monitor API usage and implement alerting for approaching rate limits\n- Use Stripe's idempotency keys to prevent duplicate requests\n- Implement request deduplication at application layer\n- Consider upgrading to higher Stripe API rate limits for high-volume scenarios\n- Implement circuit breakers to fail fast when rate limits are hit",
+                  "modelType": "STRIDE",
+                  "id": "4ef4f835-6763-429a-8224-82fe262de6a8"
+                },
+                {
+                  "title": "Tampering with PaymentIntent Objects",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Stripe API service creates and returns PaymentIntent objects (flows 4, 5, 6) that contain payment amount, currency, and status information. If an attacker intercepts these objects in transit or compromises the merchant server, they could tamper with PaymentIntent parameters before they're used for payment confirmation, potentially causing incorrect charges or payment failures. This service sits at a critical trust boundary in the Stripe/Web zone.",
+                  "mitigation": "- Validate PaymentIntent amounts server-side before and after creation\n- Use HMAC or digital signatures to protect PaymentIntent integrity\n- Implement server-side validation that amounts haven't changed between creation and confirmation\n- Use TLS 1.3 for all communications with Stripe\n- Store PaymentIntent IDs and amounts in secure server-side session storage\n- Implement monitoring for PaymentIntent amount mismatches\n- Use Stripe's built-in security features like payment method verification",
+                  "modelType": "STRIDE",
+                  "id": "bf9d5a45-8307-470e-9403-7fb466d75b19"
+                },
+                {
+                  "title": "Information Disclosure via API Response Interception",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "The Stripe API service returns PaymentIntent objects and payment responses (flows 5, 10, 11) containing sensitive information including payment status, amounts, payment method details, and customer identifiers. If API responses are intercepted through MITM attacks or logged insecurely, sensitive payment information could be exposed. This service communicates across trust boundaries back to both merchant and customer zones.",
+                  "mitigation": "- Enforce TLS 1.3 for all Stripe API communications\n- Implement certificate pinning for api.stripe.com\n- Never log full API responses containing sensitive data\n- Redact sensitive fields before logging (payment methods, amounts)\n- Use Stripe's restricted API keys with minimal required permissions\n- Implement secure response handling that clears sensitive data from memory\n- Use ephemeral storage for PaymentIntent objects\n- Implement Content Security Policy to prevent response exfiltration",
+                  "modelType": "STRIDE",
+                  "id": "da1cf831-8ede-4904-8120-39211052b4df"
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 770,
+              "y": 920
+            },
+            "size": {
+              "width": 130,
+              "height": 130
+            },
+            "attrs": {
+              "text": {
+                "text": "Stripe\nPayment Service"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 13,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "74889663-70bf-4946-a4a2-833c19a536b5"
+                },
+                {
+                  "group": "right",
+                  "id": "72e4da2f-9e3f-4c12-91ba-c33c542f492f"
+                },
+                {
+                  "group": "bottom",
+                  "id": "4a561378-4f29-458f-b347-982d3b288912"
+                },
+                {
+                  "group": "left",
+                  "id": "65b37177-809a-438d-844d-ab14c573e744"
+                }
+              ]
+            },
+            "id": "91a72b16-b05b-463a-b0c6-62fa2dd0f72b",
+            "data": {
+              "type": "tm.Process",
+              "name": "Stripe\nPayment Service",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "title": "Denial of Service Against Payment Processing",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of Service",
+                  "description": "The Stripe Payment Service process in the Stripe/Web zone is responsible for executing actual payment charges (flows 9, 10). An attacker who gains access to internal Stripe systems or exploits vulnerabilities could overload this service with fraudulent payment requests, resource exhaustion attacks, or exploit processing bottlenecks, preventing legitimate payments from completing and causing widespread business disruption for all Stripe merchants.",
+                  "mitigation": "- Implement rate limiting and throttling at the payment service layer\n- Use message queuing with backpressure mechanisms\n- Implement circuit breakers to prevent cascade failures\n- Use auto-scaling infrastructure for payment processing capacity\n- Implement payment request prioritization based on merchant tier\n- Use distributed processing and load balancing\n- Implement anomaly detection for unusual payment volumes\n- Use resource quotas and isolation between merchant payment streams",
+                  "modelType": "STRIDE",
+                  "id": "664568c9-3639-4655-8a40-080c59097454"
+                },
+                {
+                  "title": "Tampering with Payment Authorization",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "The Stripe Payment Service executes the final payment charge and communicates with card networks and banks. If this service is compromised or has vulnerabilities, attackers could tamper with authorization requests, settlement amounts, or merchant identifiers, causing incorrect charges, fund misdirection, or payment fraud. This is the most critical component in the payment processing chain within the Stripe/Web zone.",
+                  "mitigation": "- Implement cryptographic signing of all payment authorization requests\n- Use hardware security modules (HSM) for sensitive cryptographic operations\n- Implement dual authorization for high-value transactions\n- Use immutable audit logging for all payment authorizations\n- Implement real-time fraud detection and authorization\n- Use tokenization for card data to minimize sensitive data exposure\n- Implement strict access controls and separation of duties\n- Use secure enclaves or trusted execution environments for payment processing",
+                  "modelType": "STRIDE",
+                  "id": "9c449786-5533-41f6-83f7-f15d0157e299"
+                },
+                {
+                  "title": "Information Disclosure of Payment Network Credentials",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "The Stripe Payment Service maintains credentials and connections to payment networks, acquiring banks, and card schemes. If this service is compromised or credentials are exposed through misconfiguration, logs, or memory dumps, attackers could gain access to payment network connections, enabling large-scale fraud, unauthorized transaction processing, or access to sensitive financial data across many merchants.",
+                  "mitigation": "- Store payment network credentials in hardware security modules (HSM)\n- Use secrets management with automatic rotation\n- Implement strict access controls for credential access\n- Use separate credentials for each payment network with minimal permissions\n- Implement comprehensive audit logging for credential usage\n- Use encrypted memory and secure enclaves for credential storage\n- Implement anomaly detection for unusual credential usage patterns\n- Use certificate-based authentication where possible instead of static credentials",
+                  "modelType": "STRIDE",
+                  "id": "cd70b170-8632-44f5-85ab-93e97efe1e64"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "diagramTop": 0,
+    "reviewer": "A security architect",
+    "threatTop": 0
+  }
+}
