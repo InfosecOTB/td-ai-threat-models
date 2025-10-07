@@ -28,7 +28,7 @@ Want to try it yourself? Check out the [official repository](https://github.com/
 
 ## Repository Structure
 
-We've organized this repository into three distinct threat model categories, each showcasing different types of systems:
+I've organized this repository into three distinct threat model categories, each showcasing different types of systems:
 
 ### Folder Organization
 
