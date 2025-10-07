@@ -110,7 +110,7 @@ Each AI-generated threat model is available in two formats:
 
 ### Reproducing These Results
 
-To generate similar AI-enhanced threat models using the same tool:
+To generate similar AI-enhanced threat models use td-ai-modeler tool.
 
 For detailed setup instructions, see the [td-ai-modeler documentation](https://github.com/InfosecOTB/td-ai-modeler).
 
