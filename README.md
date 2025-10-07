@@ -6,7 +6,7 @@ A comprehensive collection of Threat Dragon threat models enhanced with AI-gener
 
 ## Overview
 
-Here you'll find threat models created using [Threat Dragon](https://owasp.org/www-project-threat-dragon/) - the popular open-source threat modeling tool - but with a twist: we've enhanced each model with AI-generated threat analysis from top AI providers including Anthropic, OpenAI, Google, xAI, and Novita. These models span various system architectures, showing you firsthand how AI can revolutionize traditional threat modeling practices.
+Here you'll find threat models created using [Threat Dragon](https://owasp.org/www-project-threat-dragon/) - the popular open-source threat modeling tool - but with a twist: I've enhanced each model with AI-generated threat analysis from top AI providers including Anthropic, OpenAI, Google, xAI, and Novita. These models span various system architectures, showing you firsthand how AI can revolutionize traditional threat modeling practices.
 
 ## AI Threat Generation Tool
 
@@ -23,14 +23,6 @@ Here you'll find threat models created using [Threat Dragon](https://owasp.org/w
 - **Thorough Response Validation**: Double-checks AI responses against your original models to catch any discrepancies
 - **Detailed Validation Logging**: Timestamped logs with comprehensive coverage reports so you know exactly what happened
 - **Visual Indicators**: Automatically highlights components with threats using red strokes - no manual work needed
-
-### AI Providers we've tested with:
-- **OpenAI**: GPT-5, GPT-5 Mini
-- **Anthropic**: Claude Opus 4.1, Claude Sonnet 4.5
-- **Google**: Gemini 2.5 Pro
-- **xAI**: Grok-4 (latest and fast-reasoning variants)
-- **Novita**: DeepSeek R1, DeepSeek V3.1 Terminus, Qwen3 Coder
-- **Ollama**: Gemma 3 27B (perfect for local deployments)
 
 Want to try it yourself? Check out the [official repository](https://github.com/InfosecOTB/td-ai-modeler) for detailed setup instructions and documentation.
 
@@ -89,44 +81,6 @@ You'll find each AI-generated threat model in two handy formats:
 - **JSON**: Raw Threat Dragon format - perfect for importing directly into Threat Dragon
 - **PDF**: Human-readable reports - great for sharing with your team or stakeholders
 
-## Getting Started
-
-### What you'll need
-
-- [Threat Dragon](https://owasp.org/www-project-threat-dragon/) (web or desktop version)
-- A web browser for viewing PDF reports
-
-### How to explore the models
-
-**JSON Files**: Import these directly into Threat Dragon for interactive viewing and editing - you can even modify the threats and see how the AI analysis looks
-
-**PDF Files**: Open these in any PDF viewer for clean, static documentation that's perfect for presentations
-
-### Getting started with Threat Dragon
-
-1. Head over to [Threat Dragon](https://www.threatdragon.com/#/)
-2. Create a new model or open an existing one
-3. Use the import feature to load any `.json` file from this repository
-4. Dive in and explore the AI-generated threat analysis and diagrams
-
-### Reproducing These Results
-
-Want to create your own AI-enhanced threat models? The [td-ai-modeler tool](https://github.com/InfosecOTB/td-ai-modeler) makes it surprisingly straightforward.
-
-For step-by-step setup instructions and detailed documentation, check out the [td-ai-modeler repository](https://github.com/InfosecOTB/td-ai-modeler).
-
-## AI-Enhanced Threat Modeling
-
-Here's how the [td-ai-modeler](https://github.com/InfosecOTB/td-ai-modeler) tool transforms traditional threat modeling:
-
-- **Automated Threat Generation**: Let AI models dive deep into your system components and generate comprehensive threats using the STRIDE framework - no more manual brainstorming sessions
-- **Comprehensive Threat Identification**: AI models catch threats that even experienced security professionals might overlook during manual analysis
-- **Consistent Analysis**: Get standardized threat analysis across different system types and AI providers - no more inconsistencies
-- **Multiple Perspectives**: See how different AI models approach the same system architecture - it's like having multiple security experts review your system
-- **Automated Documentation**: AI generates detailed threat descriptions, mitigations, and visual indicators - your documentation practically writes itself
-- **Quality Assurance**: Built-in validation ensures all generated threats meet Threat Dragon standards - quality is guaranteed
-- **Scalability**: Process multiple threat models efficiently with different AI providers - scale your security analysis without scaling your team
-
 ## Contributing
 
 This repository serves as a practical reference for AI-enhanced threat modeling. While these models are based on real or realistic scenarios, they're designed to be educational and help you understand how AI can enhance your threat modeling process.
@@ -138,7 +92,6 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 ## Related Resources
 
 - [Threat Dragon Official Documentation](https://www.threatdragon.com/docs/)
-- [OWASP Threat Model Cookbook](https://github.com/wunderwuzzi23/threat-model-cookbook)
 - [STRIDE Threat Modeling Framework](https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats)
 
 ## Disclaimer
