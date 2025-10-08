@@ -1,6 +1,6 @@
 # TD AI Threat Models
 
-![td-ai](assets/td-ai-part3.png)
+![td-ai](assets/td-ai-part1.png)
 
 A comprehensive collection of Threat Dragon threat models enhanced with AI-generated threat analysis from multiple leading AI providers. Whether you're exploring AI-assisted security analysis or looking for practical threat modeling examples, this repository has you covered.
 
