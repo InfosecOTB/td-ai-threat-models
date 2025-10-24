@@ -12,23 +12,19 @@ Here you'll find threat models created using [Threat Dragon](https://owasp.org/w
 
 **Every single threat model you see here was created using the [td-ai-modeler](https://github.com/InfosecOTB/td-ai-modeler) - a powerful tool that leverages Large Language Models (LLMs) to automatically analyze your system components and generate comprehensive security threats with mitigation strategies for Threat Dragon models.**
 
-### What makes td-ai-modeler special:
+### Key Features:
 
-- **AI-Powered Threat Generation**: Harnesses cutting-edge LLMs to dive deep into your system components and uncover security threats you might have missed
-- **Flexible Threat Framework Support**: Built for STRIDE, but easily adaptable to other threat modeling frameworks
-- **Multi-LLM Support**: Works with all the major players - OpenAI, Anthropic, Google, xAI, and even local Ollama setups thanks to the LiteLLM library
-- **Seamless Threat Dragon Integration**: Plays perfectly with Threat Dragon JSON models - no compatibility headaches
-- **Smart Filtering**: Automatically knows which components to focus on and which to skip
-- **Rock-Solid Data Validation**: Built-in Pydantic validation ensures your threat data is always clean and consistent
-- **Thorough Response Validation**: Double-checks AI responses against your original models to catch any discrepancies
-- **Detailed Validation Logging**: Timestamped logs with comprehensive coverage reports so you know exactly what happened
-- **Visual Indicators**: Automatically highlights components with threats using red strokes - no manual work needed
+- **AI-Powered Threat Generation**: Uses LLMs to analyze system components and generate comprehensive security threats
+- **Multi-LLM Support**: Works with OpenAI, Anthropic, Google, xAI, and Ollama
+- **Threat Dragon Integration**: Seamlessly works with Threat Dragon JSON models
+- **Data Validation**: Built-in validation ensures threat data integrity
+- **Visual Indicators**: Automatically highlights components with threats
 
-Want to try it yourself? Check out the [official repository](https://github.com/InfosecOTB/td-ai-modeler) for detailed setup instructions and documentation.
+For setup instructions, visit the [td-ai-modeler repository](https://github.com/InfosecOTB/td-ai-modeler).
 
 ## Repository Structure
 
-I've organized this repository into three distinct threat model categories, each showcasing different types of systems:
+This repository contains three threat model categories:
 
 ### Folder Organization
 
@@ -38,6 +34,9 @@ Each threat model follows this consistent structure:
 📁 1_infosecotb/
 ├── 📄 infosecotb-model.json          # Original Threat Dragon model (no threats)
 ├── 📁 anthropic/                     # AI-generated threats from Anthropic models
+├── 📁 eval_reports/                  # AI model evaluation reports
+│   ├── 📁 gpt-5/                     # GPT-5 evaluation reports
+│   └── 📁 grok-4-fast-reasoning/     # Grok-4 evaluation reports
 ├── 📁 google/                        # AI-generated threats from Google models
 ├── 📁 novita/                        # AI-generated threats from Novita models
 ├── 📁 openai/                        # AI-generated threats from OpenAI models
@@ -46,6 +45,9 @@ Each threat model follows this consistent structure:
 📁 2_husky-ai/
 ├── 📄 husky-ai-model.json            # Original Threat Dragon model (no threats)
 ├── 📁 antropic/                      # AI-generated threats from Anthropic models
+├── 📁 eval_reports/                  # AI model evaluation reports
+│   ├── 📁 gpt-5/                     # GPT-5 evaluation reports
+│   └── 📁 grok-4-fast-reasoning/     # Grok-4 evaluation reports
 ├── 📁 google/                        # AI-generated threats from Google models
 ├── 📁 novita/                        # AI-generated threats from Novita models
 ├── 📁 ollama/                        # AI-generated threats from Ollama models
@@ -55,6 +57,9 @@ Each threat model follows this consistent structure:
 📁 3_online-payments-processing-platform/
 ├── 📄 payments-processing-platform.json  # Original Threat Dragon model (no threats)
 ├── 📁 antropic/                      # AI-generated threats from Anthropic models
+├── 📁 eval_reports/                  # AI model evaluation reports
+│   ├── 📁 gpt-5/                     # GPT-5 evaluation reports
+│   └── 📁 grok-4-fast-reasoning/     # Grok-4 evaluation reports
 ├── 📁 google/                        # AI-generated threats from Google models
 ├── 📁 novita/                        # AI-generated threats from Novita models
 ├── 📁 ollama/                        # AI-generated threats from Ollama models
@@ -62,43 +67,48 @@ Each threat model follows this consistent structure:
 └── 📁 xai/                           # AI-generated threats from xAI models
 ```
 
+**Key Points:**
+- **Root JSON files**: Each threat model folder contains the original Threat Dragon model without any AI-generated threats
+- **AI Provider folders**: Each AI provider has its own folder containing JSON and PDF versions of the enhanced models
+- **Dual format**: Every AI-enhanced model comes in both JSON (for Threat Dragon import) and PDF (for documentation) formats
+- **Evaluation reports**: The `eval_reports/` folder contains detailed analysis and comparison reports organized by AI model
+
 ### 1. InfoSecOTB (Infosecotb.com)
 **Location:** `1_infosecotb/`
 
-This one's a real-world example: a cybersecurity blog platform running on WordPress with an integrated AI-powered chatbot. Perfect for understanding threats in content management systems with AI integration.
+A cybersecurity blog platform with an AI-powered chatbot system.
 
-**What's inside:**
-- WordPress CMS hosted on BlueHost
-- vMeNext AI chatbot powered by OpenAI GPT
-- Blog content management and user engagement features
-- Social media integration and search functionality
+**Components:**
+- WordPress CMS on BlueHost
+- vMeNext AI chatbot with OpenAI GPT
+- Blog content management and user engagement
 
 ### 2. Husky AI
 **Location:** `2_husky-ai/`
 
-Here's something fun but educational: a machine learning system that can tell the difference between huskies and other dogs. This model is great for understanding threats in ML/AI systems with proper security practices.
+A machine learning system for classifying huskies vs. other dogs.
 
-**The tech stack:**
-- Convolutional Neural Network (CNN) for image classification
-- Azure Cognitive Services for image retrieval
-- Azure Blob Storage with RBAC/ABAC access controls
-- Jupyter Notebook development environment
-- Production deployment with API Gateway
+**Components:**
+- CNN for image classification
+- Azure Cognitive Services
+- Azure Blob Storage with RBAC/ABAC
+- Jupyter Notebook development
+- Production API Gateway
 
 ### 3. Online Payments Processing Platform
 **Location:** `3_online-payments-processing-platform/`
 
-Based on the OWASP Threat Model Cookbook example, this one tackles the critical world of e-commerce payment processing. It's a must-see for anyone dealing with payment security.
+An e-commerce payment processing system based on OWASP Threat Model Cookbook.
 
-**What you'll learn about:**
+**Components:**
 - Customer-merchant interaction flows
 - Stripe payment integration
 - OAuth authentication
-- Secure payment processing workflows
+- Secure payment processing
 
 ## AI Provider Analysis
 
-Each threat model comes with AI-generated threat analysis from multiple providers, so you can see how different AI models approach the same security challenges:
+Each threat model includes AI-generated threat analysis from multiple providers:
 
 - **Anthropic**: Claude Opus 4.1 and Claude Sonnet 4.5
 - **OpenAI**: GPT-5 and GPT-5 Mini
@@ -109,13 +119,13 @@ Each threat model comes with AI-generated threat analysis from multiple provider
 
 ## File Formats
 
-You'll find each AI-generated threat model in two handy formats:
-- **JSON**: Raw Threat Dragon format - perfect for importing directly into Threat Dragon
-- **PDF**: Human-readable reports - great for sharing with your team or stakeholders
+Each AI-generated threat model is available in two formats:
+- **JSON**: Threat Dragon format for import
+- **PDF**: Human-readable reports for documentation
 
 ## Contributing
 
-This repository serves as a practical reference for AI-enhanced threat modeling. While these models are based on real or realistic scenarios, they're designed to be educational and help you understand how AI can enhance your threat modeling process.
+This repository serves as a reference for AI-enhanced threat modeling. The models are educational and demonstrative.
 
 ## License
 
@@ -128,4 +138,4 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 
 ## Disclaimer
 
-These threat models are designed for educational and demonstration purposes. While they provide valuable insights into AI-enhanced threat modeling, they shouldn't be used as the sole basis for security decisions in production systems. Always conduct thorough security assessments tailored to your specific use cases and environments.
+These threat models are for educational purposes. They should not be used as the sole basis for security decisions in production systems.
